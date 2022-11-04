@@ -30,7 +30,6 @@ e2e/*.map
 # System Files
 *.DS_Store
 *.pdf
-async/
 
 ### DotnetCore ###
 # .NET Core build folders
