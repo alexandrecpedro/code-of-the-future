@@ -26,7 +26,14 @@
     -  Fork, Pull Request and Github Pages
 
 #### Class 03 | Introduction to JavaScript
-    -  Integração de Classs 1 e 2
+    -  Review Basic JavaScript
+    -  Template String
+    -  Ternary Operator
+    -  Arrow Functions
+    -  Arrays, Spread & Methods
+    -  Objects Destructuring
+    -  SPA, PWA, and Web Components
+    -  Project
 
 #### Class 04 | JavaScript Practice
     -  Explicar o conceito de infraestrutura como código
