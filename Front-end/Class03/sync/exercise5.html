@@ -1,0 +1,28 @@
+<!-- EXERCISE 5
+Roberto é reitor da faculdade São Judas.
+Ele precisa de um software para calcular a média de um aluno,
+e verificar se o aluno está aprovado ou reprovado.
+
+Quantidade de notas = 4
+
+Faça um programa que solicite as 4 notas, capture o nome do aluno
+e mostre o resultado
+
+Critério de aprovação: nota maior ou igual a 5
+-->
+
+<script>
+    let nomeAluno = prompt("Informe o nome do(a) aluno(a): ");
+    let somaNotas = 0;
+    let quantidadeNotas = Number(prompt("Quantas notas deseja inserir? "));
+    for (let i = 0; i < quantidadeNotas; i++) {
+        let nota = Number(prompt("Digite a nota: "));
+        somaNotas += nota;
+    }
+
+    let mediaNotas = somaNotas / quantidadeNotas;
+
+    let situacaoAluno = mediaNotas < 5 ? "reprovado" : "aprovado";
+
+    alert(`O(A) aluno(a) ${nomeAluno} tem média de ${mediaNotas.toFixed(2)} e está ${situacaoAluno}`);
+</script>
