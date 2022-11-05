@@ -1,0 +1,22 @@
+<!-- EXERCISE 2
+João Roberto é dono de um armazém, que vende produtos de limpeza.
+Ele precisa de um programa que solicite os valores do alvejante, sabaoEmPo e o sabonete.
+
+Faça um programa que solicite também o nome do cliente
+e no final do programa mostre o valor total da compra
+(soma dos valores dos produtos) feita por este cliente.
+O valor total é a soma das variáveis listadas acima
+
+Exemplo: Olá Fulano,
+o valor de sua compra é de:
+12231312 -->
+
+<script>
+    let nome = prompt("Nome do cliente: ")
+    let alvejante = prompt("Valor do alvejante: ")
+    let sabaoEmPo = prompt("Valor do sabão em pó: ")
+    let sabonete = prompt("Valor do sabonete: ")
+
+    let valorTotal = Number(alvejante) + Number(sabaoEmPo) + Number(sabonete)
+    alert(`Olá ${nome}, \no valor de sua compra é de: R$ ${valorTotal.toFixed(2)}`)
+</script>
