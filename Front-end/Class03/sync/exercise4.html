@@ -1,0 +1,19 @@
+<!-- EXERCISE 4
+Mirian é uma aluna que precisa saber a média de suas 3 notas
+
+Faça um programa que solicite as 3 notas e 
+calcule a média no final
+-->
+
+<script>
+    let somaNotas = 0;
+    let quantidadeNotas = Number(prompt("Quantas notas deseja inserir? "));
+    let nota;
+    for (let i = 0; i < quantidadeNotas; i++) {
+        nota = Number(prompt("Digite a nota: "));
+        somaNotas += nota;
+    }
+
+    let mediaNotas = somaNotas / quantidadeNotas;
+    alert(`A média de Mirian é de ${resultado.toFixed(2)}`)
+</script>
