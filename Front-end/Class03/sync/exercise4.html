@@ -8,12 +8,11 @@ calcule a média no final
 <script>
     let somaNotas = 0;
     let quantidadeNotas = Number(prompt("Quantas notas deseja inserir? "));
-    let nota;
     for (let i = 0; i < quantidadeNotas; i++) {
-        nota = Number(prompt("Digite a nota: "));
+        let nota = Number(prompt("Digite a nota: "));
         somaNotas += nota;
     }
 
     let mediaNotas = somaNotas / quantidadeNotas;
-    alert(`A média de Mirian é de ${resultado.toFixed(2)}`)
+    alert(`A média de Mirian é de ${mediaNotas.toFixed(2)}`)
 </script>
