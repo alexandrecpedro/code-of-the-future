@@ -13,10 +13,10 @@ o valor de sua compra é de:
 
 <script>
     let nome = prompt("Nome do cliente: ")
-    let alvejante = prompt("Valor do alvejante: ")
-    let sabaoEmPo = prompt("Valor do sabão em pó: ")
-    let sabonete = prompt("Valor do sabonete: ")
+    let alvejante = parseFloat(prompt("Valor do alvejante: "))
+    let sabaoEmPo = parseFloat(prompt("Valor do sabão em pó: "))
+    let sabonete = parseFloat(prompt("Valor do sabonete: "))
 
-    let valorTotal = Number(alvejante) + Number(sabaoEmPo) + Number(sabonete)
+    let valorTotal = alvejante + sabaoEmPo + sabonete
     alert(`Olá ${nome}, \no valor de sua compra é de: R$ ${valorTotal.toFixed(2)}`)
 </script>
