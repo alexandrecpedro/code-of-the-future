@@ -1,0 +1,22 @@
+<!-- EXERCISE 2
+Cris é uma professora de matemática.
+Ela decidiu montar um cálculo que mostrará a rotação do
+planeta Terra perante o sistema solar.
+
+Para calcular esse problema, ela chegou na seguinte expressão:
+
+resultado = y + 5 * 9 / 7 + (h - t / T + o) - 5 * 100
+
+Faça um programa que resolva esta operação
+-->
+
+<script>
+    let y = parseFloat(prompt("y: "))
+    let h = parseFloat(prompt("h: "))
+    let t = parseFloat(prompt("t: "))
+    let T = parseFloat(prompt("T: "))
+    let o = parseFloat(prompt("o: "))
+
+    let resultado = y + 5 * 9 / 7 + (h - t / T + o) - 5 * 100
+    alert(`A rotação do planeta Terra perante o sistema solar é de ${resultado.toFixed(2)}`)
+</script>
