@@ -1,0 +1,29 @@
+<!-- EVENT BINDING -->
+<h2>Event Binding Examples</h2>
+
+<button 
+    (click)="onClick($event)"
+    (mouseenter)="mouseEnter()"
+>Click here!</button>
+
+<input type="text" [value]="initialValue" (keyup)="enteredSomething($event)">
+
+Input value: {{ inputValue }}
+
+<hr>
+
+<!-- PROPERTY BINDING -->
+<h2>Property Binding Examples</h2>
+
+<h3>Word: {{ car }}</h3>
+<h3>Color: {{ color }}</h3>
+<!-- DATA BINDING [] -->
+<input type="text" [value]="initialValue">
+<br>
+<button [disabled]="isDisabled">Click here!</button>
+<br>
+<p [attr.aria-label]="isDisabled ? 'Disabled button' : accessibilityText">
+    Any text...
+</p>
+<br>
+<img [src]="getImageURL()" alt="MD-11 airplane">
