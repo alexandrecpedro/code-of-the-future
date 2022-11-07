@@ -28,9 +28,8 @@ e2e/*.js
 e2e/*.map
 
 # System Files
-.DS_Store/
-.pdf
-/async/
+*.DS_Store
+*.pdf
 
 ### DotnetCore ###
 # .NET Core build folders
