@@ -19,4 +19,7 @@ export class AppComponent {
   }
 
   /** METHODS **/
+  receivedEvent($event: any): void {
+    console.log("AppComponent: RECEIVED EVENT!", $event);
+  }
 }
