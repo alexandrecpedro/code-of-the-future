@@ -27,6 +27,10 @@
 
 #### Class 03 | Introduction to JavaScript
     -  Review Basic JavaScript
+    -  Exercises
+
+#### Class 04 | JavaScript Practice
+    -  Review Basic JavaScript
     -  Template String
     -  Ternary Operator
     -  Arrow Functions
@@ -35,39 +39,37 @@
     -  SPA, PWA, and Web Components
     -  Project
 
-#### Class 04 | JavaScript Practice
-    -  Explicar o conceito de infraestrutura como código
-    -  O que existia antes da infraestrutura como código?
-    -  2 paradigmas para a infraestrutura como código: 
-        -  código imperativo vs código declarativo
-    -  Ecossistema de ferramentas
-        -  diferenças entre tecnologias 
-        -  tecnologias que devemos conhecer
-    -  O princípio da idempotência
-
 #### Class 05 | Angular: Components
     -  O que é AWS CloudFormation?
     -  Como usar essa ferramenta?
-    -  Onde usamos?
-    -  Quem usa?
-    -  Está na hora de praticar!
 
 #### Class 06 | Angular: Properties and Events
-    -  Integração de Classs 4 e 5
+    -  Data Binding
+    -  Property Binding
+    -  Exercise: Property Binding
+    -  Event Binding
+    -  Customized Event Binding
+    -  Exercise: Counter
+    -  Two Way Data Binding
+    -  Augury
 
 #### Class 07 | Angular: Directives
-    -  O que é Ansible?
-    -  Como usar essa ferramenta?
-    -  Onde usamos?
-    -  Quem usa?
-    -  Está na hora de praticar!
+    -  Introduction to Directives
+    -  Directive ngIf
+    -  Directive ngFor
+    -  Exercise: Directives ngIf and ngFor
+    -  Exercise: Directives ngIf and ngFor
+    -  Directive ngClass
 
 #### Class 08 | Angular: Encapsulation and Pipes
-    -  O que é Terraform?
-    -  Como usar essa ferramenta?
-    -  Onde usamos?
-    -  Quem usa?
-    -  Está na hora de praticar!
+    -  View Encapsulation
+    -  Lifecycle Hooks
+    -  Pipes I
+    -  Pipes II
+    -  Localization
+    -  Exercise: Pipes I
+    -  Exercise: Pipes II
+    -  Reorganizing the Project
 
 #### Class 09 | Angular: Routes and Modules
     -  Integração de Classs 7 e 8 
