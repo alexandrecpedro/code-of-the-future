@@ -1,28 +1,43 @@
 <!-- EXERCISE 1
-Roberto é reitor da faculdade São Judas.
-Ele precisa de um software para calcular a média de um aluno,
-e verificar se o aluno está aprovado ou reprovado.
+Fabiana é uma pessoa muito indecisa
+e precisa juntar dinheiro para conseguir viajar em suas férias.
+Ela terá algumas opções a escolher com seus respectivos valores:
 
-Quantidade de notas = 4
+Disney = R$ 15000
+Madrid = R$ 12000
+Maceió = R$ 8000
+Ribeirão Preto = R$ 5000
 
-Faça um programa que solicite as 4 notas, capture o nome do aluno
-e mostre o resultado
-
-Critério de aprovação: nota maior ou igual a 5
+Faça um programa que solicite o nome do usuário,
+o valor que o usuário tem para a viagem,
+a viagem que o usuário deseja e mostre, ao final do programa,
+se o usuário pode viajar ou se ele não pode.
+Se ela não puder viajar, mostre o quanto falta para ela economizar.
 -->
 
 <script>
-    let nomeAluno = prompt("Informe o nome do(a) aluno(a): ");
-    let somaNotas = 0;
-    let quantidadeNotas = Number(prompt("Quantas notas deseja inserir? "));
-    for (let i = 0; i < quantidadeNotas; i++) {
-        let nota = Number(prompt("Digite a nota: "));
-        somaNotas += nota;
+    let nomePessoa = prompt("Informe o nome do(a) viajante: ");
+    let valorEconomizado = parseFloat(prompt("Informe o valor (em R$) já economizado para a viagem: "));
+    let destinoViagem = prompt("Informe o destino da viagem: \n1-Disney \n2-Madrid \n3-Maceió \n4-Ribeirão Preto \n0-Nenhuma das opções apresentadas");
+    let valorFaltanteParaViagem = 0;
+
+    switch (destinoViagem) {
+        case "1":
+            valorEconomizado < 15000 && (valorFaltanteParaViagem = 15000 - valorEconomizado);
+            break;
+        case "2":
+            valorEconomizado < 12000 && (valorFaltanteParaViagem = 12000 - valorEconomizado);
+            break;
+        case "3":
+            valorEconomizado < 8000 && (valorFaltanteParaViagem = 8000 - valorEconomizado);
+            break;
+        case "4":
+            valorEconomizado < 5000 && (valorFaltanteParaViagem = 5000 - valorEconomizado);
+            break;
+        default:
+            console.log("Pacote de viagem indisponível :(");
+            break;
     }
 
-    let mediaNotas = somaNotas / quantidadeNotas;
-
-    let situacaoAluno = mediaNotas < 5 ? "reprovado" : "aprovado";
-
-    alert(`O(A) aluno(a) ${nomeAluno} tem média de ${mediaNotas.toFixed(2)} e está ${situacaoAluno}`);
+    alert(`${valorFaltanteParaViagem === 0} ? O(A) ${nomePessoa} pode ir viajar para ${destinoViagem} : O(A) ${nomePessoa} ainda precisa economizar R$ ${valorEconomizado.toFixed(2)} para poder ir para ${destinoViagem}`);
 </script>
