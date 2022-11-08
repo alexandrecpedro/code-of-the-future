@@ -19,6 +19,7 @@ export class DataBindingComponent implements OnInit {
   isDisabled: Boolean = true;
   accessibilityText: string = "An accessible text";
   inputValue: string = "";
+  counterValue: number = 10;
 
   /** CONSTRUCTOR **/
   constructor() {
@@ -54,4 +55,8 @@ export class DataBindingComponent implements OnInit {
     this.clicked.emit($event);
   }
 
+  // onUpdatedValueOnCounter(newValue: number): void {
+  //   this.counterValue = newValue;
+  //   console.log(`onUpdatedValueOnCounter: ${newValue}`);
+  // }
 }

@@ -8,13 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   /** DECORATORS **/
   @Input() title: string = "You're welcome!";
-
+  
   /** ATTRIBUTES  **/
+  
   /** CONSTRUCTOR  **/
   constructor() { }
   
   /** METHODS  **/
   ngOnInit(): void {
   }
+
+  logout() {}
 
 }

@@ -1,3 +1,16 @@
+Current value at counter: {{ counterValue }}
+
+<!--  EXERCISE - COUNTER -->
+<!-- <app-counter
+    [counterValue]="counterValue"
+    (changedValue)="onUpdatedValueOnCounter($event)"
+></app-counter> -->
+<app-counter
+    [(counterValue)]="counterValue"
+></app-counter>
+
+<hr>
+
 <!-- EVENT BINDING - EXAMPLES -->
 <button 
     (click)="onClickEmitButton($event)">

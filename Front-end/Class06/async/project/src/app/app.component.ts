@@ -10,6 +10,7 @@ export class AppComponent {
   title = "You're welcome! =)";
   favoriteCar: string = "Ferrari";
   favoriteColor: string = "yellow";
+  initialValue: number = 10;
 
   /** CONSTRUCTOR **/
   constructor() {
