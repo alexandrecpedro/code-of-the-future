@@ -1,0 +1,62 @@
+<p> Current value at mustDisplay: {{ mustDisplay }} </p>
+
+<button (click)="changeValue()">Change value</button>
+
+<!-- DIRECTIVE ngIf -->
+<!-- (1) Shorthand syntax -->
+<div *ngIf="mustDisplay; else elseBlock">
+    Hello! I'm inside ngIf.
+</div>
+
+<ng-template #elseBlock>
+    I WILL BE DISPLAYED WHEN mustDisplay BE FOR FALSE!
+</ng-template>
+
+<div *ngIf="sum(5, 6) > 10">
+    Display based on sum.
+</div>
+
+<!-- (2) Simple form with expanded form -->
+<ng-template [ngIf]="mustDisplay">
+    <div>Content to render when condition is true.</div>
+</ng-template>
+
+<!-- (3) Shorthand form with "then" and "else" blocks -->
+<div *ngIf="mustDisplay; then thenBlock else elseBlock2"></div>
+<ng-template #thenBlock> NG-TEMPLATE TRUE BLOCK </ng-template>
+<ng-template #elseBlock2> NG-TEMPLATE FALSE BLOCK </ng-template>
+
+<hr>
+
+<!-- DIRECTIVE ngFor -->
+<ul>
+  <li *ngFor="let fruit of fruitList"> {{ fruit }} </li>
+</ul>
+
+<ul>
+  <li *ngFor="let car of carList; let index = index; first as firstCar; last as lastCar">
+    {{ firstCar }} - {{ index + 1 }} - {{ car.licensePlate }} - {{ car.color}} - {{ lastCar }}
+  </li>
+</ul>
+
+<p *ngFor="let fruit of fruitList"> {{ fruit }} </p>
+
+<hr>
+
+<h2> Exercise Solution </h2>
+
+<ul>
+  <li *ngFor="let orderedMemes of MEMES_ORDERED_BY_CATEGORY">
+    <h2> {{ orderedMemes.category }} </h2>
+    
+    <div *ngFor="let meme of orderedMemes.memes; let even = even">
+      <img [src]="IMAGE_URL_PREFIX + meme.imageURL" *ngIf="even; else evenBlock">
+      <ng-template #evenBlock>
+        <h2> EVEN </h2>
+      </ng-template>
+    </div>
+
+  </li>
+</ul>
+
+<br><br><br><br>
