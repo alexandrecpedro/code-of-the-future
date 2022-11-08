@@ -44,7 +44,7 @@
     -  Como usar essa ferramenta?
 
 #### Class 06 | Angular: Properties and Events
-    -  Data Binding
+    -  Data Bindingg
     -  Property Binding
     -  Exercise: Property Binding
     -  Event Binding
