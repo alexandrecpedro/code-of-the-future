@@ -19,30 +19,31 @@ Se ela não puder viajar, mostre o quanto falta para ela economizar.
     let nomePessoa = prompt("Informe o nome do(a) viajante: ");
     let valorEconomizado = parseFloat(prompt("Informe o valor (em R$) já economizado para a viagem: "));
     let destinoViagem = prompt("Informe o destino da viagem: \n1-Disney \n2-Madrid \n3-Maceió \n4-Ribeirão Preto \n0-Nenhuma das opções apresentadas");
-    let valorFaltanteParaViagem = 0;
+    let valorViagem = 0;
 
     switch (destinoViagem) {
         case "1":
-            valorEconomizado < 15000 && (valorFaltanteParaViagem = 15000 - valorEconomizado);
+            valorViagem = 15000;
             destinoViagem = "Disney";
             break;
         case "2":
-            valorEconomizado < 12000 && (valorFaltanteParaViagem = 12000 - valorEconomizado);
+            valorViagem = 12000;
             destinoViagem = "Madrid";
             break;
         case "3":
-            valorEconomizado < 8000 && (valorFaltanteParaViagem = 8000 - valorEconomizado);
+            valorViagem = 8000;
             destinoViagem = "Maceió";
             break;
         case "4":
-            valorEconomizado < 5000 && (valorFaltanteParaViagem = 5000 - valorEconomizado);
+            valorViagem = 5000;
             destinoViagem = "Ribeirão Preto"
             break;
         default:
-            valorFaltanteParaViagem == null;
             console.log("Pacote de viagem indisponível :(");
             break;
     }
 
-    alert(valorFaltanteParaViagem === 0 && destinoViagem != 0 ? `O(A) ${nomePessoa} pode ir viajar para ${destinoViagem}` : (destinoViagem != 0 ? `O(A) ${nomePessoa} ainda precisa economizar R$ ${valorFaltanteParaViagem.toFixed(2)} para poder ir para ${destinoViagem}` : "Pacote de viagem indisponível :("));
+    let valorFaltanteParaViagem = valorViagem - valorEconomizado;
+
+    alert(valorFaltanteParaViagem <= 0 && destinoViagem != 0 ? `O(A) ${nomePessoa} pode ir viajar para ${destinoViagem}` : (destinoViagem != 0 ? `O(A) ${nomePessoa} ainda precisa economizar R$ ${valorFaltanteParaViagem.toFixed(2)} para poder ir para ${destinoViagem}` : "Pacote de viagem indisponível :("));
 </script>
