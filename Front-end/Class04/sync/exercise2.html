@@ -1,0 +1,16 @@
+<!-- EXERCISE 2
+João precisa de um sistema que solicite o número de início
+e o número final da operação.
+Faça um programa que mostre somente os números pares entre os números digitados
+-->
+
+<script>
+    let numeroInicio = Number(prompt("Digite o primeiro número da operação: "));
+    let numeroFinal = Number(prompt("Digite o número final da operação: "));
+    for (let index = numeroInicio; index <= numeroFinal ; index++) {
+        console.log(`Números pares entre ${numeroInicio} e ${numeroFinal}`);
+        if (index % 2 == 0) {
+            console.log(index);
+        }
+    }
+</script>
