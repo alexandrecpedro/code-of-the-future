@@ -44,5 +44,5 @@ Se ela não puder viajar, mostre o quanto falta para ela economizar.
             break;
     }
 
-    alert(valorFaltanteParaViagem === 0 ? `O(A) ${nomePessoa} pode ir viajar para ${destinoViagem}` : (destinoViagem != 0 ? `O(A) ${nomePessoa} ainda precisa economizar R$ ${valorFaltanteParaViagem.toFixed(2)} para poder ir para ${destinoViagem}` : "Pacote de viagem indisponível :("));
+    alert(valorFaltanteParaViagem === 0 && destinoViagem != 0 ? `O(A) ${nomePessoa} pode ir viajar para ${destinoViagem}` : (destinoViagem != 0 ? `O(A) ${nomePessoa} ainda precisa economizar R$ ${valorFaltanteParaViagem.toFixed(2)} para poder ir para ${destinoViagem}` : "Pacote de viagem indisponível :("));
 </script>
