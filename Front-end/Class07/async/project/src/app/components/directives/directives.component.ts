@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MEMES_ORDERED_BY_CATEGORY } from './directives.constants';
 
 @Component({
   selector: 'app-directives',
@@ -32,6 +33,9 @@ export class DirectivesComponent implements OnInit {
       color: "Red",
     },
   ];
+
+  IMAGE_URL_PREFIX = 'https://raw.githubusercontent.com/vitorfgsantos/angular-memes-diretivas/master/images';
+  MEMES_ORDERED_BY_CATEGORY = MEMES_ORDERED_BY_CATEGORY;
 
   /** CONSTRUCTOR **/
   constructor() { }
