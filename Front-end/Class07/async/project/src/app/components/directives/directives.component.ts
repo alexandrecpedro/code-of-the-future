@@ -34,6 +34,8 @@ export class DirectivesComponent implements OnInit {
     },
   ];
 
+  mustBeGreen: boolean = false;
+
   IMAGE_URL_PREFIX = 'https://raw.githubusercontent.com/vitorfgsantos/angular-memes-diretivas/master/images';
   MEMES_ORDERED_BY_CATEGORY = MEMES_ORDERED_BY_CATEGORY;
 
@@ -50,6 +52,10 @@ export class DirectivesComponent implements OnInit {
 
   sum(number1: number, number2: number): number {
     return number1 + number2;
+  }
+
+  makeItGreen(): void {
+    this.mustBeGreen = true;
   }
 
 }

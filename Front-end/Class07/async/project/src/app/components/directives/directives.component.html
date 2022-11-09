@@ -59,4 +59,30 @@
   </li>
 </ul>
 
+<hr>
+
+<!-- DIRECTIVE ngClass -->
+<h2>Directives ngClass Exercise</h2>
+
+<button (click)="makeItGreen()">Make it green!</button>
+
+<!-- (1) If ternary -->
+<p [ngClass]="mustBeGreen ? 'green' : 'red'">Testing</p>
+
+<!-- (2) Multiple options (object) -->
+<p [ngClass]="{
+  'green': mustBeGreen,
+  'red': !mustBeGreen
+}">Testing 2</p>
+
+<!-- (3) Property Binding -->
+<p [class]="mustBeGreen ? 'green' : 'red'">
+  Testing PropertyBinding Class
+</p>
+
+<!-- (4) Just checking 1 class on Property Binding -->
+<p [class.green]="mustBeGreen">
+  Testing PropertyBinding Class
+</p>
+
 <br><br><br><br>
