@@ -29,6 +29,7 @@ Critério de avaliação:
         let matricula = prompt("Informe os dados de matrícula do aluno: ");
         let quantidadeNotas = Number(prompt("Informe a quantidade de notas do aluno: "));
         let notas = [];
+        let idAluno = alunosEscola.length + 1;
         
         do {
             let nota = Number(prompt("Informe a nota do aluno: "));
@@ -47,6 +48,7 @@ Critério de avaliação:
         }
 
         let aluno = {
+            id: idAluno,
             nome: nomeAluno,
             matricula: matricula,
             notas: notas,
