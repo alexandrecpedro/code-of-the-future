@@ -1,0 +1,59 @@
+<!-- EXERCISE 3
+Francisco precisa de um sistema para gerenciar sua escola.
+Neste sistema, precisamos capturar o aluno com as seguintes informações:
+
+aluno
+    - nome
+    - matrícula
+    - notas
+
+As notas podem ser quantas o sistema quiser, ou seja, deixe o usuário escolher a
+quantidade de notas.
+Neste sistema você precisará de um menu onde fará o:
+- cadastro de alunos, digitando nome, matrícula e notas.
+- emissão de relatório, o qual mostrará a lista de alunos com
+nome, matrícula, notas, média, aprovado/reprovado/recuperação
+
+Critério de avaliação:
+    - aprovado: nota >= 7
+    - recuperação: 5 <= nota < 7
+    - reprovado: nota < 5
+-->
+
+<script>
+    let alunosEscola = [];
+    let quantidadeAlunos = Number(prompt("Informe a quantidade de alunos da escola: "));
+
+    for (let index = 1; index <= quantidadeAlunos ; index++) {
+        let nomeAluno = prompt("Informe o nome do aluno: ");
+        let matricula = prompt("Informe os dados de matrícula do aluno: ");
+        let quantidadeNotas = Number(prompt("Informe a quantidade de notas do aluno: "));
+        let notas = [];
+        
+        do {
+            let nota = Number(prompt("Informe a nota do aluno: "));
+            notas.push(nota);
+        } while (notas.length <= quantidadeNotas);
+
+        let mediaNotas = (notas.reduce((valorAcumulado, nota) => valorAcumulado + nota, 0) / notas.length).toFixed(2);
+
+        let situacao;
+        if (mediaNotas < 5) {
+            situacao = "Reprovado";
+        } else if (mediaNotas < 7) {
+            situacao = "Recuperação";
+        } else {
+            situacao = "Aprovado";
+        }
+
+        let aluno = {
+            nome: nomeAluno,
+            matricula: matricula,
+            notas: notas,
+            media: mediaNotas,
+            situacao: situacao
+        }
+
+        alunosEscola.push(aluno);
+    }
+</script>
