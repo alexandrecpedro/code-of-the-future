@@ -1,4 +1,4 @@
-<!-- EXERCISE 3
+<!-- EXERCISE 4
 Francisco precisa de um sistema para gerenciar sua escola.
 Neste sistema, precisamos capturar o aluno com as seguintes informações:
 
@@ -18,17 +18,44 @@ Critério de avaliação:
     - aprovado: nota >= 7
     - recuperação: 5 <= nota < 7
     - reprovado: nota < 5
+
+Use o paradigma de Orientação a Objetos
 -->
 
 <script>
-    const alunos = []
+    class Aluno {
+        /** ATTRIBUTES **/
 
-    const mostrarAlunos = () => {
+        /** CONSTRUCTOR **/
+        constructor() {
+            this.nome = "";
+            this.matricula = "";
+            this.notas = [];
+        }
+
+        /** METHODS **/
+        media() {
+            return (this.notas.reduce((valorAtual, nota) => valorAtual + nota, 0) / this.notas.length).toFixed(2);
+        }
+
+        situacao() {
+            const mediaCalculada = this.media();
+            if (mediaCalculada >= 7) return "Aprovado";
+            else if (mediaCalculada >= 5) return "Recuperação";
+            else return "Reprovado";
+        }
+    }
+
+    const appNotas = {}
+
+    appNotas.alunos = []
+
+    appNotas.mostrarAlunos = () => {
         let msg = ""
-        for (let i = 0; i < alunos.length; i++) {
-            let aluno = alunos[i]
+        for (let i = 0; i < appNotas.alunos.length; i++) {
+            let aluno = appNotas.alunos[i]
             msg += `
-            ${mostrarAluno(aluno)}
+            ${appNotas.mostrarAluno(aluno)}
             --------------------------------
         `
         }
@@ -36,18 +63,18 @@ Critério de avaliação:
         alert(msg)
     }
 
-    const mostrarAluno = (aluno) => {
+    appNotas.mostrarAluno = (aluno) => {
         return `
         Aluno: ${aluno.nome}
         Matrícula: ${aluno.matricula}
         Quantidade de Notas: ${aluno.notas.join(", ")}
-        Média Final: ${aluno.media}
-        Situação: ${aluno.situacao}
+        Média Final: ${aluno.media()}
+        Situação: ${aluno.situacao()}
     `
     }
 
-    const cadastroAluno = () => {
-        const aluno = {}
+    appNotas.cadastroAluno = () => {
+        const aluno = new Aluno()
 
         aluno.nome = prompt("Qual o nome do aluno?")
         aluno.matricula = prompt("Digite o número da matrícula:")
@@ -61,42 +88,31 @@ Critério de avaliação:
             soma += nota
         }
 
-        aluno.media = (soma / aluno.notas.length).toFixed(2);
-
-        if (aluno.media >= 7) {
-            aluno.situacao = "Aprovado"
-        } else if (aluno.media >= 5 && aluno.media < 7) {
-            aluno.situacao = "Recuperação"
-        } else {
-            aluno.situacao = "Reprovado"
-        }
-
         const confirmacao = confirm(`
-        Salvar estas informações?
-        ${mostrarAluno(aluno)}
-    `)
+            Salvar estas informações?
+            ${appNotas.mostrarAluno(aluno)}
+        `)
 
         if (confirmacao) {
-            alunos.push(aluno)
+            appNotas.alunos.push(aluno)
         }
     }
 
-
-    const menu = () => {
+    appNotas.menu = () => {
         let opcao = prompt(
             "Cadastrar novo(a) aluno(a)\n\n" +
             "Escolha uma opção:\n" +
             "1. Cadastrar\n" +
-            "2. Exibir alunos\n" +
+            "2. Exibir relatório de alunos\n" +
             "3. Sair"
         )
 
         switch (opcao) {
             case "1":
-                cadastroAluno()
+                appNotas.cadastroAluno()
                 break
             case "2":
-                mostrarAlunos();
+                appNotas.mostrarAlunos();
                 break
             case "3":
                 return
@@ -104,9 +120,9 @@ Critério de avaliação:
                 alert("Opção inválida!")
         }
 
-        menu()
+        appNotas.menu()
     }
 
 </script>
 <h1>Bem vindo ao programa de alunos</h1>
-<button onclick="menu()">Iniciar programa</button>
+<button onclick="appNotas.menu()">Iniciar programa</button>
