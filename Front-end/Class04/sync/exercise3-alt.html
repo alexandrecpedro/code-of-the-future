@@ -1,0 +1,103 @@
+<!-- EXERCISE 3
+Francisco precisa de um sistema para gerenciar sua escola.
+Neste sistema, precisamos capturar o aluno com as seguintes informações:
+
+aluno
+    - nome
+    - matrícula
+    - notas
+
+As notas podem ser quantas o sistema quiser, ou seja, deixe o usuário escolher a
+quantidade de notas.
+Neste sistema você precisará de um menu onde fará o:
+- cadastro de alunos, digitando nome, matrícula e notas.
+- emissão de relatório, o qual mostrará a lista de alunos com
+nome, matrícula, notas, média, aprovado/reprovado/recuperação
+
+Critério de avaliação:
+    - aprovado: nota >= 7
+    - recuperação: 5 <= nota < 7
+    - reprovado: nota < 5
+-->
+
+<script>
+    // Criação das variáveis principais
+    var alunos = []
+    var selecao
+    // Condição para repetir até o usuário selecionar a opção de sair (4)
+    while (selecao != 4) {
+    //Solicita a opção para o usuário
+    selecao = Number(prompt("Informe a opção desejada: \n1) Cadastro\n2) Relatório\n3) Consulta\n4) Sair"))
+    //Condicionais de acordo com a seleção
+    //Se selecionado 1, entra na condicional de cadastro
+       switch (selecao) {
+            case 1:
+                //Solicita os dados para cadastro
+                nome = prompt("Informe o nome do aluno")
+                matricula = Number(prompt("Informe o número da matrícula"))
+                qtdNotas = Number(prompt("Informe a quantidade de notas à serem inseridas:"))
+                //Variável para usar no While
+                let cont = 1
+                //Array que vai salvar as notas
+                notas = []
+                //Loop para inserir as notas de acordo com a quantidade informada em qtdNotas
+                while (cont <= qtdNotas) {
+                    notas.push(Number(prompt(`Informe a ${cont}º nota`)))
+                    cont++
+                }
+                //Transforma o array de notas em String
+                notasTexto = notas.toString()
+                //Soma todas as notas dentro do array "notas"
+                somaNotas = notas.reduce(function(notaAnterior, notaAtual) {
+                    return notaAnterior +notaAtual
+                })
+                //Calcula a média das notas
+                media = somaNotas/qtdNotas
+                //Verifica se a média atende ao critério e adiciona a situação na variável
+                if (media >= 7) {
+                    situacao = "Aprovado"
+                } else if (media >=5 && media < 7) {
+                    situacao = "Recuperação"
+                } else {
+                    situacao = "Reprovado"
+                }
+                //Adiciona todas as variáveis registradas como objeto dentro do array "alunos" criado no começo do código
+                alunos.push({
+                    'nome': nome,
+                    'matricula': matricula, 
+                    'notas': notasTexto, 
+                    'media': media, 
+                    'situacao': situacao
+                })
+                continue
+            //Se selecionado 2, entra na condicional de relatórios
+            case 2: 
+                //Exibe no console a tabela com todos os dados do array alunos de forma ordenada.
+                console.table(alunos)
+                continue
+        
+            
+            //Se selecionado 3, entra na condicional de consulta
+            case 3:
+                //Solicita a forma de pesquisa
+                tipoPesquisa = prompt("Como gostaria de pesquisar?\n1) Nome\n2) Matrícula")
+                //Pesquisa por nome
+                if (tipoPesquisa == 1) {
+                    pesquisaNome = prompt("Informe o nome do aluno:")
+                    //Encontra no array "alunos" a linha que contem o nome informado em pesquisaNome
+                    encontraNome = alunos.find(aluno => aluno.nome == pesquisaNome)
+                    //Retorna no console o resultado da pesquisa
+                    console.table (encontraNome)
+                } 
+                //Pesquisa por Matrícula   
+                else if (tipoPesquisa == 2) {
+                    pesquisaMatricula = Number(prompt("Informe o número da Matrícula do aluno:"))
+                    //Encontra no array "alunos" a linha que contem a matrícula informada em pesquisaMatricula
+                    encontraMatricula = alunos.find(aluno => aluno.matricula == pesquisaMatricula)
+                    //Retorna no console o resultado da pesquisa
+                    console.table (encontraMatricula)
+                }
+                continue
+            }
+    }
+</script>
