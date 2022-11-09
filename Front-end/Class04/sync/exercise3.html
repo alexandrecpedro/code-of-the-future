@@ -34,7 +34,7 @@ Critério de avaliação:
         do {
             let nota = Number(prompt("Informe a nota do aluno: "));
             notas.push(nota);
-        } while (notas.length <= quantidadeNotas);
+        } while (notas.length < quantidadeNotas);
 
         let mediaNotas = (notas.reduce((valorAcumulado, nota) => valorAcumulado + nota, 0) / notas.length).toFixed(2);
 
@@ -58,4 +58,7 @@ Critério de avaliação:
 
         alunosEscola.push(aluno);
     }
+
+    console.log("RELATÓRIO:");
+    alunosEscola.map((aluno) => console.log(`Aluno(a): ${aluno.nome} \nMatrícula: ${aluno.matricula} \nNotas: ${aluno.notas} \nMédia: ${aluno.media} \nSituação final: ${aluno.situacao}`));
 </script>
