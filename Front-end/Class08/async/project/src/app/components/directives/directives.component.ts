@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MEMES_ORDERED_BY_CATEGORY } from './directives.constants';
 
 @Component({
   selector: 'app-directives',
   templateUrl: './directives.component.html',
-  styleUrls: ['./directives.component.css']
+  styleUrls: ['./directives.component.css'],
+  // Angular automatically emulates an encapsulation when a property is created
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class DirectivesComponent implements OnInit {
   /** ATTRIBUTES **/
