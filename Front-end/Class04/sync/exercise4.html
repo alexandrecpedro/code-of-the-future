@@ -34,8 +34,12 @@ Use o paradigma de Orientação a Objetos
         }
 
         /** METHODS **/
+        soma() {
+            return this.notas.reduce((valorAtual, nota) => valorAtual + nota, 0);
+        }
+        
         media() {
-            return (this.notas.reduce((valorAtual, nota) => valorAtual + nota, 0) / this.notas.length).toFixed(2);
+            return (this.soma() / this.notas.length).toFixed(2);
         }
 
         situacao() {
@@ -50,79 +54,136 @@ Use o paradigma de Orientação a Objetos
 
     appNotas.alunos = []
 
+    appNotas.mostrarFormAluno = () => {
+        document.getElementById("formCadastro").style.display = "block"; // mostra o form de alunos
+        appNotas.esconderListaAlunos()
+    }
+
+    appNotas.esconderFormAluno = () => {
+        document.getElementById("formCadastro").style.display = "none"; // esconde o form de alunos
+        appNotas.mostrarListaAlunos()
+    }
+
+    appNotas.mostrarListaAlunos = () => {
+        document.getElementById("listaAlunos").style.display = "block";
+        appNotas.mostrarAlunos() // pegar os alunos do array e colocar na tabela do HTML
+    }
+
+    appNotas.esconderListaAlunos = () => {
+        document.getElementById("listaAlunos").style.display = "none";
+    }
+
     appNotas.mostrarAlunos = () => {
-        let msg = ""
+        let linhasHTML = ""
         for (let i = 0; i < appNotas.alunos.length; i++) {
             let aluno = appNotas.alunos[i]
-            msg += `
-            ${appNotas.mostrarAluno(aluno)}
-            --------------------------------
+            linhasHTML += `
+            <tr>
+                <td>${aluno.nome}</td>
+                <td>${aluno.matricula}</td>
+                <td>${aluno.notas.join(", ")}</td>
+                <td>${aluno.media().toFixed(2)}</td>
+                <td>${aluno.situacao()}</td>
+            </tr>
         `
         }
 
-        alert(msg)
+        document.getElementById("tbodyAlunos").innerHTML = linhasHTML // substituindo o conteúdo do tbody no HTML
     }
 
-    appNotas.mostrarAluno = (aluno) => {
-        return `
-        Aluno: ${aluno.nome}
-        Matrícula: ${aluno.matricula}
-        Quantidade de Notas: ${aluno.notas.join(", ")}
-        Média Final: ${aluno.media()}
-        Situação: ${aluno.situacao()}
-    `
+    appNotas.validarCadastro = () => {
+        if (document.getElementById("nome").value == "") {
+            alert("Nome é obrigatório")
+            document.getElementById("nome").focus();
+            return false
+        }
+
+        if (document.getElementById("matricula").value == "") {
+            alert("Matícula é obrigatória")
+            document.getElementById("matricula").focus();
+            return false
+        }
+
+        if (document.getElementById("notas").value == "") {
+            alert("Notas separadas com ',' é obrigatória")
+            document.getElementById("notas").focus();
+            return false
+        }
+
+        return true
     }
 
     appNotas.cadastroAluno = () => {
+        if (!appNotas.validarCadastro) return
+
         const aluno = new Aluno()
 
-        aluno.nome = prompt("Qual o nome do aluno?")
-        aluno.matricula = prompt("Digite o número da matrícula:")
-        aluno.notas = []
+        aluno.nome = document.getElementById("nome").value
+        aluno.matricula = document.getElementById("matricula").value
+        aluno.notas = document.getElementById("notas").value.split(",")
 
-        let qtdNotas = Number(prompt("Quantas notas o aluno teve?"))
-        let soma = 0
-        for (let i = 0; i < qtdNotas; i++) {
-            let nota = Number(prompt(`Digite o valor da nota ${i + 1}:`))
-            aluno.notas.push(nota)
-            soma += nota
-        }
+        appNotas.alunos.push(aluno)
 
-        const confirmacao = confirm(`
-            Salvar estas informações?
-            ${appNotas.mostrarAluno(aluno)}
-        `)
+        appNotas.esconderFormAluno()
 
-        if (confirmacao) {
-            appNotas.alunos.push(aluno)
-        }
-    }
-
-    appNotas.menu = () => {
-        let opcao = prompt(
-            "Cadastrar novo(a) aluno(a)\n\n" +
-            "Escolha uma opção:\n" +
-            "1. Cadastrar\n" +
-            "2. Exibir relatório de alunos\n" +
-            "3. Sair"
-        )
-
-        switch (opcao) {
-            case "1":
-                appNotas.cadastroAluno()
-                break
-            case "2":
-                appNotas.mostrarAlunos();
-                break
-            case "3":
-                return
-            default:
-                alert("Opção inválida!")
-        }
-
-        appNotas.menu()
+        document.getElementById("nome").value = ""
+        document.getElementById("matricula").value = ""
+        document.getElementById("notas").value = ""
     }
 
 </script>
 <h1>Bem vindo ao programa de alunos</h1>
-<button onclick="appNotas.menu()">Iniciar programa</button>
+
+<button onclick="appNotas.mostrarFormAluno()">Cadastrar Aluno</button>
+<button onclick="appNotas.mostrarListaAlunos()">Listar Alunos</button>
+<hr>
+
+<form id="formCadastro" style="display: none;">
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br>
+    <label for="matricula">Matrícula:</label><br>
+    <input type="text" id="matricula" name="matricula"><br>
+    <label for="notas">Notas separadas por virgula:</label><br>
+    <input type="text" id="notas" name="notas"><br><br>
+    <button type="button" onclick="appNotas.cadastroAluno()">Cadastrar</button>
+</form>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table id="listaAlunos" style="display: none;">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Notas</th>
+            <th>Média</th>
+            <th>Situação</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyAlunos">
+        <tr>
+            <td>Carregando...</td>
+            <td>Carregando...</td>
+            <td>Carregando...</td>
+            <td>Carregando...</td>
+            <td>Carregando...</td>
+        </tr>
+    </tbody>
+</table>
