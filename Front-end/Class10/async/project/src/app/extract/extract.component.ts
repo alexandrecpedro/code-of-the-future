@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { finalize, take } from 'rxjs';
+
 import { Transaction } from './extract.interfaces';
 import { ExtractService } from './extract.service';
 
@@ -30,6 +32,13 @@ export class ExtractComponent implements OnInit {
     this.errorWhileLoading = false;
 
     this.extractService.getTransactions(this.page)
+    // Operators from RxJS
+      .pipe(
+        // Observable send only 1 event then unsubscribe from Observable
+        take(1),
+        // Finalize = when function ends
+        finalize(() => this.isLoading = false)
+      )
       .subscribe(
         response => this.onSuccess(response),
         error => this.onError(error),
@@ -42,7 +51,7 @@ export class ExtractComponent implements OnInit {
 
   onError(error: any): void {
     this.errorWhileLoading = true;
-    console.log(error);
+    console.error(error);
   }
 
   nextPage(): void {
@@ -54,5 +63,4 @@ export class ExtractComponent implements OnInit {
     this.page = this.page - 1;
     this.loadExtract();
   }
-
 }

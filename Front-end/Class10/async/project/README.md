@@ -4,20 +4,13 @@
 
 ### 1 Front-end
 
-#### Class 09 | Angular: Routes and Modules
-    -  Routes
-        - home
-            - products
-                - detail
-                - categories
-            - about
-            - support <=> ticket
-    -  Routes: Router link
-    -  Routes: Default route and Not found route
-    -  Install Bootstrap
-    -  Services and Dependency Injection I
-    -  Services and Dependency Injection II
-    -  Modules
-    -  Module Review
-    -  HTTP Requests I
-    -  HTTP Requests II
+#### Class 10 | Angular: Interfaces
+    -  Creating Interfaces
+    -  Environment variables
+    -  Adding Loading and Error Handling
+    -  Working with RxJS operators
+    -  Observables and RxJS
+    -  Adding pagination at Extract
+    -  Exercise: Creating contacts screen
+    -  Contact details screen with Parameterized Routes
+    -  Exercise: Contact Details

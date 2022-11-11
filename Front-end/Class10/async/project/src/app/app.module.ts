@@ -11,6 +11,10 @@ import { ExtractComponent } from './extract/extract.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ListContactsComponent } from './contacts/list-contacts/list-contacts.component';
+import { EditContactComponent } from './contacts/edit-contact/edit-contact.component';
+import { DetailContactComponent } from './contacts/detail-contact/detail-contact.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -20,7 +24,11 @@ registerLocaleData(localePt, 'pt');
     LoginComponent,
     ExtractComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ContactsComponent,
+    ListContactsComponent,
+    EditContactComponent,
+    DetailContactComponent
   ],
   imports: [
     BrowserModule,
