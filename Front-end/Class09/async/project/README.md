@@ -4,22 +4,20 @@
 
 ### 1 Front-end
 
-#### Class 08 | Angular: Encapsulation and Pipes
-    -  View Encapsulation
-    -  Lifecycle Hooks
-        - Events Order:
-            - constructor
-            - ngOnChanges = when property-binding value is updated
-            - ngOnInit = when component is initialized
-            - ngDoCheck = each update verification cycle
-                - ngAfterContentInit = after insert external content on view
-                - ngAfterContentChecked = each inserted content verification
-                - ngAfterViewInit
-                - ngAfterViewChecked = each content verification
-            - ngOnDestroy = before directives/components be destroyed
-    -  Pipes I
-    -  Pipes II
-    -  Localization: internationalization API (i18n)
-    -  Exercise: Pipes I
-    -  Exercise: Pipes II
-    -  Reorganizing the Project
+#### Class 09 | Angular: Routes and Modules
+    -  Routes
+        - home
+            - products
+                - detail
+                - categories
+            - about
+            - support <=> ticket
+    -  Routes: Router link
+    -  Routes: Default route and Not found route
+    -  Install Bootstrap
+    -  Services and Dependency Injection I
+    -  Services and Dependency Injection II
+    -  Modules
+    -  Module Review
+    -  HTTP Requests I
+    -  HTTP Requests II
