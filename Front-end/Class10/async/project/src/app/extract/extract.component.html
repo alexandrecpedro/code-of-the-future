@@ -1,0 +1,21 @@
+<div class="container text-center p-5">
+    <div *ngIf="!estaCarregando && !erroNoCarregamento">
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Category</th>
+            </tr>
+
+            <tr *ngFor="let transaction of transactions">
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.date | date }}</td>
+                <td>{{ transaction.description }}</td>
+                <td>{{ transaction.value | currency: "BRL" }}</td>
+                <td>{{ transaction.category }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<!-- PROPERTY BINDING -->
+<header class="header">
+    <h1 class="header__title"> {{ title }} </h1>
+  
+    <ul class="nav-bar-list">
+      <li>
+        <a routerLink="/home" routerLinkActive="activated"> Home </a>
+      </li>
+      <li>
+        <a routerLink="/extract" routerLinkActive="activated"> Extract </a>
+      </li>
+      <li>
+        <a routerLink="/contacts" routerLinkActive="activated"> Contacts </a>
+      </li>
+      <li>
+        <button class="btn btn-dark" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+  </header>
