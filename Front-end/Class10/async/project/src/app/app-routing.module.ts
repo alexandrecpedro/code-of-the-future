@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ExtractComponent } from './extract/extract.component';
-import { HomeComponent } from './home/home.component';
+
+import { LoggedAreaComponent } from './logged-area/logged-area.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: "/home", component: HomeComponent },
-  { path: "/login", component: LoginComponent },
-  { path: "/extract", component: ExtractComponent },
-  { path: "/contacts", component: ContactsComponent },
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "", component: LoggedAreaComponent },
+  { path: "login", component: LoginComponent },
   { path: "**", component: NotFoundComponent }
 ];
 
