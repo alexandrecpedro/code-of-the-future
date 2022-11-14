@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="text-center">
+    <!-- DIRECTIVE ngForm -->
+    <!-- DIRECTIVE ngSubmit -->
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
+        <div class="p-2">
+            <!-- DIRECTIVE ngModel -->
+            <input
+                type="text" class="form-control"
+                placeholder="Email" name="email"
+                [(ngModel)]="email" required email
+                [class.is-invalid]="displayError("email", form)" #emailInput>
+                <div *ngIf="displayError("email", form)" class="invalid-feedback">Invalid email!</div>
+        </div>
+
+        <div class="p-2">
+            <input
+                type="password" class="form-control"
+                placeholder="Password" name="password"
+                [(ngModel)]="password" required
+                [class.is-invalid]="displayError("password", form)" #passwordInput>
+                <div *ngIf="displayError("password", form)" class="invalid-feedback">Invalid password!</div>
+        </div>
+
+        <p *ngIf="errorOnLogin">
+            Invalid user or password!
+        </p>
+
+        <div class="p-2">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="isLoading">
+                Login
+            </button>
+        </div>
+    </form>
+
+    <div *ngIf="isLoading" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>

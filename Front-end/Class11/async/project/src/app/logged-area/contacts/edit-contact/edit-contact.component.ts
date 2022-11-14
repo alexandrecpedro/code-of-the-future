@@ -10,15 +10,15 @@ import { ContactsService } from '../contacts.service';
 @Component({
   selector: 'app-edit-contact',
   templateUrl: './edit-contact.component.html',
-  styleUrls: ['./edit-contact.component.css']
+  styleUrls: ['./edit-contact.component.scss']
 })
 export class EditContactComponent implements OnInit {
   /** ATTRIBUTES **/
   contactId!: string;
   contactForm!: FormGroup;
 
-  isLoading: boolean = false;
-  errorWhileLoading: boolean = false;
+  isLoading!: boolean;
+  errorWhileLoading!: boolean;
 
   /** CONSTRUCTOR **/
   constructor(
@@ -46,7 +46,7 @@ export class EditContactComponent implements OnInit {
       cpf: ["", Validators.required],
       // bankData: this.formBuilder({
       bank: ["", Validators.required],
-      ag: ["", [Validators.required, Validators.minLength(4)]],
+      agency: ["", [Validators.required, Validators.minLength(4)]],
       cc: ["", [Validators.required, Validators.minLength(5)]],
       // })
     });

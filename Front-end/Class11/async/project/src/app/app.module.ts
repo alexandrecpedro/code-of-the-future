@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt, 'pt');
 
@@ -26,7 +25,6 @@ registerLocaleData(localePt, 'pt');
     HttpClientModule,
     SharedModule,
     ToastrModule.forRoot(),
-    NgbModule,
   ],
   providers: [{
     // Locale to be used => Brazilian Portuguese

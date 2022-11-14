@@ -5,7 +5,7 @@ import { DetailContactComponent } from './detail-contact/detail-contact.componen
 import { EditContactComponent } from './edit-contact/edit-contact.component';
 import { ListContactsComponent } from './list-contacts/list-contacts.component';
 
-const routes:Routes = [
+const routes: Routes = [
   { path: "", component: ListContactsComponent },
   { path: "new", component: EditContactComponent },
   { path: ":id", component: DetailContactComponent },

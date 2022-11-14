@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { IsLoggedGuard } from './shared/guards/is-logged/is-logged.guard';
+import { IsNotLoggedGuard } from './shared/guards/is-not-logged/is-not-logged.guard';
 
 const routes: Routes = [
-  { path: "", 
+  {
+    path: "",
     loadChildren: () => import("./logged-area/logged-area.module").then(m => m.LoggedAreaModule),
-    canActivate: []
+    canActivate: [IsLoggedGuard]
   },
-  { path: "login", 
-    component: LoginComponent, 
-    canActivate: []
+  {
+    path: "login",
+    loadChildren: () => import("./login/login.module").then(m => m.LoginModule),
+    canActivate: [IsNotLoggedGuard]
   },
   { path: "**", component: NotFoundComponent }
 ];

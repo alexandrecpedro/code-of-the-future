@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   /** DECORATORS **/
@@ -11,8 +12,9 @@ export class HeaderComponent {
   @Input() title: string = "You're welcome!";
 
   /** CONSTRUCTOR  **/
-  constructor() {
-  }
+  constructor(
+    private authService: AuthService,
+  ) { }
 
   /** METHODS  **/
   /* // Lifecycle Hooks
@@ -32,5 +34,7 @@ export class HeaderComponent {
     console.log("I was destroyed!");
   } */
 
-  logout() { }
+  logout(): void {
+    this.authService.logout();
+  }
 }

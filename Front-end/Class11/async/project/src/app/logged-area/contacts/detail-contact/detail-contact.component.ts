@@ -8,13 +8,13 @@ import { ContactsService } from '../contacts.service';
 @Component({
   selector: 'app-detail-contact',
   templateUrl: './detail-contact.component.html',
-  styleUrls: ['./detail-contact.component.css']
+  styleUrls: ['./detail-contact.component.scss']
 })
 export class DetailContactComponent implements OnInit {
   /** ATTRIBUTES **/
   contact!: Contact;
-  isLoading: boolean = false;
-  errorWhileLoading: boolean = false;
+  isLoading!: boolean;
+  errorWhileLoading!: boolean;
 
   /** CONSTRUCTOR **/
   constructor(

@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { CounterComponent } from './components/counter/counter.component';
@@ -30,5 +31,10 @@ import { PipesComponent } from './components/pipes/pipes.component';
     HeaderComponent,
     PipesComponent
   ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }]
 })
 export class SharedModule { }

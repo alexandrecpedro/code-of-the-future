@@ -1,23 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+
+import { User } from 'src/app/shared/interfaces/user.interface';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   /** ATTRIBUTES **/
-  user: any = {
-    name: "Alex"
-  };
+  user!: User | null;
 
   /** CONSTRUCTOR **/
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private modalService: NgbModal,
+  ) { }
 
   /** METHODS **/
   ngOnInit(): void {
+    this.user = this.authService.getUser();
   }
 
-  openModal(): void {}
+  openModal(content: any): void {
+    this.modalService.open(content).result.then((result) => {
+      console.log("Closed modal!");
+    }, (reason) => {
+      console.log("Dismissed modal!");
+    });
+  }
 
 }

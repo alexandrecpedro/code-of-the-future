@@ -9,13 +9,13 @@ import { ContactsService } from '../contacts.service';
 @Component({
   selector: 'app-list-contacts',
   templateUrl: './list-contacts.component.html',
-  styleUrls: ['./list-contacts.component.css']
+  styleUrls: ['./list-contacts.component.scss']
 })
 export class ListContactsComponent implements OnInit {
   /** ATTRIBUTES **/
   contacts: Contact[] = [];
-  isLoading: boolean = false;
-  errorWhileLoading: boolean = false;
+  isLoading!: boolean;
+  errorWhileLoading!: boolean;
 
   /** CONSTRUCTOR **/
   constructor(
