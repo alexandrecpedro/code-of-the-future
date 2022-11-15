@@ -1,0 +1,26 @@
+<h1>Fruits</h1>
+<hr>
+<div *ngIf="products.length == 0">There is not registered products</div>
+<table *ngIf="products.length > 0" class="table table-bordered" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+    <thead>
+        <tr role="row">
+            <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 161px;">ID
+            </th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                aria-label="Position: activate to sort column ascending" style="width: 248px;">Name</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                aria-label="Office: activate to sort column ascending" style="width: 115px;">Description</th>
+            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
+                aria-label="Age: activate to sort column ascending" style="width: 51px;">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd" *ngFor="let product of products">
+            <td class="sorting_1">{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.value | currency: "BRL" }}</td>
+        </tr>
+    </tbody>
+</table>
