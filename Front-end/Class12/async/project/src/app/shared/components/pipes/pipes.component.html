@@ -1,0 +1,27 @@
+<h2>MOVIE</h2>
+<p>Title: {{ movie.title | uppercase }}</p>
+<p>Rating: {{ movie.rating | number: "1.1-2" }}</p>
+<p>Rental Price: {{ movie.rentalPrice | currency: "BRL" }}</p>
+<p>Release Date: {{ movie.releaseDate | date: "fullDate" | uppercase }}</p>
+
+<hr>
+
+<ul>
+    <li *ngFor="let shop of shopping">
+        <p>Product: <b>{{shop.product | uppercase }}</b></p>
+        <p>Value: {{shop.value | currency: "BRL" }}</p>
+        <p>Quantity: {{ shop.quantity }}</p>
+        
+        <!-- <p> Weight:: {{ shop.weight | number:'1.1-2' }} Kg </p> -->
+        <!-- <p> Weight:: {{ shop.weight > 0 ? (shop.weight | number:'1.1-2') + ' Kg' : 'no weight' }} </p> -->
+        <p>Weight: {{ getFormattedWeight(shop.weight) }}</p>
+
+        <p>Date: {{ shop.date | date: "EEEE, dd \'de\' MMMM \'de\' yyyy, \'às\' HH:mm"}}</p>
+        <!-- <p> Date: {{ shop.date | date:'fullDate' }}, às {{ shop.date | date:'HH:mm' }} </p> -->
+    </li>
+</ul>
+
+<br>
+<br>
+<br>
+<br>

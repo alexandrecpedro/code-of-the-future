@@ -1,0 +1,30 @@
+<div class="container text-center p-5">
+    <div class="spinner-border" role="status" *ngIf="isLoading">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div *ngIf="errorWhileLoading">
+        <h2>Error :(</h2>
+        <button (click)="loadContacts()">Try again</button>
+    </div>
+
+    <button class="btn btn-primary m-1" (click)="newContact()">New contact</button>
+
+    <div *ngIf="!isLoading && !errorWhileLoading">
+        <table class="table table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+
+            <tr *ngFor="let contact of contacts">
+                <td>{{ contact.name }}</td>
+                <td>
+                    <button class="btn btn-primary m-1" (click)="goToDetails(contact.id)"> See details </button>
+                    <button class="btn btn-primary m-1" (click)="goToEdit(contact.id)"> Edit </button>
+                    <button class="btn btn-danger m-1" (click)="deleteContact(contact.id)"> Delete </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

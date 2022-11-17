@@ -1,0 +1,25 @@
+<div class="container text-center p-5">
+
+    <div class="spinner-border" role="status" *ngIf="isLoading">
+      <span class="sr-only">Loading...</span>
+    </div>
+  
+    <div *ngIf="errorWhileLoading">
+      <h2>Error :(</h2>
+      <button (click)="loadContact()">Try again</button>
+    </div>
+  
+    <div *ngIf="!isLoading && !errorWhileLoading">
+      <p> Name: {{ contact.name }} </p>
+      <p> CPF: {{ contact.cpf }} </p>
+      <p> Bank: {{ contact.bank }} </p>
+      <p> Agency: {{ contact.ag }} </p>
+      <p> Checking account: {{ contact.cc }} </p>
+    </div>
+  
+    <br>
+    <button class="btn btn-primary" (click)="back()">
+      Back
+    </button>
+  
+  </div>
