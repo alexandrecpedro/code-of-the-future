@@ -1,21 +1,21 @@
 <main>
-    <h2> Hello, {{ user.name }} </h2>
-  
-    <button class="btn btn-primary" (click)="openModal()">Open modal!</button>
-  </main>
-  
-  
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss("Cross click")">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      Hello World!
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close("Save click")">Save</button>
-    </div>
-  </ng-template>
+  <h2 *ngIf="user != null"> Hello, {{ user.name }} </h2>
+
+  <button class="btn btn-primary" (click)="openModal(content)">Open modal!</button>
+</main>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Hello World!
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>

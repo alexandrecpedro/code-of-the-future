@@ -44,10 +44,10 @@ export class EditContactComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
       name: ["", Validators.required],
       cpf: ["", Validators.required],
-      // bankData: this.formBuilder({
-      bank: ["", Validators.required],
-      agency: ["", [Validators.required, Validators.minLength(4)]],
-      cc: ["", [Validators.required, Validators.minLength(5)]],
+      // bankData: this.formBuilder.group({
+        bank: ["", Validators.required],
+        agency: ["", [Validators.required, Validators.minLength(4)]],
+        cc: ["", [Validators.required, Validators.minLength(5)]],
       // })
     });
   }
@@ -59,17 +59,17 @@ export class EditContactComponent implements OnInit {
     const contactId = this.route.snapshot.paramMap.get("id");
     if (contactId) {
       this.contactsService.getContact(contactId)
-      // Operators from RxJS
-      .pipe(
-        // Observable send only 1 event then unsubscribe from Observable
-        take(1),
-        // Finalize = when function ends
-        finalize(() => this.isLoading = false)
-      )
-      .subscribe(
-        response => this.onSuccessLoadContact(response),
-        error => this.onErrorLoadContact(error),
-      );
+        // Operators from RxJS
+        .pipe(
+          // Observable send only 1 event then unsubscribe from Observable
+          take(1),
+          // Finalize = when function ends
+          finalize(() => this.isLoading = false)
+        )
+        .subscribe(
+          response => this.onSuccessLoadContact(response),
+          error => this.onErrorLoadContact(error),
+        );
     }
   }
 
@@ -88,20 +88,20 @@ export class EditContactComponent implements OnInit {
     return this.contactForm.get(controlName)?.invalid && this.contactForm.get(controlName)?.touched
   }
 
-  validateFieldForms(form: FormGroup): void {
+  validateFormFields(form: FormGroup): void {
     Object.keys(form.controls).forEach(field => {
       const control = form.get(field);
       if (control instanceof FormControl) {
         control.markAsTouched();
       } else if (control instanceof FormGroup) {
-        this.validateFieldForms(control);
+        this.validateFormFields(control);
       }
     });
   }
 
   onSubmit(): void {
     if (this.contactForm.invalid) {
-      this.validateFieldForms(this.contactForm);
+      this.validateFormFields(this.contactForm);
       return;
     }
 

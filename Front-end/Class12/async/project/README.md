@@ -4,69 +4,53 @@
 
 ### 1 Front-end
 
-#### Class 11 | Angular: Forms
-    -  POST, PUT and DELETE Requests
-    -  Introduction to Forms
+#### Class 12 | Angular: Libraries and Deploy with Firebase
+    -  Adding libraries to the project I
+    -  Adding libraries to the project II
+    -  Deleting a contact
+    -  New Contact Component
+    -  Reactive Forms
+    -  Applying validation on form fields
+    -  Applying CSS classes
+    -  Creating a contact by POST request
+    -  Create Edit Contact screen I
+    -  Create Edit Contact screen II
+    -  Grouped Forms
+    -  Adding Headers with HTTP Interceptor
+    -  Uploading an application in Firebase
+        - Commands
         <table>
             <tr>
-                <th>Template Driven</th>
-                <th>Data Driven (Reactive)</th>
+                <th>Commands</th>
+                <th>Meaning</th>
             </tr>
             <tr>
-                <td>Form is created and set at HTML</td>
-                <td>Form is created and set at Component</td>
+                <td>ng build --prod</td>
+                <td>Build an Angular app for production</td>
             </tr>
             <tr>
-                <td>Validations are made on HTML Template</td>
-                <td>Validations are made on Component</td>
+                <td></td>
+                <td>Create a Firebase account & project</td>
             </tr>
             <tr>
-                <td>Angular creates a FormGroup from HTML code</td>
-                <td>Angular uses FormGroup created at Component</td>
+                <td>npm install -g firebase-tools</td>
+                <td>Install the Firebase command line tools</td>
+            </tr>
+            <tr>
+                <td>firebase login</td>
+                <td>Login using the Firebase CLI</td>
+            </tr>
+            <tr>
+                <td>firebase init</td>
+                <td>Initialize the project</td>
+            </tr>
+            <tr>
+                <td>firebase deploy</td>
+                <td>Deploy to Firebase Hosting</td>
+            </tr>
+            <tr>
+                <td>firebase open</td>
+                <td>Open the project</td>
             </tr>
         </table>
-    -  ngForm, ngSubmit and ngModel
-    -  ngModel Directive
-    -  Forms validation
-    -  Displaying form errors
-    -  Applying styles at fields validations
-        <table>
-            <tr>
-                <th>State</th>
-                <th>YES</th>
-                <th>NO</th>
-            </tr>
-            <tr>
-                <td>Visited control</td>
-                <td>ng-touched</td>
-                <td>ng-untouched</td>
-            </tr>
-            <tr>
-                <td>Changed value</td>
-                <td>ng-dirty</td>
-                <td>ng-pristine</td>
-            </tr>
-            <tr>
-                <td>Valid control</td>
-                <td>ng-valid</td>
-                <td>ng-invalid</td>
-            </tr>
-        </table>
-    -  Applying own styles at fields validations
-    -  Using ViewChild decorator I
-    -  Using ViewChild decorator II
-    -  Correction of Form parameter type
-    -  Login Service I
-    -  Login Service II
-    -  Adding loading validations on Login
-    -  Creating Authentication Service I
-    -  Creating Authentication Service II
-    -  Upgrading Authentication Service
-    -  Adding Route Guards I
-        - Route Guards validates if an user can access parts of an application, based on a restriction/verification
-    -  Adding Route Guards II
-    -  Modularization and Lazy Loading
-    -  Augury Routinging and Contacts Refactoring
-    -  Son Routes: Logged Area Component I
-    -  Son Routes: Logged Area Component II
-    -  Modularizating Login and Logout Button
+    -  End of the Course

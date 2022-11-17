@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 
 import { User } from 'src/app/shared/interfaces/user.interface';
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.user = this.authService.getUser();
   }
 
-  openModal(content: any): void {
+  openModal(content: TemplateRef<any>): void {
     this.modalService.open(content).result.then((result) => {
       console.log("Closed modal!");
     }, (reason) => {

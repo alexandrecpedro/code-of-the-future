@@ -24,22 +24,23 @@
             </div>
 
             <!-- <div formGroupName="bankData"> -->
-            <div class="form-group">
-                <label for="bank">Bank</label>
-                <input type="text" class="form-control" id="bank" placeholder="Bank" formControlName="bank"
-                    [class.is-invalid]="displayError('bankData.bank')">
-            </div>
+                <div class="form-group">
+                    <label for="bank">Bank</label>
+                    <input type="text" class="form-control" id="bank" placeholder="Bank" formControlName="bank"
+                        [class.is-invalid]="displayError('bankData.bank')">
+                </div>
 
-            <div class="form-group">
-                <label for="agency">Agency</label>
-                <input type="number" class="form-control" id="agency" placeholder="Agency" formControlName="agency"
-                    [class.is-invalid]="displayError('bankData.agency')">
-            </div>
+                <div class="form-group">
+                    <label for="agency">Agency</label>
+                    <input type="number" class="form-control" id="agency" placeholder="Agency" formControlName="agency"
+                        [class.is-invalid]="displayError('bankData.agency')">
+                </div>
 
-            <div class="form-group">
-                <label for="cc">Account</label>
-                <input type="text" class="form-control" id="cc" placeholder="Account" formControlName="cc"
-                    [class.is-invalid]="displayError('bankData.cc')">
+                <div class="form-group">
+                    <label for="cc">Account</label>
+                    <input type="text" class="form-control" id="cc" placeholder="Account" formControlName="cc"
+                        [class.is-invalid]="displayError('bankData.cc')">
+                <!-- </div> -->
             </div>
 
             <button class="btn btn-primary" (click)="onSubmit()">

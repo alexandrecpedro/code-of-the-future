@@ -9,6 +9,7 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
+    // HTTP Interceptors can accept multiple values =  true
     multi: true,
   }]
 })

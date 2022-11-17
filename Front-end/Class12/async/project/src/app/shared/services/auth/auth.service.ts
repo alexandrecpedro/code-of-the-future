@@ -40,7 +40,7 @@ export class AuthService {
     localStorage.setItem("token", token);
   }
 
-  getToken(): string | null {
+  getToken(): string {
     if (this.token) {
       return this.token;
     }
@@ -51,7 +51,8 @@ export class AuthService {
       return this.token;
     }
 
-    return null;
+    // return null;
+    return "";
   }
 
   isLogged(): boolean {
