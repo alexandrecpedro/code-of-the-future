@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CpfFormatPipe } from './pipes/cpf-format/cpf-format.pipe';
 import { PhoneFormatPipe } from './pipes/phone-format/phone-format.pipe';
+import { ProductsComponent } from './products/products.component';
 
 registerLocaleData(ptBr);
 
@@ -21,7 +22,8 @@ registerLocaleData(ptBr);
     FooterComponent,
     HomeComponent,
     PhoneFormatPipe,
-    CpfFormatPipe
+    CpfFormatPipe,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
