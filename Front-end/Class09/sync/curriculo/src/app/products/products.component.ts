@@ -39,5 +39,4 @@ export class ProductsComponent implements OnInit {
     this.products.splice(Number(productId), 1);
     return this.products;
   }
-
 }
