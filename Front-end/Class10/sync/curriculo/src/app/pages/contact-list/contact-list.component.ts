@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client/client.service';
+import { ObserverClientServiceService } from 'src/app/services/observer-client-service/observer-client-service.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -13,7 +14,10 @@ export class ContactListComponent implements OnInit {
   clients: Client[] = ClientService.searchClients();
 
   /** CONSTRUCTOR **/
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private observerClientService: ObserverClientServiceService
+  ) { }
 
   /** METHODS **/
   ngOnInit(): void {
@@ -31,6 +35,7 @@ export class ContactListComponent implements OnInit {
   deleteClient(client: Client): void {
     ClientService.deleteClient(client);
     this.clients = ClientService.searchClients();
+    this.observerClientService.updateQuantity();
   }
 
 }
