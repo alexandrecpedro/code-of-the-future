@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client/client.service';
+import { ObserverClientServiceService } from 'src/app/services/observer-client-service/observer-client-service.service';
 
 @Component({
   selector: 'app-form',
@@ -19,6 +20,7 @@ export class FormComponent implements OnInit {
   constructor(
     private router: Router,
     private routerParams: ActivatedRoute,
+    private observerClientService: ObserverClientServiceService,
   ) { }
 
   /** METHODS **/
@@ -47,6 +49,7 @@ export class FormComponent implements OnInit {
       value: this.convertNumber(this.value)
     });
 
+    this.observerClientService.updateQuantity();
     this.router.navigateByUrl("/contacts");
   }
 
