@@ -123,7 +123,20 @@
     -  Modularizating Login and Logout Button
 
 #### Class 12 | Angular: Libraries and Deploy with Firebase
-    -  Integração das Classs 10 e 11
+    -  Adding libraries to the project I
+    -  Adding libraries to the project II
+    -  Deleting a contact
+    -  New Contact Component
+    -  Reactive Forms
+    -  Applying validation on form fields
+    -  Applying CSS classes
+    -  Creating a contact by POST request
+    -  Create Edit Contact screen I
+    -  Create Edit Contact screen II
+    -  Grouped Forms
+    -  Adding Headers with HTTP Interceptor
+    -  Uploading an application in Firebase
+    -  End of the Course
 
 ### 2 Back-end
 
