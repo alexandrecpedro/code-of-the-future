@@ -13,12 +13,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormComponent } from './pages/form/form.component';
 import { CpfFormatPipe } from './pipes/cpf-format/cpf-format.pipe';
 import { PhoneFormatPipe } from './pipes/phone-format/phone-format.pipe';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './pages/products/products.component';
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
 import { NotifyClientsComponent } from './components/notify-clients/notify-clients.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ClientComponent } from './client/client.component';
 
 registerLocaleData(ptBr);
 
@@ -36,7 +37,8 @@ registerLocaleData(ptBr);
     NotifyClientsComponent,
     PortfolioComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,

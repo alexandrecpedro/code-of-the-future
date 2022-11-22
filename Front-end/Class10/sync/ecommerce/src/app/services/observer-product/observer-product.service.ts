@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ClientService } from '../client/client.service';
+import { ProductService } from '../product/product.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ObserverClientService {
+export class ObserverProductService {
   /** ATTRIBUTES **/
   quantity: Number = 0;
 
   /** CONSTRUCTOR **/
   constructor() {
-    this.updateQuantity();
+    this.updateStock();
   }
 
   /** METHODS **/
-  updateQuantity() {
+  updateStock(): void {
     console.log("Entered the method");
-    this.quantity = ClientService.searchClients().length;
+    this.quantity = ProductService.searchProducts().length;
   }
 }

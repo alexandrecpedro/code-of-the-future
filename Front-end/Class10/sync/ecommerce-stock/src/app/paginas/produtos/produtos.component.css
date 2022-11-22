@@ -1,0 +1,7 @@
+.lista{
+display: flex;
+justify-content: space-between;
+}
+p{
+  margin-top: 2rem;
+}
