@@ -12,5 +12,5 @@ export class ProductService {
   constructor() { }
 
   /** METHODS **/
-  static listProduct(): Product[] {}
+  // static listProduct(): Product[] {}
 }
