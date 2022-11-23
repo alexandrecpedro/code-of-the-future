@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~swiper/swiper-bundle";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ant-input-number-input {
+  height: 44px;
+}
+
+.swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #555;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 4px;
+}

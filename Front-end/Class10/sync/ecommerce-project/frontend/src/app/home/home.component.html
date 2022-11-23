@@ -1,0 +1,58 @@
+<div class="home-container">
+    <div class="categories">
+        <div class="categories__header">
+            <h2>Categories</h2>
+        </div>
+        <div class="categories__list">
+            <swiper
+                [zoom]="false"
+                [slidesPerView]="screenWidth > 1200 ? 3 : 1"
+                [spaceBetween]="50"
+                [pagination]="true"
+                [loop]="true"
+            >
+                <ng-template swiperSlide *ngIf="let category of categories">
+                    <div class="category-card">{{ category.name }}</div>
+                </ng-template>
+            </swiper>
+        </div>
+    </div>
+    <div class="products">
+        <div class="products__header">
+            <h2>New Products</h2>
+        </div>
+        <div *ngIf="loading" class="products__loading">
+            <ng-template #indicatorTemplate>
+                <i
+                    nz-icon
+                    nzType="loading"
+                    [ngStyle]="{ 'font-size': '2rem', margin: '0 auto' }"
+                ></i>
+            </ng-template>
+            <nz-spin nzSimple [nzIndicator]="indicatorTemplate"></nz-spin>
+        </div>
+        <div *ngIf="!loading" class="products__list">
+            <add-product-cart
+                *ngFor="let product of products"
+                [id]="product.id"
+                [title]="product.title"
+                [image]="product.image"
+                [price]="product.price"
+                [short_desc]="product.short_desc"
+                [category]="product.category"
+                [quantity]="product.quantity"
+                [onAdd]="cartService.addProduct.bind(cartService)"
+            >
+            </add-product-cart>
+        </div>
+    </div>
+    <div class="load-products">
+        <button
+            nz-button
+            (click)="showMoreProducts()"
+            [nzLoading]="additionalLoading"
+        >
+            Show more
+        </button>
+    </div>
+</div>
