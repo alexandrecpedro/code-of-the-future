@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/models/client';
@@ -11,43 +12,50 @@ import { ObserverClientServiceService } from 'src/app/services/observer-client-s
 })
 export class FormComponent implements OnInit {
   /** ATTRIBUTES **/
-  title: String ="New Client"
-  client: Client = {} as Client;
-  value: String = "";
+  private clientService: ClientService = {} as ClientService;
+  title: String = "New Client";
+  client: Client | undefined = {} as Client;
+  value: any = "";
   pluginValue: String = "";
 
   /** CONSTRUCTOR **/
   constructor(
+    private http: HttpClient,
+    private observerClientService: ObserverClientServiceService,
     private router: Router,
     private routerParams: ActivatedRoute,
-    private observerClientService: ObserverClientServiceService,
   ) { }
 
   /** METHODS **/
   ngOnInit(): void {
+    this.clientService = new ClientService(this.http);
     let id: Number = this.routerParams.snapshot.params["id"];
     if (id) {
-      this.title = "Updating Client"
-      this.client = ClientService.searchClientById(id);
-      this.value = this.client.value.toString();
+      this.editClient(id);
     }
   }
 
+  private async editClient(id: Number): Promise<void> {
+    this.title = "Updating Client";
+    this.client = await this.clientService.findById(id);
+    this.value = this.client?.value.toString();
+  }
+
   save(): void {
-    if (this.client.id > 0) {
+    if (this.value && this.client && this.client.id > 0) {
       this.client.value = this.convertNumber(this.value);
-      ClientService.updateClient(this.client);
-      return;
+      this.clientService.update(this.client);
+    } else {
+      this.clientService.create({
+        id: 0,
+        name: this.client?.name,
+        cpf: "34567898765",
+        phone: 11999599999,
+        address: this.client?.address,
+        date: new Date(),
+        value: this.convertNumber(this.value)
+      });
     }
-    ClientService.addClient({
-      id: 0,
-      name: this.client.name,
-      cpf: "34567898765",
-      phone: 11999599999,
-      address: this.client.address,
-      date: new Date(),
-      value: this.convertNumber(this.value)
-    });
 
     this.observerClientService.updateQuantity();
     this.router.navigateByUrl("/contacts");
@@ -75,5 +83,4 @@ export class FormComponent implements OnInit {
     let floatValue = Number(this.value);
     this.value = floatValue.toLocaleString("pt-br", {style: "currency", currency: "BRL"});
   }
-
 }

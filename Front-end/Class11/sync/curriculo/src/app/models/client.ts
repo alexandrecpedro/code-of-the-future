@@ -1,9 +1,9 @@
 export interface Client {
     id: Number;
-    name: String;
+    name: String | undefined;
     cpf: String;
     phone: Number;
-    address: String;
+    address: String | undefined;
     date: Date;
     value: Number;
 }

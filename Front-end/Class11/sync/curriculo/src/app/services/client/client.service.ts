@@ -1,51 +1,40 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { Client } from 'src/app/models/client';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  private static clients: Client[] = [];
+  /** ATTRIBUTES **/
+  // private static clients: Client[] = [];
 
-  constructor() { }
-
+  /** CONSTRUCTOR **/
+  constructor(private http: HttpClient) { }
 
   /** METHODS **/
-  static searchClients(): Client[] {
-    return ClientService.clients;
+  async listClients(): Promise<Client[] | undefined> {
+    let clients: Client[] | undefined = await firstValueFrom(this.http.get<Client[]>(`${environment.api}/clients`));
+    return clients;
   }
 
-  static searchClientById(id: Number): Client {
-    let client: Client = {} as Client;
-    let findClient = ClientService.clients.find(client => client.id === id);
-    if (findClient !== undefined) client = findClient;
-    return client;
+  async findById(id: Number): Promise<Client | undefined> {
+    return await firstValueFrom(this.http.get<Client | undefined>(`${environment.api}/clients/${id}`));
   }
 
-  static addClient(client: Client): void {
-    client.id = ClientService.searchClients().length + 1;
-    ClientService.clients.push(client);
+  async create(client: Client): Promise<Client | undefined> {
+    let clientRest: Client | undefined = await firstValueFrom(this.http.post<Client>(`${environment.api}/clients/`, client));
+    return clientRest;
   }
 
-  static updateClient(client: Client): void {
-    for (let i=0; i<ClientService.clients.length; i++) {
-      let clientDb = ClientService.clients[i];
-      if (clientDb.id === client.id) {
-        clientDb = {...client};
-        break;
-      }
-    }
+  async update(client: Client): Promise<Client | undefined> {
+    let clientRest: Client | undefined = await firstValueFrom(this.http.put<Client>(`${environment.api}/clients/${client.id}`, client));
+    return clientRest;
   }
 
-  static deleteClient(client: Client): void {
-    let newList = [];
-    for (let i=0; i<ClientService.clients.length; i++) {
-      let clientDb = ClientService.clients[i];
-      if (clientDb.id !== client.id) {
-        newList.push(clientDb);
-      }
-    }
-
-    ClientService.clients = newList;
+  deleteById(id: Number): void {
+    firstValueFrom(this.http.delete(`${environment.api}/clients/${id}`));
   }
 }

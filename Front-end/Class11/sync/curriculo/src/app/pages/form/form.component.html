@@ -11,14 +11,7 @@
         <!-- Contact Section Form-->
         <div class="row justify-content-center">
             <div class="col-lg-8 col-xl-7">
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" *ngIf="client" data-sb-form-api-token="API_TOKEN">
                     <!-- Name input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" id="name" type="text" name="name" [(ngModel)]="client.name" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no">
