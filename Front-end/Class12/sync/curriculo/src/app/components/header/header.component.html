@@ -8,12 +8,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" routerLink="/portfolio">Portfolio</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" routerLink="/about">
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" routerLink="/about">
                     About ({{ observerClientService.quantity }})
-                </a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" routerLink="/contacts">
-                    <span>Clients</span> <app-notify-clients></app-notify-clients> 
-                </a></li>
+                    </a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" routerLink="/contacts">
+                        <span>Clients</span> <app-notify-clients></app-notify-clients> 
+                    </a>
+                </li>
+                <li *ngIf="loggedService.logged" class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="javascript:;" (click)="loggedService.logout()">
+                        <span>Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

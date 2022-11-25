@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ObserverClientServiceService } from 'src/app/services/observer-client-service/observer-client-service.service';
+import { Component, OnInit } from '@angular/core';
+import { ObserverClientService } from 'src/app/services/observer-client/observer-client.service';
 
 @Component({
   selector: 'app-notify-clients',
@@ -13,7 +12,7 @@ export class NotifyClientsComponent implements OnInit {
   // clientQuantity: Number = 0;
 
   /** CONSTRUCTOR **/
-  constructor(observerClientService: ObserverClientServiceService) { }
+  constructor(observerClientService: ObserverClientService) { }
 
   /** METHODS **/
   ngOnInit(): void {

@@ -5,7 +5,7 @@ import { ClientService } from '../client/client.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ObserverClientServiceService {
+export class ObserverClientService {
   /** ATTRIBUTES **/
   quantity: Number = 0;
 

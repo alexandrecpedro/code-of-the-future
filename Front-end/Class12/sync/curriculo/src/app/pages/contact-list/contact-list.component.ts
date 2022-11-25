@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client/client.service';
-import { ObserverClientServiceService } from 'src/app/services/observer-client-service/observer-client-service.service';
+import { LoggedService } from 'src/app/services/logged/logged.service';
+import { ObserverClientService } from 'src/app/services/observer-client/observer-client.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -19,12 +20,15 @@ export class ContactListComponent implements OnInit {
   /** CONSTRUCTOR **/
   constructor(
     private http: HttpClient,
-    private observerClientService: ObserverClientServiceService,
+    private observerClientService: ObserverClientService,
+    private loggedService: LoggedService,
     private router: Router
   ) { }
 
   /** METHODS **/
   ngOnInit(): void {
+    if (this.loggedService.redirectNotLoggedLogin()) return;
+
     this.clientService = new ClientService(this.http);
     this.listClients();
   }
