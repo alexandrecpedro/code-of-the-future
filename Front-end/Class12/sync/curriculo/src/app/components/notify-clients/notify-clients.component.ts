@@ -12,7 +12,7 @@ export class NotifyClientsComponent implements OnInit {
   // clientQuantity: Number = 0;
 
   /** CONSTRUCTOR **/
-  constructor(observerClientService: ObserverClientService) { }
+  constructor(public observerClientService: ObserverClientService) { }
 
   /** METHODS **/
   ngOnInit(): void {

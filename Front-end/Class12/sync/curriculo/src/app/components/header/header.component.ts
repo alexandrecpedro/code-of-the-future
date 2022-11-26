@@ -10,8 +10,8 @@ import { ObserverClientService } from 'src/app/services/observer-client/observer
 export class HeaderComponent implements OnInit {
 
   constructor(
-    observerClientService: ObserverClientService,
-    loggedService: LoggedService,
+    public observerClientService: ObserverClientService,
+    public loggedService: LoggedService,
   ) { }
 
   ngOnInit(): void {
