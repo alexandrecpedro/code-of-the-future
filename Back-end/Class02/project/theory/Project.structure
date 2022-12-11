@@ -1,0 +1,32 @@
+// LAST VERSIONS = .NET 5 or lower
+// using System;
+
+// namespace project
+// {
+//     // Default = internal class Program
+//     class Program
+//     {
+//         public static void Main(string[] args)
+//         {
+//             // See https://aka.ms/new-console-template for more information
+//             Console.WriteLine("Hello, World! - " + args[0]);
+//         }
+//     }
+// }
+
+// .NET 6
+namespace project;
+
+// Default = internal class Program
+class Program
+{
+    public static void Main(string[] args)
+    {
+        // See https://aka.ms/new-console-template for more information
+        Console.WriteLine("Hello, World! - " + args[0]);
+    }
+}
+
+// .NET 7
+// See https://aka.ms/new-console-template for more information
+// Console.WriteLine("Hello, World! - " + args[0]);
