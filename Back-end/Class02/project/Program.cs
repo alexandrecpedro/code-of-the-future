@@ -27,7 +27,6 @@ public class Program
 
             var opcao = Console.ReadLine()?.Trim();
             Console.Clear();
-            bool sair = false;
 
             switch (opcao)
             {
@@ -44,14 +43,11 @@ public class Program
                     listarQuantidadeItensEstoque();
                     break;
                 case "4":
-                    sair = true;
-                    break;
+                    return;
                 default:
                     Console.WriteLine("Opção inválida");
                     break;
             }
-
-            if (sair) break;
         }
 
         void cadastrarProduto()
@@ -73,6 +69,7 @@ public class Program
                 {
                     mensagem($"Produto já cadastrado com este id {id}. \nCadastre novamente");
                     cadastrarProduto();
+                    return;
                 }
             }
 
