@@ -10,6 +10,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        var produtos = new List<Produto>();
+
         while (true)
         {
             Console.Clear();
@@ -64,9 +66,9 @@ public class Program
             var quantidadeEmEstoque = Convert.ToInt16(Console.ReadLine());
             Console.Clear();
 
-            if(ProdutoServico.Get().Lista.Count > 0)
+            if(produtos.Count > 0)
             {
-                Produto? produto = ProdutoServico.Get().Lista.Find(prod => prod.ID == id);
+                Produto? produto = produtos.Find(prod => prod.ID == id);
                 if(produto != null)
                 {
                     mensagem($"Produto já cadastrado com este id {id}. \nCadastre novamente");
@@ -74,7 +76,7 @@ public class Program
                 }
             }
 
-            ProdutoServico.Get().Lista.Add(new Produto
+            produtos.Add(new Produto
             {
                 ID = id,
                 NomeProduto = nomeProduto ?? "[Novo produto]",
@@ -93,7 +95,7 @@ public class Program
 
         void listarProdutosCadastrados()
         {
-            if(ProdutoServico.Get().Lista.Count == 0)
+            if(produtos.Count == 0)
             {
                 menuCadastraProdutoSeNaoExiste();
             }
@@ -136,7 +138,7 @@ public class Program
             Console.Clear();
             Console.WriteLine(header);
 
-            foreach(var produto in ProdutoServico.Get().Lista)
+            foreach(var produto in produtos)
             {
                 Console.WriteLine($"""
                 ID: {produto.ID}
@@ -154,7 +156,7 @@ public class Program
 
         void listarQuantidadeItensEstoque()
         {
-            if(ProdutoServico.Get().Lista.Count == 0)
+            if(produtos.Count == 0)
             {
                 menuCadastraProdutoSeNaoExiste();
             }
@@ -170,7 +172,7 @@ public class Program
             Console.Clear();
             Console.WriteLine(header);
 
-            foreach(var produto in ProdutoServico.Get().Lista)
+            foreach(var produto in produtos)
             {
                 Console.WriteLine($"""
                 Nome do Produto: {produto.NomeProduto}
