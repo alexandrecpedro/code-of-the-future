@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client/client.service';
-import { ObserverClientServiceService } from 'src/app/services/observer-client-service/observer-client-service.service';
+import { ObserverClientService } from 'src/app/services/observer-client/observer-client.service';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +11,7 @@ import { ObserverClientServiceService } from 'src/app/services/observer-client-s
 })
 export class FormComponent implements OnInit {
   /** ATTRIBUTES **/
-  title: String ="New Client"
+  title: String = "New Client"
   client: Client = {} as Client;
   value: String = "";
   pluginValue: String = "";
@@ -20,7 +20,7 @@ export class FormComponent implements OnInit {
   constructor(
     private router: Router,
     private routerParams: ActivatedRoute,
-    private observerClientService: ObserverClientServiceService,
+    private observerClientService: ObserverClientService,
   ) { }
 
   /** METHODS **/
@@ -73,7 +73,7 @@ export class FormComponent implements OnInit {
 
   mask(): void {
     let floatValue = Number(this.value);
-    this.value = floatValue.toLocaleString("pt-br", {style: "currency", currency: "BRL"});
+    this.value = floatValue.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
   }
 
 }

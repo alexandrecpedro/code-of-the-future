@@ -7,15 +7,26 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { AllowEditGuard } from './services/allow-edit/allow-edit.guard';
+import { AuthGuard } from './services/auth/auth.guard';
+import { FormLeaveGuard } from './services/form-leave/form-leave.guard';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
-  { path: "portfolio", component: PortfolioComponent },
+  { path: "portfolio", component: PortfolioComponent, canActivate: [AuthGuard] },
   { path: "about", component: AboutComponent },
-  { path: "form", component: FormComponent },
-  { path: "update-form/:id", component: FormComponent },
-  { path: "contacts", component: ContactListComponent },
+  { path: "form", component: FormComponent, canActivate: [AuthGuard], canDeactivate: [FormLeaveGuard] },
+  { 
+    path: "form/:id",
+    canActivateChild: [AllowEditGuard],
+    children: [
+      { path: "", redirectTo: "update", pathMatch: "full" },
+      { path: "update", component: FormComponent, canDeactivate: [FormLeaveGuard] }
+    ]
+  },
+  // { path: "update-form/:id", component: FormComponent, canActivate: [AuthGuard] },
+  { path: "contacts", component: ContactListComponent, canActivate: [AuthGuard] },
   { path: "**", component: NotFoundComponent },
 ];
 

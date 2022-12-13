@@ -141,30 +141,45 @@
 ### 2 Back-end
 
 #### Class 01 | Introduction to .NET
-    -  Definir e explicar o objetivo da disciplina
-    -  Enumerar e percorrer os temas vistos em Introdução à Informática e Infraestrutura I
-    -  Localizar em tempo e espaço os temas vistos em um mapa do mundo da infraestrutura moderna
-    -  Apresentar os conteúdos da Infraestrutura II e explicar como aumentam os conteúdos já adquiridos
+    -  .NET origins
+    -  Servers to run .NET (Integration with systems)
+    -  Resources
 
 #### Class 02 | .NET Frameworks
-    -  Explicar o que é DevOps
-    -  Problemas que ele resolve
-    -  .NET Core
-    -  Perfis e pessoas que atuam no ecossistema DevOps
-    -  O que se espera de uma pessoa que se desenvolve nesse ecossistema
+    -  .NET Versions
+    -  Exercises
 
 #### Class 03 | Identity Server and Visual Studio
-    -  Integração de Classs 1 e 2
+    -  Identity Server: Creating the Solution
+    -  Identity Server: Setting the API
+    -  Identity Server: Setting the Client
+    -  Identity Server: Using Access Token
+    -  Identity Server: Identity Server with Microservices
+    -  Visual Studio: Productivity Resources
+    -  Visual Studio: "Hello World"
+    -  Visual Studio: Refactoring and IntelliSense
 
 #### Class 04 | Object-oriented
-    -  Explicar o conceito de infraestrutura como código
-    -  O que existia antes da infraestrutura como código?
-    -  2 paradigmas para a infraestrutura como código: 
-        -  código imperativo vs código declarativo
-    -  Ecossistema de ferramentas
-        -  diferenças entre tecnologias 
-        -  tecnologias que devemos conhecer
-    -  O princípio da idempotência
+    -  Introduction to Object-oriented
+    -  Classes, instances and encapsulation
+    -  Solving a logical problem
+    -  Creating lists
+    -  Creating console application menu
+    -  Function to register students
+    -  Listing students and calculating grades average
+    -  Refactoring code and encapsulated variables
+    -  Creating methods at class Student
+    -  Understanding the properties of a class
+    -  Talking a little bit about methods
+    -  Adding methods
+    -  Static methods
+    -  Contructor methods
+    -  Overwritten inheritance and polymorphism
+    -  Public, protected, internal and private
+    -  Code documentation
+    -  Interfaces
+    -  Abstract classes and classes members
+    -  Sealed classes and classes members
 
 #### Class 05 | SOLID Principles
     -  O que é AWS CloudFormation?

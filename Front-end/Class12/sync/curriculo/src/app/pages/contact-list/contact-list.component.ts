@@ -14,20 +14,20 @@ import { ObserverClientService } from 'src/app/services/observer-client/observer
 })
 export class ContactListComponent implements OnInit {
   /** ATTRIBUTES **/
-  clients: Client[] | undefined = [];
+  public clients: Client[] | undefined = [];
   private clientService: ClientService = {} as ClientService;
 
   /** CONSTRUCTOR **/
   constructor(
     private http: HttpClient,
     private observerClientService: ObserverClientService,
-    private loggedService: LoggedService,
+    public loggedService: LoggedService,
     private router: Router
   ) { }
 
   /** METHODS **/
   ngOnInit(): void {
-    if (this.loggedService.redirectNotLoggedLogin()) return;
+    // if (this.loggedService.redirectNotLoggedLogin()) return;
 
     this.clientService = new ClientService(this.http);
     this.listClients();

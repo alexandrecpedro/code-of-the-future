@@ -16,7 +16,7 @@ export class ObserverClientService {
 
   /** METHODS **/
   async updateQuantity() {
-    console.log("Entered the method");
+    // console.log("Entered the method");
     let list = await new ClientService(this.http).listClients();
     this.quantity = list ? list.length : 0;
   }

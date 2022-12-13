@@ -1,3 +1,5 @@
+const Client = require("../models/client");
+
 /* GET home page. */
 module.exports = {
     index: async (req, res, next) => {

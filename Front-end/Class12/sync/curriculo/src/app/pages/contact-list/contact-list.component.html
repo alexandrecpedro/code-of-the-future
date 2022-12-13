@@ -45,8 +45,8 @@
               <td>{{client.address}}</td>
               <td>{{client.date | date: "dd/MM/yyyy" }}</td>
               <td>{{client.value.toString() | currency }}</td>
-              <td><button class="btn btn-warning" routerLink="/update-form/{{client.id}}">Update</button></td>
-              <td><button class="btn btn-danger" (click)="deleteClient(client)">Delete</button></td>
+              <td><button class="btn btn-warning" routerLink="/form/{{client.id}}">Update</button></td>
+              <td><button class="btn btn-danger" [disabled]="!loggedService.adm" (click)="deleteClient(client)">Delete</button></td>
             </tr>
           </tbody>
         </table>
