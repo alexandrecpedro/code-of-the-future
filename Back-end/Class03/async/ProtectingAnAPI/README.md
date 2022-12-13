@@ -1,0 +1,26 @@
+#### Class 03 | Identity Server and Visual Studio
+    -   Identity Server: Creating the Solution
+        -   New Solution
+            -   dotnet new sln -n ProtectingAnAPI
+        -   IdentityServer Templates
+            -   Install
+                -   dotnet new -i IdentityServer4.Templates
+            -   New project
+                -   dotnet new is4empty -n IdentityServer
+            -   Add project to Solution
+                -   dotnet sln add IdentityServer/IdentityServer.csproj
+    -   Identity Server: Setting the API
+        -   New API
+            -   dotnet new webapi -n Api -f netcoreapp3.1
+        -   Add project to Solution
+            -   dotnet sln add Api/Api.csproj
+    -   Identity Server: Setting the Client
+        -   New Client
+            -   dotnet new console -n Client -f netcoreapp3.1
+        -   Add project to Solution
+            -   dotnet sln add Client/Client.csproj
+    -   Identity Server: Using Access Token
+    -   Identity Server: Identity Server with Microservices
+    -   Visual Studio: Productivity Resources
+    -   Visual Studio: "Hello World"
+    -   Visual Studio: Refactoring and IntelliSense
