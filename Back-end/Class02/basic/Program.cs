@@ -1,14 +1,47 @@
 ﻿using System.Text.Json;
+using Basico.Condicionais;
+using Basico.InterfaceComUsuario;
 using Basico.Models;
-using System;
-using System.Collections.Generic;
+using Basico.Recursividade;
+using Basico.Services;
 
 namespace basico;
 
 class Program
 {
+    // public const string CAMINHO_ARQUIVO = @"c:\temp\imports";
+    public const string CAMINHO_ARQUIVO = "/Users/danilo/Desktop/codigo-do-futuro/dotnet/basico/imports";
+    
     static void Main(string[] args)
     {
+        var usuario = new Usuario();
+        // usuario.ClientePorCompleto3();
+
+        var cliente = new Cliente
+        {
+            Nome = "Jucileia"
+        };
+
+        // cliente.ClientePorCompleto3();
+
+        cliente.NomeMaiusculo();
+        cliente.NomeMinusculo();
+
+        Unica.Get().Teste = "ssss";
+
+        GenericoServico.ImprimeNome(cliente);
+
+        var fornecedor = new Fornecedor("Didox Business");
+
+        Console.WriteLine(fornecedor.NomeMaiusculo());
+
+        GenericoServico.ImprimeNome(fornecedor);
+
+
+        GenericoServicoComGenerics<Cliente>.ImprimeNome(cliente);
+        GenericoServicoComGenerics<Fornecedor>.ImprimeNome(fornecedor);
+        
+        /*
         var nivaldo = new Cliente()
         {
             Nome = "Nivaldo", Telefone = "(11) 11111-1111"
@@ -23,7 +56,15 @@ class Program
 
         Console.WriteLine(leticia.ClientePorCompleto());
         
-        
+        string conteudoDoArquivo = """
+        {"nome": "Danilo", "telefone": "123432123"}
+        """;
+        var cliente = JsonSerializer.Deserialize<Cliente>(conteudoDoArquivo, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+        var json = JsonSerializer.Serialize(cliente);
+        var x = "";
 
         // var lista = Recursiva.CalculaValores(new List<double>());
 
@@ -37,11 +78,13 @@ class Program
         // UsandoCondicional.usandoSwitchParaOpcoesDeMenu();
         // utilizandoLoop();
         // var oQueRetornou = utilizandoArrayOuLista("ssss");
+        
+        */
     }
 
-    /* private static string utilizandoArrayOuLista(string outroNome)
+    private static string utilizandoArrayOuLista(string outroNome)
     {
-        
+        /*
         // string[] nomes = new string[4];
         // nomes[0] = "Danilo";
         // nomes[1] = "Alexandre";
@@ -53,6 +96,7 @@ class Program
         {
             Console.WriteLine(nome);
         }
+        */
 
         List<string> nomes = new List<string>(){ "Danilo", "Alexandre", "Pedro", "Bia" };
         nomes.Add("Leanderson");
@@ -77,7 +121,6 @@ class Program
         while(i<100);
         
 
-        
         int x = 0;
         while(x<100)
         {
@@ -94,5 +137,5 @@ class Program
 
             Console.WriteLine(y);
         }
-    } */
+    }
 }

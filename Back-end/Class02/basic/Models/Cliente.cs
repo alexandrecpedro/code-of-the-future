@@ -1,14 +1,20 @@
+using Basico.Interfaces;
+
 namespace Basico.Models;
 
-public class Cliente
+public class Cliente : Pessoa, IObjeto
 {
     // ATTRIBUTES
-    public string Nome { get;set; } = default!;
     public string Telefone { get;set; } = default!;
 
     // CONSTRUCTOR
-    public Cliente()
-    {}
+    public Cliente() { }
+
+    public Cliente(string _nome)
+    {
+        var lista = new List<Cliente>();
+        this.Nome = _nome;
+    }
 
     public Cliente(string _nome, string _telefone)
     {
@@ -17,6 +23,16 @@ public class Cliente
     }
 
     // METHODS
+    public string MetodoComDoisParametros(string nome, string sobrenome)
+    {
+        return $"{nome} {sobrenome}";
+    }
+
+    public override string? ToString()
+    {
+        return this.Nome;
+    }
+
     public string ClientePorCompleto()
     {
         return $"Nome: {this.Nome} - Telefone: {this.Telefone}";
@@ -40,5 +56,15 @@ public class Cliente
     private string ClientePorCompleto4()
     {
         return $"Nome: {this.Nome} - Telefone: {this.Telefone}";
+    }
+
+    public override string NomeMaiusculo()
+    {
+        return this.Nome.ToUpper();
+    }
+
+    public override string NomeMinusculo()
+    {
+        return this.Nome.ToLower();
     }
 }
