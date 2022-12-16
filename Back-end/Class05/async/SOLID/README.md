@@ -1,6 +1,7 @@
 #### Class 05 | SOLID Principles
     -   Introduction to SOLID
-        -   An acronym created by Michael Feathers to validate some of the principles of object-oriented programming and code design identified by Robert C. Martin (Uncle Bob) in the book Clean Code
+        -   An acronym created by Michael Feathers to validate some of the principles of object-oriented programming 
+        and code design identified by Robert C. Martin (Uncle Bob) in the book Clean Code
 <br><br>
 <table>
     <thead>
