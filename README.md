@@ -182,14 +182,21 @@
     -  Sealed classes and classes members
 
 #### Class 05 | SOLID Principles
-    -  O que é AWS CloudFormation?
-    -  Como usar essa ferramenta?
-    -  Onde usamos?
-    -  Quem usa?
-    -  Está na hora de praticar!
+    -  Introduction to SOLID
+    -  SPR - Single Responsibility Principle
+    -  OCP - Open-Closed Principle
+    -  LSP - Liskov Substitution Principle
+    -  ISP - Interface Segregation Principle
+    -  DIP - Dependency Inversion Principle
 
 #### Class 06 | Best pratices for software development and testing
-    -  Integração de Classs 4 e 5
+    -  Introduction to Best Practices
+    -  Clean Code Principles
+    -  Clean Code: Classes Name
+    -  Clean Code: Methods Name
+    -  Clean Code: Function Creation
+    -  Clean Code: Code Sample
+    -  Clean Code: Class Creation
 
 #### Class 07 | Database: Fundamentals
     -  O que é Ansible?
