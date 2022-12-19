@@ -98,27 +98,31 @@
         -   1 feature per function
         -   Completed logic
         -   Reasons to create a function
-        <ol>
-            <li>Avoid code duplication</li>
-            <li>Code indentation</li>
-            <li>When you have a not clear piece of code, the fuction serves as a summary / an introduction to the subject</li>
-            <li>Since the function should only have a single responsibility, it shouldn't be too long</li>
-        <ol>
+```
+<ol>
+    <li>Avoid code duplication</li>
+    <li>Code indentation</li>
+    <li>When you have a not clear piece of code, the fuction serves as a summary / an introduction to the subject</li>
+    <li>Since the function should only have a single responsibility, it shouldn't be too long</li>
+<ol>
+
+```
     -   Clean Code: Code Sample
     -   Clean Code: Class Creation
         -   Reasons to create a class
-        <ol>
-            <li>Model a real-life object</li>
-            <li>Class methods have little or nothing to do with each other (Low cohesion class)</li>
-            <li>Allow code reuse</li>
-            <li>Reduce the complexity</li>
-            <li>Clear parameters quantity (reduces)</li>
-            <li>Class that changes a lot on any commit</li>
-        </ol>
-        -   Signals of very small classes (avaliate if two smaller classes should be only one)
-        <ol>
-            <li>Classes that heavily depend on each other (the same business rule)</li>
-            <li>Class that always uses one feature of the other</li>
-            <li>Class so small that it is difficult to understand how the system works</li>
-        </ol>
 ```
+        
+<ol>
+    <li>Model a real-life object</li>
+    <li>Class methods have little or nothing to do with each other (Low cohesion class)</li>
+    <li>Allow code reuse</li>
+    <li>Reduce the complexity</li>
+    <li>Clear parameters quantity (reduces)</li>
+    <li>Class that changes a lot on any commit</li>
+</ol>
+-   Signals of very small classes (avaliate if two smaller classes should be only one)
+<ol>
+    <li>Classes that heavily depend on each other (the same business rule)</li>
+    <li>Class that always uses one feature of the other</li>
+    <li>Class so small that it is difficult to understand how the system works</li>
+</ol>
