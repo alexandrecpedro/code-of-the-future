@@ -46,7 +46,9 @@
         </tr>
     </tbody>
 </table>
+```shell
     -   Clean Code Principles
+```
 <table>
     <thead>
         <tr> 
@@ -82,6 +84,7 @@
         </tr>
     </tbody>
 </table>
+```shell
     -   Clean Code: Classes Name
         -   Choose class Name guide:
             -   It must be nouns not verbs
@@ -116,3 +119,4 @@
             <li>Class that always uses one feature of the other</li>
             <li>Class so small that it is difficult to understand how the system works</li>
         </ol>
+```
