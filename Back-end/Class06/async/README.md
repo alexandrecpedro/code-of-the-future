@@ -46,7 +46,8 @@
         </tr>
     </tbody>
 </table>
-```shell
+
+```
     -   Clean Code Principles
 ```
 <table>
@@ -84,7 +85,8 @@
         </tr>
     </tbody>
 </table>
-```shell
+
+```
     -   Clean Code: Classes Name
         -   Choose class Name guide:
             -   It must be nouns not verbs
