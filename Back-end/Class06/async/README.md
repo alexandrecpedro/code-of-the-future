@@ -120,7 +120,10 @@
     <li>Clear parameters quantity (reduces)</li>
     <li>Class that changes a lot on any commit</li>
 </ol>
+
+```
 -   Signals of very small classes (avaliate if two smaller classes should be only one)
+```
 <ol>
     <li>Classes that heavily depend on each other (the same business rule)</li>
     <li>Class that always uses one feature of the other</li>
