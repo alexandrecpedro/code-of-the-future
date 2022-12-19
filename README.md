@@ -196,7 +196,7 @@
     -  Clean Code: Methods Name
     -  Clean Code: Function Creation
     -  Clean Code: Code Sample
-    -  Clean Code: Class Creation
+    -  Clean Code: Class Creation 
 
 #### Class 07 | Database: Fundamentals
     -  O que é Ansible?
