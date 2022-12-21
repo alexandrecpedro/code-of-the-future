@@ -13,7 +13,7 @@ public class Pessoa
 
     public virtual void Cadastrar(Pessoa pessoa)
     {
-        var path = Environment.GetEnvironmentVariable(@"JSON_CLASSES");
+        var path = Environment.GetEnvironmentVariable("JSON_CLASSES");
         string json = File.ReadAllText(path!);
 
         var pessoas = JsonSerializer.Deserialize<List<Pessoa>>(json);

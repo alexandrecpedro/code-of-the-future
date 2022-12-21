@@ -7,7 +7,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var path = Environment.GetEnvironmentVariable(@"JSON_CLASSES");
+        var path = Environment.GetEnvironmentVariable("JSON_CLASSES");
         var pessoas = JsonSerializer.Deserialize<List<Pessoa>>(File.ReadAllText(path!));
 
         while (true)
