@@ -1,0 +1,25 @@
+﻿@using Business.Models
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Novo cliente</h1>
+</div>
+
+<hr>
+
+<form action="/clientes/cadastrar" method="post">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="nome" class="form-control" id="nome" name="nome" placeholder="Digite o nome">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Digite o email">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  <a href="/clientes" class="btn btn-default">Voltar</a>
+</form>
