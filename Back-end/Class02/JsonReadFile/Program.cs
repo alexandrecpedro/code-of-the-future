@@ -42,8 +42,8 @@ class Program
 
     private static void ReadFilesJson(int fileName)
     {
-
-        var path = @$"/Users/alexandrepedro/Desktop/IMPORTANTES/INFORMATION_TECHNOLOGY/GAMA_ACADEMY/CODIGO_DO_FUTURO/Back-end/Class03/sync/basic/Imports/cliente{fileName}.json";
+        var basic_path = Environment.GetEnvironmentVariable("JSON_READ_FILE");
+        var path = @$"{basic_path}/cliente{fileName}.json";
 
         if (File.Exists(path))
         {
@@ -56,7 +56,7 @@ class Program
             }
         }
 
-        path = @$"/Users/alexandrepedro/Desktop/IMPORTANTES/INFORMATION_TECHNOLOGY/GAMA_ACADEMY/CODIGO_DO_FUTURO/Back-end/Class02/JsonReadFile/Imports/client{fileName + 1}.json";
+        path = @$"{basic_path}/client{fileName + 1}.json";
 
         if (File.Exists(path))
         {
