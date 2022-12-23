@@ -1,0 +1,15 @@
+#### Class 08 | Database: MySQL
+    -   Installing MySQL
+    -   Creating database and tables with SQL I
+    -   Creating database and tables with SQL II
+    -   Creating tables at Workbench I
+    -   Creating tables at Workbench II
+    -   Altering structures and removing tables
+    -   Inserting data at tables
+    -   Making changes and understanding results
+    -   Simple queries
+    -   Groupings and totals
+    -   Joins with 2 tables
+    -   Joins with 3 or more tables
+    -   Outer joins
+    -   Subqueries
