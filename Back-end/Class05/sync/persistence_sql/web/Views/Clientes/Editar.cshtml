@@ -1,0 +1,26 @@
+﻿@using Business.Entidades
+@{
+  Cliente cliente = @ViewBag.cliente;
+  ViewData["Title"] = "Editar Cliente - cliente.Nome";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar Cliente - @cliente.Nome</h1>
+</div>
+
+<hr>
+
+<form action="/clientes/@cliente.Id/atualizar" method="post">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="nome" class="form-control" id="nome" value="@cliente.Nome" name="nome" placeholder="Digite o nome">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" value="@cliente.Email" name="email" placeholder="Digite o email">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  <a href="/clientes" class="btn btn-default">Voltar</a>
+</form>
