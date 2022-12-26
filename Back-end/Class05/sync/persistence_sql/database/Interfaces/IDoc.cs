@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Database.MongoDb.Interfaces;
+namespace Database.Interfaces;
 
 public interface IDoc
 {

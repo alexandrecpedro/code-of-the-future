@@ -1,6 +1,5 @@
 using Database.Atributos;
 using Database.Interfaces;
-using Database.MySql.Interfaces;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Reflection;

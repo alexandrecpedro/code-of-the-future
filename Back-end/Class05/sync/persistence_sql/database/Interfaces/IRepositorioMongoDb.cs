@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Driver.Linq;
 
-namespace Database.MongoDb.Interfaces;
+namespace Database.Interfaces;
 
 public interface IRepositorioMongoDb<T>
 {

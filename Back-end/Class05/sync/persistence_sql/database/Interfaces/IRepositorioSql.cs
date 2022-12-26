@@ -1,4 +1,4 @@
-namespace Database.MySql.Interfaces;
+namespace Database.Interfaces;
 
 public interface IRepositorioSql<T>
 {

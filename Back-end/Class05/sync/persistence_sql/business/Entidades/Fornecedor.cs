@@ -2,7 +2,7 @@ using Database.Atributos;
 
 namespace Business.Entidades;
 
-[Tabela(Nome = "fornecedor")]
+[Tabela(Nome = "fornecedores")]
 public class Fornecedor
 {
     public int Id { get; set; }
