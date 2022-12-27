@@ -5,7 +5,7 @@ using Negocio.Servicos;
 
 namespace web.Controllers;
 
-public class ProdutoController : Controller
+public class ProdutosController : Controller
 {
     private static Servico<Produto> produtoServico = new Servico<Produto>(new RepositorioMYSQL<Produto>());
 
@@ -17,17 +17,17 @@ public class ProdutoController : Controller
 
     public IActionResult Cadastrar([FromForm] Produto produto)
     {
-        if(string.IsNullOrEmpty(produto.Nome))
-        {
-            ViewBag.erro = "O nome não pode ser vazio";
-            return View();
-        }
+        // if(string.IsNullOrEmpty(produto.Nome))
+        // {
+        //     ViewBag.erro = "O nome não pode ser vazio";
+        //     return View();
+        // }
 
-        if(string.IsNullOrEmpty(produto.Descricao))
-        {
-            ViewBag.erro = "A descrição do produto não pode ser vazia";
-            return View();
-        }
+        // if(string.IsNullOrEmpty(produto.Descricao))
+        // {
+        //     ViewBag.erro = "A descrição do produto não pode ser vazia";
+        //     return View();
+        // }
 
         produtoServico.Salvar(produto);
 
