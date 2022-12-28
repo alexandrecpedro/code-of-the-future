@@ -1,0 +1,34 @@
+﻿@using negocio.models
+@{
+    ViewData["Title"] = "Produtos Vencidos";
+}
+<div class="text-center">
+    <h1 class="display-4">Produtos Vencidos</h1>
+    <br>
+    <a href="/produtos" class="btn btn-default">Voltar</a>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Data de Validade</th>
+      <th scope="col">Data de Criação</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Produto produto in ViewBag.produtosVencidos)
+    {
+      <tr>
+        <th scope="row">@produto.Id</th>
+        <td>@produto.Nome</td>
+        <td>@produto.Descricao</td>
+        <td>@produto.Quantidade</td>
+        <td>@produto.data_vencimento</td>
+        <td>@produto.created_at</td>
+      </tr>
+    }
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Principal";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastro de Produtos</h1>
+    <p>Clique <a href="/produtos">Aqui</a> para entrar.</p>
+</div>
+
+<hr>
+
+<div class=" d-flex flex-column text-center">
+
+    <a class="btn btn-primary">Quantidade de Itens em estoque: @ViewBag.quantidadeDeItensNoEstoque</a>
+<br>
+    <a class="btn btn-primary" href="/produtos/produtos-vencidos">Quantidade de Produtos Vencidos: @ViewBag.produtosVencidos</a>
+<br>
+    <a class="btn btn-primary">Quantidade de Produtos para vencer daqui a 3 dias: @ViewBag.produtosAVencerEm3Dias</a>
+   <br>
+    <a class="btn btn-primary" href="/produtos/">Quantidade de Produtos totais: @ViewBag.quantidadeDeProdutos</a>
+
+</div>

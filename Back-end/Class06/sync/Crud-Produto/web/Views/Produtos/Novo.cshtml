@@ -1,0 +1,36 @@
+@using negocio.models
+@{
+    ViewData["Title"] = "Novo Produto";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Novo Produto</h1>
+</div>
+<hr>
+
+
+<div class="text-center">
+  <form action="/produtos/cadastrar" method="post">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do produto">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Digite a descrição do produto">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="quantidade">Quantidade</label>
+      <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Digite a quantidade do produto">
+    </div>
+    <div class="form-group">
+      <label for="data_vencimento">Data de Vencimento</label>
+      <input type="datetime-local" id="data_vencimento" name="data_vencimento" >
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <a href="/produtos" class="btn btn-default">Voltar</a>
+  </form>
+</div>
