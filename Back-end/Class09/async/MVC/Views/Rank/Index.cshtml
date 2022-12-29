@@ -1,0 +1,40 @@
+﻿@model List<MVC.Models.Score>
+
+@{
+    ViewData["Title"] = "Ranking de Jogadores";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Lista de jogadores</h2>
+</div>
+
+<p>Olá, estamos na View Template!</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" colspan="2">Jogador</th>
+      <th scope="col">Pontos</th>
+      <th style="width: 30px;" scope="col"></th>
+      <th style="width: 30px;" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+    @foreach(var score in Model)
+    {
+      <tr>
+        <th scope="row">@score.Id</th>
+        <td>@score.Avatar</td>
+        <td>@score.PlayerName</td>
+        <td>@score.Points</td>
+        <td>
+            <a href="" class="btn btn-warning">Editar</a>
+        </td>
+        <td>
+            <a href="#" onclick="" class="btn btn-danger">Apagar</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

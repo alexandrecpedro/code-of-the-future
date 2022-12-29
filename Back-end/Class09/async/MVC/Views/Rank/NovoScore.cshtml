@@ -1,0 +1,54 @@
+﻿@model MVC.Models.NewScoreViewModel
+
+@{
+    ViewData["Title"] = "Novo Score";
+}
+
+<div class="row mt-4">
+  <div class="col col-md-6 offset-md-3 alert alert-primary">
+    <span class="h1">Novo Score</span>
+  </div>
+</div>
+
+<form action="" method="post">
+  <div class="row">
+    <div class="col col-md-6 offset-md-3">
+      <div class="row alert alert-warning bg-dark text-white">
+        <span class="col col-md-3 mt-0 h1">Avatar</span>
+        <span class="col col-md-3 mt-0 h1 border-left">Nome</span>
+        <span class="col col-md-3 mt-0 h1 border-left text-right">Pontos</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <input type="hidden" name="Id" value="@(Model.NewScore.Id)" />
+    <select name="Avatar" id="avatars" class="col col-md-3 mt-0 h1">
+      @foreach (var avatar in Model.Avatars)
+      {
+        if (avatar == Model.NewScore.Avatar)
+        {
+          <option value="@avatar" selected>@avatar</option>
+        }
+        else
+        {
+          <option value="@avatar">@avatar</option>
+        }
+      }
+    </select>
+    @* <input type="text" class="col col-md-6 mt-0 h1" name="PlayerName" value="@(Model.NewScore.PlayerName)" /> *@
+    @Html.TextBoxFor(model => model.NewScore.PlayerName, new { @class="col col-md-6 mt-0 h1", name="PlayerName" })
+    @* <input type="number" class="col col-md-6 mt-0 h1 text-right" name="Points" value="@(Model.NewScore.Points)" /> *@
+    @Html.TextBoxFor(model => model.NewScore.Points, new { type="number", @class="col col-md-6 mt-0 h1 text-right", name="Points" })
+  </div>
+  <div class="h4 alert-warning">
+    @Html.ValidationMessageFor(model => model.NewScore.PlayerName)
+    @Html.ValidationMessageFor(model => model.NewScore.Points)
+  </div>
+  <div class="row mt-0">
+    <div class="col col-md-4 offset-md-5">
+      <input type="submit" class="h1 mt-0 float-right text-center" value="✔️ Confirmar" />
+      <input type="button" class="h1 mt-0 mr-4 button float-right text-center" 
+            value="❌ Cancelar" onclick="location.href='/rank'" />
+    </div>
+  </div>
+</form>
