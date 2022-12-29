@@ -199,21 +199,40 @@
     -  Clean Code: Class Creation 
 
 #### Class 07 | Database: Fundamentals
-    -  O que é Ansible?
-    -  Como usar essa ferramenta?
-    -  Onde usamos?
-    -  Quem usa?
-    -  Está na hora de praticar!
+    -  Database Selection: Reasons
+    -  Normalized Databases x Non Normalized Databases
 
 #### Class 08 | Database: MySQL
-    -  O que é Terraform?
-    -  Como usar essa ferramenta?
-    -  Onde usamos?
-    -  Quem usa?
-    -  Está na hora de praticar!
+    -  Installing MySQL
+    -  Creating database and tables with SQL I
+    -  Creating database and tables with SQL II
+    -  Creating tables at Workbench I
+    -  Creating tables at Workbench II
+    -  Altering structures and removing tables
+    -  Inserting data at tables
+    -  Making changes and understanding results
+    -  Simple queries
+    -  Groupings and totals
+    -  Joins with 2 tables
+    -  Joins with 3 or more tables
+    -  Outer joins
+    -  Subqueries
 
 #### Class 09 | MVC Pattern, Models and Views
-    -  Integração de Classs 7 e 8 
+    -  MVC Pattern: WebForms vs MVC
+    -  MVC Pattern: Introduction to MVC Pattern
+    -  MVC Pattern: Routing
+    -  MVC Pattern: Attribute Routing
+    -  MVC Pattern: Action Result
+    -  MVC Pattern: Views
+    -  Models: Models Creation
+    -  Models: Input I
+    -  Models: Input II
+    -  Models: HTTP Verbs
+    -  Models: Model Validation I
+    -  Models: Model Validation II
+    -  Views: Partial Views
+    -  Views: Layouts
 
 #### Class 10 | Design Patterns
     -  Detalhes de TF (Terraform DSL)
