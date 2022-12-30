@@ -4,9 +4,6 @@ namespace MVC.Services;
 
 public class RankingService
 {
-    private RankingService() {}
-    private static RankingService _instance; 
-
     public List<Score> listaJogadores { get; set; } = new List<Score>
     {
         new Score(8, "👩‍🦰", "Marlene F. Martelli", 1298),
@@ -14,14 +11,22 @@ public class RankingService
         new Score(7, "👩‍🦱", "Sandra D. Martins", 765),
         new Score(3, "👨‍🦳", "Tiago O. Vieira", 721)
     };
+    private static RankingService? _instance;
 
     public static RankingService Instance
     {
         get
         {
-            return _instance ?? (_instance = new RankingService());
+            if (_instance == null)
+            {
+                _instance = new RankingService();
+            }
+
+            return _instance;
         }
     }
+
+    private RankingService() {}
 
     public List<Score> GetAll()
     {
@@ -30,7 +35,7 @@ public class RankingService
 
     public List<Score> Create(Score score)
     {
-        GetAll().Add(score);
-        return lista;
+        GetAll().ToList().Add(score);
+        return GetAll();
     }
 }
