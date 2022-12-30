@@ -1,0 +1,13 @@
+#### Class 10 | Design Patterns
+    -   Unit of Work: Repository I
+    -   Unit of Work: Repository II
+    -   Unit of Work: Generic Repository
+    -   Unity of Work
+    -   Explaining Strategy pattern
+        -   Pattern: https://macoratti.net/08/08/net_stgy.htm
+    -   Creating Strategy pattern structure
+    -   Strategy: Coupling strategies
+    -   Singleton: The Sigleton pattern
+        -   Pattern: https://macoratti.net/21/08/c_singleton1.htm
+    -   Singleton: Abstract Factory
+        -   Pattern: https://macoratti.net/21/07/c_abstrfactory1.htm
