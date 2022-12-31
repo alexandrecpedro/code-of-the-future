@@ -165,7 +165,7 @@
                 </script>
             -   Route Restrictions
     -   MVC Pattern: Action Result
-<br>
+```
 <table style="display: flex; justify-content: center; align-items: center; width: 50%;">
     <thead>
         <tr>
