@@ -8,7 +8,7 @@
             <th scope="col" colspan="2">ASP.NET MVC</th>
         </tr>
     </thead>
-    <tbody scope="row" rowspan="2">
+    <tbody rowspan="2">
         <tr colspan="10">
             <td>BROWSER</td>
             <td>User access the application</td>
@@ -44,6 +44,42 @@
         <tr>
             <td>UPDATING CONTROLS</td>
             <td>A cleanup is done as soon as the page is no longer needed</td>
+        </tr>
+        <tr>
+            <td>RESPONSE OUTPUT STREAM</td>
+            <td>A response will be delivered as a stream</td>
+        </tr>
+        <tr colspan="9">
+            <td>BROWSER</td>
+            <td>User access the application</td>
+        </tr>
+        <tr>
+            <td>IIS (Internet Information Services)</td>
+            <td>Software hosting server</td>
+        </tr>
+        <tr>
+            <td>ASP.NET HTTP RUNTIME</td>
+            <td>It is used to extend ASP.NET so we can add, remove, and adapt/extend functionalities as needed<wbr>It will call URL ROUTER</td>
+        </tr>
+        <tr>
+            <td>URL ROUTER</td>
+            <td>The router tells us on which resource/class that route will be executed<wbr>That strategy can be used to separate by folders, product code, client code, etc<wbr>A logic is created in the route to distribute access according to the structure of the application</td>
+        </tr>
+        <tr>
+            <td>MVC HTTP HANDLER</td>
+            <td>The router will deliver to the MVC framework through a handler<wbr>This handler will deliver the route to a controller factory</td>
+        </tr>
+        <tr>
+            <td>CONTROLLER FACTORY</td>
+            <td>It is the route management, which calls an specific controller, who execute a method</td>
+        </tr>
+        <tr>
+            <td>METHOD EXECUTION</td>
+            <td>Known as an action. Each controller has one or more actions (insert, find, update, delete)</td>
+        </tr>
+        <tr>
+            <td>VIEW ENGINE</td>
+            <td>After executing an action, there will be a response (string, number, ..., or even a webpage)<wbr>In case of a webpage, unlike the WebForms page, there will be rendered a view (page engine)<wbr>In MVC that view engine is used with the Razor (motor)<wbr>In addition to the view engine, raw data is needed to render a page</td>
         </tr>
         <tr>
             <td>RESPONSE OUTPUT STREAM</td>
