@@ -39,7 +39,7 @@
                 </tr>
             </td>
             <td>
-                <tr>
+                <tc>
                     <td>BROWSER</td>
                     <td>IIS (Internet Information Services)</td>
                     <td>ASP.NET HTTP RUNTIME</td>
@@ -49,10 +49,10 @@
                     <td>METHOD EXECUTION</td>
                     <td>VIEW ENGINE</td>
                     <td>RESPONSE OUTPUT STREAM</td>
-                </tr>
+                </tc>
             </td>
             <td>
-                <tr>
+                <tc>
                     <td>User access the application</td>
                     <td>Software hosting server</td>
                     <td>It is used to extend ASP.NET so we can add, remove, and adapt/extend functionalities as needed<br>It will call WebForms</td>
@@ -62,7 +62,7 @@
                     <td>Known as an action. Each controller has one or more actions (insert, find, update, delete)</td>
                     <td>After executing an action, there will be a response (string, number, ..., or even a webpage)<wbr>In case of a webpage, unlike the WebForms page, there will be rendered a view (page engine)<wbr>In MVC that view engine is used with the Razor (motor)<wbr>In addition to the view engine, raw data is needed to render a page</td>
                     <td>A response will be delivered as a stream</td>
-                </tr>
+                </tc>
             </td>
         </tr>
     </tbody>
