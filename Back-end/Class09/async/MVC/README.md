@@ -10,10 +10,10 @@
     </thead>
     <tbody scope="row" rowspan="2">
         <tr colspan="11">
-            <td colspan="0">BROWSER</td>
+            <td>BROWSER</td>
             <td>User access the application</td>
-            <!-- <td>BROWSER</td>
-            <td>User access the application</td> -->
+            <td>BROWSER</td>
+            <td>User access the application</td>
         </tr>
         <tr>
             <td>IIS (Internet Information Services)</td>
@@ -23,21 +23,21 @@
         </tr>
         <tr>
             <td>ASP.NET HTTP RUNTIME</td>
-            <td>It is used to extend ASP.NET so we can add, remove, and adapt/extend functionalities as needed<wbr>It will call WebForms</td>
+            <td>It is used to extend ASP.NET so we can add, remove, and adapt/extend functionalities as needed. It will call WebForms</td>
             <td>ASP.NET HTTP RUNTIME</td>
-            <td>It is used to extend ASP.NET so we can add, remove, and adapt/extend functionalities as needed<wbr>It will call URL ROUTER</td>
+            <td>It is used to extend ASP.NET so we can add, remove, and adapt/extend functionalities as needed. It will call URL ROUTER</td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td>URL ROUTER</td>
-            <td>The router tells us on which resource/class that route will be executed<wbr>That strategy can be used to separate by folders, product code, client code, etc<wbr>A logic is created in the route to distribute access according to the structure of the application</td>
+            <td>The router tells us on which resource/class that route will be executed. That strategy can be used to separate by folders, product code, client code, etc. A logic is created in the route to distribute access according to the structure of the application</td>
         </tr>
         <tr>
             <td>PAGE HTTP HANDLER</td>
             <td>It processes requests for an endpoint (url), which will redirect user for WebForms initial page</td>
             <td>MVC HTTP HANDLER</td>
-            <td>The router will deliver to the MVC framework through a handler<wbr>This handler will deliver the route to a controller factory</td>
+            <td>The router will deliver to the MVC framework through a handler. This handler will deliver the route to a controller factory</td>
         </tr>
         <tr>
             <td>PAGE CLASS</td>
@@ -47,15 +47,15 @@
         </tr>
         <tr>
             <td>PAGE LIFECYCLE (PRELIMINARIES)</td>
-            <td>Each page has a lifecycle. It starts with the first request<wbr>At that moment (first request), ASP.NET will find if it has already been compiled, and/or analyzed,<wbr>to assemble its structure in memory</td>
+            <td>Each page has a lifecycle. It starts with the first request. At that moment (first request), ASP.NET will find if it has already been compiled, and/or analyzed, to assemble its structure in memory</td>
             <td>METHOD EXECUTION</td>
             <td>Known as an action. Each controller has one or more actions (insert, find, update, delete)</td>
         </tr>
         <tr>
             <td>POSTBACK EVENT</td>
-            <td>This event always happens when a event that changes the page occurs<wbr>(user clicks on button, confirms an action), and the user doesn't get out of the page<wbr>The page is reloaded and the ASP.NET with WebForms treats all requests as if an user had a browsing history<wbr>The fields are filled in as an user navigates through the page<wbr>This happens hidden from the developer, so that the user has a similar experience with Windows Forms</td>
+            <td>This event always happens when a event that changes the page occurs (user clicks on button, confirms an action), and the user doesn't get out of the page. The page is reloaded and the ASP.NET with WebForms treats all requests as if an user had a browsing history. The fields are filled in as an user navigates through the page. This happens hidden from the developer, so that the user has a similar experience with Windows Forms</td>
             <td>VIEW ENGINE</td>
-            <td>After executing an action, there will be a response (string, number, ..., or even a webpage)<wbr>In case of a webpage, unlike the WebForms page, there will be rendered a view (page engine)<wbr>In MVC that view engine is used with the Razor (motor)<wbr>In addition to the view engine, raw data is needed to render a page</td>
+            <td>After executing an action, there will be a response (string, number, ..., or even a webpage. In case of a webpage, unlike the WebForms page, there will be rendered a view (page engine). In MVC that view engine is used with the Razor (motor). In addition to the view engine, raw data is needed to render a page</td>
         </tr>
         <tr>
             <td>PAGE LIFECYCLE (FINALIZATION)</td>
