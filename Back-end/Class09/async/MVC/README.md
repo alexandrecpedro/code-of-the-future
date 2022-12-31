@@ -10,10 +10,10 @@
     </thead>
     <tbody scope="row" rowspan="2">
         <tr colspan="11">
-            <td>BROWSER</td>
-            <td>User access the application</td>
-            <td>BROWSER</td>
-            <td>User access the application</td>
+            <td rowspan="1">BROWSER</td>
+            <td rowspan="1">User access the application</td>
+            <!-- <td>BROWSER</td>
+            <td>User access the application</td> -->
         </tr>
         <tr>
             <td>IIS (Internet Information Services)</td>
