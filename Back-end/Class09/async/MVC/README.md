@@ -8,7 +8,7 @@
             <th scope="col" colspan="2">ASP.NET MVC</th>
         </tr>
     </thead>
-    <tbody rowspan="2">
+    <tbody scope="row" rowspan="2">
         <tr colspan="10">
             <td>BROWSER</td>
             <td>User access the application</td>
