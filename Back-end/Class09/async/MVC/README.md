@@ -12,6 +12,8 @@
         <tr colspan="10">
             <td>BROWSER</td>
             <td>User access the application</td>
+            <td>BROWSER</td>
+            <td>User access the application</td>
         </tr>
         <tr>
             <td>IIS (Internet Information Services)</td>
