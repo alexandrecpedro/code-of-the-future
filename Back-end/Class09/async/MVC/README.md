@@ -10,8 +10,8 @@
     </thead>
     <tbody scope="row" rowspan="2">
         <tr colspan="11">
-            <td rowspan="0">BROWSER</td>
-            <td rowspan="0">User access the application</td>
+            <td colspan="0">BROWSER</td>
+            <td colspan="0">User access the application</td>
             <!-- <td>BROWSER</td>
             <td>User access the application</td> -->
         </tr>
