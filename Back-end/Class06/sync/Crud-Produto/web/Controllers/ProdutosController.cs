@@ -10,16 +10,21 @@ namespace web.Controllers;
 public class ProdutosController : Controller
 {
     ProdutoServico produtoServico = new ProdutoServico(new RepositorioMYSQL<Produto>());
+
+    List<Produto> listaDeProduto = new List<Produto>();
+
     public IActionResult Index()
     {
-        ViewBag.produtos = produtoServico.BuscarTodos();
+        listaDeProduto = produtoServico.BuscarTodos();
+        var listaDeProdutoOrdenada = listaDeProduto.OrderByDescending(produto => produto.Nome).Reverse();
+        ViewBag.produtos = listaDeProdutoOrdenada;
         return View();
     }
     public IActionResult Cadastrar([FromForm] Produto produto)
     {
-        if( string.IsNullOrEmpty(produto.Nome) )
+        if( string.IsNullOrEmpty(produto.Nome) || string.IsNullOrEmpty(produto.Descricao ) || string.IsNullOrEmpty(produto.Data_vencimento.ToString()))
         {
-            ViewBag.erro = "O nome não pode ser vazio!";
+            ViewBag.erro = "Preencha todos os campos para cadastrar um produto!";
             return View();
         }
         
@@ -30,7 +35,8 @@ public class ProdutosController : Controller
     [Route("/produtos/{id}/atualizar")]
     public IActionResult Atualizar([FromRoute] int id,[FromForm] Produto produto)
     {
-        produto.Id = id;
+        produto.Id = id;        
+        var dataConvertida = Convert.ToDateTime(produto.Data_vencimento).ToString("yyyy-MM-dd HH:MM:ss");
         produtoServico.Salvar(produto);
         return Redirect("/produtos");
     }

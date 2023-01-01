@@ -4,6 +4,7 @@
 }
 
 <div class="text-center">
+<br>
     <h1 class="display-4">Lista de Produtos</h1>
 <br>
     <a href="/produtos/novo" class="btn btn-primary">Novo</a>
@@ -11,12 +12,10 @@
     <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Id</th>
       <th scope="col">Nome</th>
       <th scope="col">Descrição</th>
       <th scope="col">Quantidade</th>
       <th scope="col">Data de Vaildade</th>
-      <th scope="col">Data de criação</th>
       <th style="width: 30px;" scope="col"></th>
       <th style="width: 30px;" scope="col"></th>
     </tr>
@@ -25,12 +24,19 @@
     @foreach (Produto produto in ViewBag.produtos)
     {
       <tr>
-        <th scope="row">@produto.Id</th>
         <td>@produto.Nome</td>
         <td>@produto.Descricao</td>
         <td>@produto.Quantidade</td>
-        <td>@produto.data_vencimento</td>
-        <td>@produto.created_at</td>
+         @if (@produto.Data_vencimento < DateTime.Now)
+        {
+          <td style="color: red;">@produto.Data_vencimento</td>
+        } else if (@produto.Data_vencimento > DateTime.Now && @produto.Data_vencimento < DateTime.Now.AddDays(3))
+        {
+          <td style="color: darkorange;">@produto.Data_vencimento</td>
+        } else 
+        {
+          <td style="color: blue;">@produto.Data_vencimento</td>
+        }
         <td><a href="/produtos/@produto.Id/editar" class="btn btn-warning">Editar</a></td>
         <td><a onclick="excluir(@produto.Id)" href="#" class="btn btn-danger">Apagar</a></td>
       </tr>

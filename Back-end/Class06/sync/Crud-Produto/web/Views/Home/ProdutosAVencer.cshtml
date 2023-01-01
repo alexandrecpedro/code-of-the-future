@@ -1,9 +1,9 @@
 ﻿@using negocio.models
 @{
-    ViewData["Title"] = "Produtos Vencidos";
+    ViewData["Title"] = "Produtos - a - Vencer";
 }
 <div class="text-center">
-    <h1 class="display-4">Produtos Vencidos</h1>
+    <h1 class="display-4">Produtos à vencer em 3 dias</h1>
     <br>
     <a href="/produtos" class="btn btn-default">Voltar</a>
     <br>
@@ -17,18 +17,12 @@
     </tr>
   </thead>
   <tbody>
-    @foreach (Produto produto in ViewBag.listaDeProdutosVencidos)
+    @foreach (Produto produto in ViewBag.listaDeProdutosAVencer)
     {
       <tr>
         <td>@produto.Nome</td>
         <td>@produto.Quantidade</td>
-        @if (@produto.Data_vencimento < DateTime.Now)
-        {
-          <td style="color: red;">@produto.Data_vencimento</td>
-        } else 
-        {
-          <td style="color: green;">@produto.Data_vencimento</td>
-        }
+        <td style="color: darkorange;">@produto.Data_vencimento</td>
       </tr>
     }
   </tbody>

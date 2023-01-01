@@ -1,14 +1,14 @@
 @using negocio.models
 @{
     Produto produto = @ViewBag.produto;
-    ViewData["Title"] = "Editar Produto - produto.Nome";
+    ViewData["Title"] = "Editar Produto";
 }
 
 <div class="text-center">
   <h1 class="display-4">Editar Produto - @produto.Nome</h1>
 </div>
-<hr>
 
+<hr>
 
 <div class="text-center">
   <form action="/produtos/@produto.Id/atualizar" method="post">
@@ -28,9 +28,8 @@
     </div>
     <br>
     <div class="form-group">
-      <label for="data">Data de Vencimento</label>
-      <input type="datetime-local" id="data"
-       name="data" value='@produto.data_vencimento.ToString("yyyy-MM-ddThh:mm")'>
+      <label for="Data_vencimento">Data de Vencimento</label>
+      <input type="datetime-local" id="Data_vencimento" name="Data_vencimento" value='@produto.Data_vencimento.ToString("yyyy-MM-dd HH:MM:ss")'>
     </div>
     <br>
     <button type="submit" class="btn btn-primary">Enviar</button>

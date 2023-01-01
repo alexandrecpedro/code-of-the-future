@@ -3,20 +3,21 @@
 }
 
 <div class="text-center">
+    <br>
     <h1 class="display-4">Cadastro de Produtos</h1>
-    <p>Clique <a href="/produtos">Aqui</a> para entrar.</p>
+    <br>
 </div>
 
 <hr>
 
 <div class=" d-flex flex-column text-center">
 
-    <a class="btn btn-primary">Quantidade de Itens em estoque: @ViewBag.quantidadeDeItensNoEstoque</a>
-<br>
-    <a class="btn btn-primary" href="/produtos/produtos-vencidos">Quantidade de Produtos Vencidos: @ViewBag.produtosVencidos</a>
-<br>
-    <a class="btn btn-primary">Quantidade de Produtos para vencer daqui a 3 dias: @ViewBag.produtosAVencerEm3Dias</a>
+        <a class="btn btn-primary" href="/produtos/produtos-em-estoque/">Quantidade de Itens em estoque: <span style="font-weight:500; color: black; padding-left: 16px;">@ViewBag.quantidadeDeItensNoEstoque</span></a>
+    <br>
+        <a class="btn btn-primary" href="/produtos/produtos-vencidos/">Quantidade de Produtos Vencidos: <span style="font-weight:500; color: black; padding-left: 16px;">@ViewBag.produtosVencidos</span></a>
+    <br>
+        <a class="btn btn-primary" href="/produtos/produtos-a-vencer/">Quantidade de Produtos para vencer daqui a 3 dias: <span style="font-weight:500; color: black; padding-left: 16px;">@ViewBag.produtosAVencerEm3Dias</span></a>
    <br>
-    <a class="btn btn-primary" href="/produtos/">Quantidade de Produtos totais: @ViewBag.quantidadeDeProdutos</a>
+        <a class="btn btn-primary" href="/produtos/">Quantidade de Produtos totais: <span style="font-weight:500; color: black; padding-left: 16px;">@ViewBag.quantidadeDeProdutos</span></a>
 
 </div>
