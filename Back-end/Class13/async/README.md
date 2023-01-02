@@ -73,6 +73,13 @@
         -   RestSharp (ServiceA - client)
             -   https://www.nuget.org/packages/RestSharp/109.0.0-preview.1
     -   Using telemetry in ASP.NET Core II
+        -   OpenTelemetry (ServiceA, ServiceB)
+            -   https://www.nuget.org/packages/OpenTelemetry/1.4.0-rc.1
+            -   https://www.nuget.org/packages/OpenTelemetry.Api/1.4.0-rc.1
+            -   https://www.nuget.org/packages/OpenTelemetry.Extensions.Hosting/1.4.0-rc.1
+            -   https://www.nuget.org/packages/OpenTelemetry.Instrumentation.Http/1.0.0-rc9.10
+            -   https://www.nuget.org/packages/OpenTelemetry.Instrumentation.AspNetCore/1.0.0-rc9.10
+            -   https://www.nuget.org/packages/OpenTelemetry.Exporter.Console/1.4.0-rc.1
     -   Telemetry: Introduction to Jaeger
         -   Documentation
             -   https://www.jaegertracing.io/

@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+/* var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -23,3 +23,21 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+*/
+
+using Microsoft.AspNetCore;
+
+namespace ServiceB;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        BuildWebHost(args).Run();
+    }
+
+    public static IWebHost BuildWebHost(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .UseStartup<Startup>()
+            .Build();
+}
