@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Basket";
+}
+@model CustomerBasket;
+
+<form method="post" asp-action="basket"></form>
+
+<h3>My Basket</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a class="btn btn-success" asp-controller="catalog">
+                Add More Products
+            </a>
+            <a class="btn btn-success" asp-controller="registration">
+                Fill in Registration
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">&nbsp;</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <div class="row">
+            <div class="col-md-6">
+                Item
+            </div>
+            <div class="col-md-2 text-center">
+                Unit Price
+            </div>
+            <div class="col-md-2 text-center">
+                Quantity
+            </div>
+            <div class="col-md-2">
+                <span class="pull-right">
+                    Subtotal
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+
+        @foreach (var item in Model.Items)
+        {
+
+            <div class="row row-center product-line" item-id="@item.Id">
+                <div class="col-md-3">
+                    <img class="img-product-basket" src="@(item.ImageURL)" />
+                </div>
+                <input type="hidden" name="productId" value="@(item.ProductId)" />
+                <div class="col-md-3">@(item.ProductName)</div>
+                <div class="col-md-2 text-center">R$ @(item.UnitPrice.ToString("0.00"))</div>
+                <div class="col-md-2 text-center">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default"
+                                    onclick="basket.clickDecrement(this)">
+                                <span class="glyphicon-minus"></span>
+                            </button>
+                        </span>
+                        <input type="text" value="@(item.Quantity)"
+                               class="form-control text-center quantity"
+                               onblur="basket.updateQuantity(this)" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default"
+                                    onclick="basket.clickIncrement(this)">
+                                <span class="glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="pull-right">
+                        R$ <span class="pull-right" subtotal>
+                            @((item.Quantity * item.UnitPrice).ToString("0.00"))
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <br />
+        }
+
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-md-10">
+                <span numero-items>
+                    Total: @(Model.Items.Count())
+                    items
+                </span>
+            </div>
+            <div class="col-md-2">
+                Total: R$ <span class="pull-right" total>
+                    @((Model.Total).ToString("0.00"))
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a class="btn btn-success" asp-controller="catalog">
+                Add More Products
+            </a>
+            <a class="btn btn-success" asp-controller="registration">
+                Fill in Registration
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script src="~/js/basket.js"></script>
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Identity.API</name>
+    </assembly>
+    <members>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.Login(System.String)">
+            <summary>
+            Show login page
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.Login(IdentityServer4.Quickstart.UI.LoginInputModel,System.String)">
+            <summary>
+            Handle postback from username/password login
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.ExternalLogin(System.String,System.String)">
+            <summary>
+            initiate roundtrip to external authentication provider
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.ExternalLoginCallback">
+            <summary>
+            Post processing of external authentication
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.Logout(System.String)">
+            <summary>
+            Show logout page
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.Logout(IdentityServer4.Quickstart.UI.LogoutInputModel)">
+            <summary>
+            Handle logout page postback
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.Register(System.String)">
+            <summary>
+            Show register page
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.AccountController.Register(IdentityServer4.Quickstart.UI.RegisterInputModel,System.String)">
+            <summary>
+            Handle postback from username/password register
+            </summary>
+        </member>
+        <member name="T:IdentityServer4.Quickstart.UI.ConsentController">
+            <summary>
+            This controller processes the consent UI
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.ConsentController.Index(System.String)">
+            <summary>
+            Shows the consent screen
+            </summary>
+            <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.ConsentController.Index(IdentityServer4.Quickstart.UI.ConsentInputModel)">
+            <summary>
+            Handles the consent screen postback
+            </summary>
+        </member>
+        <member name="T:IdentityServer4.Quickstart.UI.GrantsController">
+            <summary>
+            This sample controller allows a user to revoke grants given to clients
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.GrantsController.Index">
+            <summary>
+            Show list of grants
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.GrantsController.Revoke(System.String)">
+            <summary>
+            Handle postback to revoke a client
+            </summary>
+        </member>
+        <member name="M:IdentityServer4.Quickstart.UI.HomeController.Error(System.String)">
+            <summary>
+            Shows the error page
+            </summary>
+        </member>
+    </members>
+</doc>

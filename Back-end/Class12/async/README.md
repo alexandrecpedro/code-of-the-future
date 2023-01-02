@@ -6,6 +6,8 @@
 </div>
 <br>
         -   Microservice architecture
+            -   Reference
+                -   https://www.alura.com.br/artigos/microservicos-com-dotnetcore-comunicacao-entre-servicos
 <table style="display: flex; justify-content: center; align-items: center; width: 50%;">
     <thead>
         <tr>

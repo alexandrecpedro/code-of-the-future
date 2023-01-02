@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Check-out";
+}
+
+@model OrderConfirmed;
+
+<h3>Order Has Been Placed!</h3>
+
+<div class="panel-info">
+    <p>Your order has been placed.</p>
+    <br />
+    <p>Soon you will receive an e-mail at <b>@Model.Email</b> including all order details.</p>
+    <br />
+    <p><a href="/" class="btn btn-success">Back to product catalog</a></p>
+</div>
