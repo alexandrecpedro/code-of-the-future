@@ -4,10 +4,12 @@
 <div align = 'center' justify-content = 'space-around'>
   <img width="1604" alt="Microsservices Project" src="./img/Microsservices_Project.png">
 </div>
-<br>
+
+```
         -   Microservice architecture
             -   Reference
                 -   https://www.alura.com.br/artigos/microservicos-com-dotnetcore-comunicacao-entre-servicos
+```
 <table style="display: flex; justify-content: center; align-items: center; width: 50%;">
     <thead>
         <tr>
@@ -31,6 +33,7 @@
     </tbody>
 </table>
 
+```
     -   Message Broker with Rebus and RabbitMQ
     -   Azure Service Bus: Sending Messages to the Queue
         -   Azure Service Bus is a RabbitMQ component
@@ -44,6 +47,7 @@
             -   dotnet add package Azure.Messaging.ServiceBus
             -   dotnet add package Azure.Identity
     -   Virtualization: ASP.NET Core Microservices Project
+```
 <div align = 'center' justify-content = 'space-around'>
   <img width="1604" alt="Virtualization - part 1" src="./img/Virtualization1.png">
   <img width="1604" alt="Virtualization - part 2" src="./img/Virtualization2.png">
@@ -51,7 +55,8 @@
   <img width="1604" alt="Virtualization - Virtual Machines concept" src="./img/Virtualization4.png">
   <img width="1604" alt="Virtualization - Virtual Machines vs Docker" src="./img/Virtualization5.png">
 </div>
-<br>
+
+```
     -   Traceability ID with Jaeger UI
         -   Documentation
             -   https://www.jaegertracing.io/
