@@ -1,0 +1,152 @@
+[
+  {
+    "number": 1,
+    "name": "Oranges",
+    "category": "Fruits"
+  },
+  {
+    "number": 2,
+    "name": "Lemons",
+    "category": "Fruits"
+  },
+  {
+    "number": 3,
+    "name": "Bananas",
+    "category": "Fruits"
+  },
+  {
+    "number": 4,
+    "name": "Strawberries",
+    "category": "Fruits"
+  },
+  {
+    "number": 5,
+    "name": "Grapes",
+    "category": "Fruits"
+  },
+  {
+    "number": 6,
+    "name": "Carrots",
+    "category": "Legumes"
+  },
+  {
+    "number": 7,
+    "name": "Yellow peppers",
+    "category": "Legumes"
+  },
+  {
+    "number": 8,
+    "name": "Potatoes",
+    "category": "Legumes"
+  },
+  {
+    "number": 9,
+    "name": "Tomatoes",
+    "category": "Legumes"
+  },
+  {
+    "number": 10,
+    "name": "Eggplants",
+    "category": "Legumes"
+  },
+  {
+    "number": 11,
+    "name": "Lettuce",
+    "category": "Vegetables"
+  },
+  {
+    "number": 12,
+    "name": "Broccoli",
+    "category": "Vegetables"
+  },
+  {
+    "number": 13,
+    "name": "Cauliflower",
+    "category": "Vegetables"
+  },
+  {
+    "number": 14,
+    "name": "Onion",
+    "category": "Vegetables"
+  },
+  {
+    "number": 15,
+    "name": "Aspargus",
+    "category": "Vegetables"
+  },
+  {
+    "number": 16,
+    "name": "Rice",
+    "category": "Grains / Beans"
+  },
+  {
+    "number": 17,
+    "name": "Beans",
+    "category": "Grains / Beans"
+  },
+  {
+    "number": 18,
+    "name": "Oat",
+    "category": "Grains / Beans"
+  },
+  {
+    "number": 19,
+    "name": "Corn",
+    "category": "Grains / Beans"
+  },
+  {
+    "number": 20,
+    "name": "Peas",
+    "category": "Grains / Beans"
+  },
+  {
+    "number": 21,
+    "name": "Milk",
+    "category": "Dairy products"
+  },
+  {
+    "number": 22,
+    "name": "Cheese",
+    "category": "Dairy products"
+  },
+  {
+    "number": 23,
+    "name": "Yogurt",
+    "category": "Dairy products"
+  },
+  {
+    "number": 24,
+    "name": "Butter",
+    "category": "Dairy products"
+  },
+  {
+    "number": 25,
+    "name": "Cream cheese",
+    "category": "Dairy products"
+  },
+  {
+    "number": 26,
+    "name": "Sliced ham",
+    "category": "Meat & eggs"
+  },
+  {
+    "number": 27,
+    "name": "Beef",
+    "category": "Meat & eggs"
+  },
+  {
+    "number": 28,
+    "name": "Shrimp",
+    "category": "Meat & eggs"
+  },
+  {
+    "number": 29,
+    "name": "Barbecue",
+    "category": "Meat & eggs"
+  },
+  {
+    "number": 30,
+    "name": "Eggs",
+    "category": "Meat & eggs"
+  }
+]

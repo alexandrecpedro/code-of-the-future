@@ -1,0 +1,115 @@
+﻿@model List<OrderDTO>;
+
+<h3>Order History</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a class="btn btn-success" asp-action="index" asp-controller="catalog">
+                Back to Catalog
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="panel-body">
+    @foreach (var order in Model)
+    {
+        <h4>
+            <span>Order: </span>@order.Id
+        </h4>
+        <h4>
+            <span>Date: </span>@order.DateCreated.ToShortDateString()
+        </h4>
+        <h4>
+            <span>Total: </span>
+            <span>
+                @order.Total.ToString("C")
+            </span>
+        </h4>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        Item
+                    </div>
+                    <div class="col-md-2 text-center">
+                        Unit Price
+                    </div>
+                    <div class="col-md-2 text-center">
+                        Quantity
+                    </div>
+                    <div class="col-md-2">
+                        <span class="pull-right">
+                            Subtotal
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                @foreach (var item in order.Items)
+                {
+
+                    <div class="row row-center linha-product" item-id="@item.ProductCode">
+                        <div class="col-md-3">
+                            @*<img class="img-product-basket" src="@(item.ImageURL)" />*@
+                        </div>
+                        <input type="hidden" name="productId" value="@(item.ProductCode)" />
+                        <div class="col-md-3">@(item.ProductName)</div>
+                        <div class="col-md-2 text-center">R$ @(item.ProductUnitPrice.ToString("0.00"))</div>
+                        <div class="col-md-2 text-center">
+                            <div class="input-group">
+                                <input type="text" value="@(item.ProductQuantity)"
+                                        class="form-control text-center quantidade" disabled />
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="pull-right">
+                                R$ <span class="pull-right" subtotal>
+                                    @(item.Subtotal.ToString("0.00"))
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-10">
+                        <span numero-items>
+                            Total: @(order.Items.Count())
+                            items
+                        </span>
+                    </div>
+                    <div class="col-md-2">
+                        Total: R$ <span class="pull-right" total>
+                            @((order.Total).ToString("0.00"))
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div>
+    <span>Total Geral: </span>
+    <span>
+        @Model.Sum(p => p.Total).ToString("C")
+    </span>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a class="btn btn-success" asp-action="index" asp-controller="catalog">
+                Back to Catalog
+            </a>
+        </div>
+    </div>
+</div>
+

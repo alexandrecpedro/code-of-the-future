@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Catalog";
+}
+
+@model SearchProductsViewModel;
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Search products</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <form asp-action="SearchProducts">
+                        <input type="text" asp-for="@Model.Search" name="search"
+                               class="form-control input-lg"
+                               placeholder="category or product" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    var products = Model.Products;
+
+    var categories =
+        products
+            .Select(m => m.Category)
+            .Distinct();
+}
+
+@foreach (var category in categories)
+{
+    var productsInCategory =
+        products
+        .Where(p => p.Category.Id == category.Id);
+
+    <h3>@category.Name</h3>
+
+    <div id="my-carousel-@category.Id" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+            @{
+                const int PAGE_SIZE = 4;
+
+                int pages = (int)Math.Ceiling((double)productsInCategory.Count() / PAGE_SIZE);
+            }
+
+            @for (int page = 0; page < pages; page++)
+            {
+
+                <div class="item @(page == 0 ? "active" : "")">
+                    <div class="row">
+
+                        @{
+                            var productsInPage = productsInCategory.Skip(page * PAGE_SIZE).Take(PAGE_SIZE);
+                        }
+
+                        @foreach (var product in productsInPage)
+                        {
+
+                            <div class="col-md-3 col-sm-3 col-lg-3">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <img class="img-product-catalog" src="/images/catalog/large_@(product.Code).jpg" />
+                                    </div>
+                                    <div class="panel-footer product-footer">
+                                        <div class="product-nome">@product.Name</div>
+                                        <div><h4><strong>$ @product.Price.ToString("0.00", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</strong></h4></div>
+                                        <div class="text-center">
+                                            @if (ViewBag.UserCounterData != null)
+                                            {
+                                                <button class="btn btn-success btn-addtobasket" code="@product.Code"
+                                                        onclick="catalog.clickAddToBasket(this)">
+                                                    Add to basket
+                                                </button>
+                                            }
+                                            else
+                                            {
+                                                <a asp-controller="basket" asp-action="index" asp-route-code="@product.Code"
+                                                   class="btn btn-success btn-addtobasket">
+                                                    Add to basket
+                                                </a>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#my-carousel-@category.Id" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#my-carousel-@category.Id" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div id="snackbar">Product has been added successfully to the basket...</div>
+}
+
+@section Scripts
+    {
+    <script src="~/js/catalog.js"></script>
+}

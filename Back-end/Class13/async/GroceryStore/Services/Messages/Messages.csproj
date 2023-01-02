@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="IntegrationEvents\EventHandling\**" />
+    <Compile Remove="IntegrationEvents\Mappers\**" />
+    <Compile Remove="Ports\**" />
+    <EmbeddedResource Remove="IntegrationEvents\EventHandling\**" />
+    <EmbeddedResource Remove="IntegrationEvents\Mappers\**" />
+    <EmbeddedResource Remove="Ports\**" />
+    <None Remove="IntegrationEvents\EventHandling\**" />
+    <None Remove="IntegrationEvents\Mappers\**" />
+    <None Remove="Ports\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ArrayCache.cs" />
+    <Compile Remove="TinyIoC.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Rebus" Version="4.2.2" />
+  </ItemGroup>
+
+</Project>
