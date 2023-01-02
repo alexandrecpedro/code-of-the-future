@@ -1,4 +1,3 @@
-using System.Data;
 using Microsoft.EntityFrameworkCore;
 using UnityOfWork.DAL.Interfaces;
 using UnityOfWork.Entities;
@@ -31,7 +30,8 @@ public class AlunoRepository : IRepository<Aluno>
 
     public Aluno Insert(Aluno aluno)
     {
-        return context.Alunos.Add(aluno);
+        context.Alunos.Add(aluno);
+        return aluno;
     }
 
     public void Update(Aluno aluno)

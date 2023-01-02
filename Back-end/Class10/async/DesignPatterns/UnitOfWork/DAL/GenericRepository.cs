@@ -7,7 +7,7 @@ namespace UnityOfWork.DAL;
 public class GenericRepository<TEntity> where TEntity : class
 {
     internal EscolaContext context;
-    internal System.Data.Entity.DbSet<TEntity> dbSet;
+    internal DbSet<TEntity> dbSet;
 
     public GenericRepository(EscolaContext context)
     {
@@ -32,7 +32,8 @@ public class GenericRepository<TEntity> where TEntity : class
 
     public TEntity Insert(TEntity entity)
     {
-        return dbSet.Add(entity);
+        dbSet.Add(entity);
+        return entity;
     }
 
     public void Update(TEntity entity)
