@@ -1,0 +1,49 @@
+﻿@using Entity.Models
+@{
+  ViewData["Title"] = "Fornecedores";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Lista de fornecedores</h1>
+</div>
+
+<hr>
+<a href="/fornecedores/novo" class="btn btn-primary">Novo</a>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th style="width: 30px;" scope="col"></th>
+      <th style="width: 30px;" scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Fornecedor fornecedor in ViewBag.fornecedores)
+    {
+      <tr>
+        <th scope="row">@fornecedor.Id</th>
+        <td>@fornecedor.Nome</td>
+        <td>@fornecedor.Email</td>
+        <td>
+          <a href="/fornecedores/@fornecedor.Id/editar" class="btn btn-warning">Editar</a>
+        </td>
+        <td>
+          <a href="#" onclick="excluir(@fornecedor.Id)" class="btn btn-danger">Apagar</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<script>
+  const excluir = (id) => {
+    if(confirm('Confirma?'))
+    {
+      window.location.href = `/fornecedores/${id}/deletar`;
+    }
+  }
+</script>

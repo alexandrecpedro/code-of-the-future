@@ -1,0 +1,25 @@
+﻿@{
+  Fornecedor fornecedor = @ViewBag.fornecedor;
+  ViewData["Title"] = "Editar fornecedor - fornecedor.Nome";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar fornecedor - @fornecedor.Nome</h1>
+</div>
+
+<hr>
+
+<form action="/fornecedores/@fornecedor.Id/atualizar" method="post">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="nome" class="form-control" id="nome" value="@fornecedor.Nome" name="nome" placeholder="Digite o nome">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" value="@fornecedor.Email" name="email" placeholder="Digite o email">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+  <a href="/fornecedores" class="btn btn-default">Voltar</a>
+</form>
