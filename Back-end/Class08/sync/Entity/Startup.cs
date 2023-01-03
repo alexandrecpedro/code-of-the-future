@@ -16,9 +16,11 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // var connection = Configuration["appsettings.property"];
-        var connection = Environment.GetEnvironmentVariable("DATABASE_CODE_OF_THE_FUTURE");
+        var connection = Environment.GetEnvironmentVariable("DATABASE_CODE_OF_THE_FUTURE_MIGRATIONS");
         if (connection is null) connection = Configuration.GetConnectionString("connection");
 
+        // services.Single<Single>();
+        // services.AddScoped<ClienteServico>();
         services.AddDbContext<DbContexto>(options =>
         {
             options.UseMySql(connection, ServerVersion.AutoDetect(connection));

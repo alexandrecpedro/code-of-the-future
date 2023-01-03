@@ -1,49 +1,47 @@
-﻿@using Entity.Models
+@model IEnumerable<Entity.Models.Cliente>
+
 @{
-  ViewData["Title"] = "Clientes";
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-  <h1 class="display-4">Lista de clientes</h1>
-</div>
+<h1>Index</h1>
 
-<hr>
-<a href="/clientes/novo" class="btn btn-primary">Novo</a>
-<hr>
-
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Email</th>
-      <th style="width: 30px;" scope="col"></th>
-      <th style="width: 30px;" scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach (Cliente cliente in ViewBag.clientes)
-    {
-      <tr>
-        <th scope="row">@cliente.Id</th>
-        <td>@cliente.Nome</td>
-        <td>@cliente.Email</td>
-        <td>
-          <a href="/clientes/@cliente.Id/editar" class="btn btn-warning">Editar</a>
-        </td>
-        <td>
-          <a href="#" onclick="excluir(@cliente.Id)" class="btn btn-danger">Apagar</a>
-        </td>
-      </tr>
-    }
-  </tbody>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
 </table>
-
-<script>
-  const excluir = (id) => {
-    if(confirm('Confirma?'))
-    {
-      window.location.href = `/clientes/${id}/deletar`;
-    }
-  }
-</script>
