@@ -36,7 +36,8 @@ public class Startup
             configure.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("ServiceB"))
             .AddAspNetCoreInstrumentation() // entry requests
             .AddHttpClientInstrumentation() // exit requests
-            .AddConsoleExporter() // print on console
+            // .AddConsoleExporter() // print on console
+            .AddJaegerExporter() // export to Jaeger
         );
     }
 
