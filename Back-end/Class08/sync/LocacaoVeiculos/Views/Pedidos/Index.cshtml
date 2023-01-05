@@ -1,0 +1,53 @@
+@model IEnumerable<LocacaoVeiculos.Models.Pedido>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <button class="btn btn-primary"><a asp-action="Create" class="text-white text-decoration-none">Create New</a></button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataLocacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntrega)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Veiculo.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataLocacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrega)
+            </td>
+            <td>
+                    <button class="btn btn-warning"><a asp-action="Edit" asp-route-id="@item.Id" class="text-white text-decoration-none">Edit</a></button>
+                    <button class="btn btn-info"><a asp-action="Details" asp-route-id="@item.Id" class="text-white text-decoration-none">Details</a></button>
+                    <button class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id" class="text-white text-decoration-none">Delete</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
