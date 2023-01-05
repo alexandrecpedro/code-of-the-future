@@ -1,4 +1,4 @@
-@model IEnumerable<LocacaoVeiculos.Models.Modelo>
+@model IEnumerable<LocacaoVeiculos.Models.Configuracao>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                @Html.DisplayNameFor(model => model.DiasDeLocacao)
             </th>
             <th></th>
         </tr>
@@ -22,13 +22,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nome)
+                @Html.DisplayFor(modelItem => item.DiasDeLocacao)
             </td>
             <td>
                     <button class="btn btn-warning"><a asp-action="Edit" asp-route-id="@item.Id" class="text-white text-decoration-none">Edit</a></button>
-                        <button class="btn btn-info">
-                            <a asp-action="Details" asp-route-id="@item.Id" class="text-white text-decoration-none">Details</a></button>
-                            <button class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id" class="text-white text-decoration-none">Delete</a></button>
+                    <button class="btn btn-info">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="text-white text-decoration-none">Details</a></button>
+                    <button class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id" class="text-white text-decoration-none">Delete</a></button>
             </td>
         </tr>
 }

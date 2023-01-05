@@ -8,11 +8,12 @@ public class Modelo
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("modelo_id")]
+    [Column("id")]
     public int Id { get;set; }
 
     [Required(ErrorMessage = "Nome é obrigatório")]
-    //[MaxLength(100)]
     [Column("nome", TypeName = "varchar(100)")]
     public string Nome { get;set; } = default!;
+
+    public ICollection<Veiculo>? Veiculos { get; set; }
 }

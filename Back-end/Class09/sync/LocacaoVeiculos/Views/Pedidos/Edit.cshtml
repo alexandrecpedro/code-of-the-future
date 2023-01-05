@@ -15,13 +15,13 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="ClienteId" class="control-label"></label>
-                <input asp-for="ClienteId" class="form-control" />
+                <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
                 <span asp-validation-for="ClienteId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CarroId" class="control-label"></label>
-                <input asp-for="CarroId" class="form-control" />
-                <span asp-validation-for="CarroId" class="text-danger"></span>
+                <label asp-for="VeiculoId" class="control-label"></label>
+                <select asp-for="VeiculoId" class="form-control" asp-items="ViewBag.VeiculoId"></select>
+                <span asp-validation-for="VeiculoId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataLocacao" class="control-label"></label>
@@ -41,6 +41,6 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <button class="btn btn-secondary"><a asp-action="Index" class="text-white text-decoration-none">Back to List</a></button>
 </div>
 

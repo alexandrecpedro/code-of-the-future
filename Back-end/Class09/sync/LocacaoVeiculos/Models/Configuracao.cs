@@ -8,7 +8,7 @@ public class Configuracao
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("configuracao_id")]
+    [Column("id")]
     public int Id { get; set; }
     
     [Required(ErrorMessage = "Dias de locação é obrigatório")]

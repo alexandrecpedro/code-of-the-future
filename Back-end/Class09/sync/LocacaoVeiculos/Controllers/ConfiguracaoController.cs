@@ -10,16 +10,16 @@ using LocacaoVeiculos.Models;
 
 namespace LocacaoVeiculos.Controllers
 {
-    public class ConfiguracoesController : Controller
+    public class ConfiguracaoController : Controller
     {
         private readonly DbContexto _context;
 
-        public ConfiguracoesController(DbContexto context)
+        public ConfiguracaoController(DbContexto context)
         {
             _context = context;
         }
 
-        // GET: Configuracoes
+        // GET: Configuracao
         public async Task<IActionResult> Index()
         {
               return _context.Configuracoes != null ? 
@@ -27,7 +27,7 @@ namespace LocacaoVeiculos.Controllers
                           Problem("Entity set 'DbContexto.Configuracoes'  is null.");
         }
 
-        // GET: Configuracoes/Details/5
+        // GET: Configuracao/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Configuracoes == null)
@@ -45,13 +45,13 @@ namespace LocacaoVeiculos.Controllers
             return View(configuracao);
         }
 
-        // GET: Configuracoes/Create
+        // GET: Configuracao/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Configuracoes/Create
+        // POST: Configuracao/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +67,7 @@ namespace LocacaoVeiculos.Controllers
             return View(configuracao);
         }
 
-        // GET: Configuracoes/Edit/5
+        // GET: Configuracao/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Configuracoes == null)
@@ -83,7 +83,7 @@ namespace LocacaoVeiculos.Controllers
             return View(configuracao);
         }
 
-        // POST: Configuracoes/Edit/5
+        // POST: Configuracao/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,7 +118,7 @@ namespace LocacaoVeiculos.Controllers
             return View(configuracao);
         }
 
-        // GET: Configuracoes/Delete/5
+        // GET: Configuracao/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Configuracoes == null)
@@ -136,7 +136,7 @@ namespace LocacaoVeiculos.Controllers
             return View(configuracao);
         }
 
-        // POST: Configuracoes/Delete/5
+        // POST: Configuracao/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

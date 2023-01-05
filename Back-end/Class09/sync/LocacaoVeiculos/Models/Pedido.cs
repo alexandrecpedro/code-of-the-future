@@ -8,16 +8,21 @@ public class Pedido
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("pedido_id")]
+    [Column("id")]
     public int Id { get; set; }
 
-    [Required(ErrorMessage = "O IdCliente é obrigatório")]
+    [Required(ErrorMessage = "Id do cliente é obrigatório")]
     [Column("cliente_id")]
     public int ClienteId { get; set; }
+    [ForeignKey("ClienteId")]
+    public Cliente? Cliente { get; set; }
 
-    [Required(ErrorMessage = "O IdCarro é obrigatório")]
-    [Column("carro_id")]
-    public int CarroId { get; set; }
+    [Required(ErrorMessage = "Id do veículo é obrigatório")]
+    [Column("veiculo_id")]
+    public int VeiculoId { get; set; }
+    [ForeignKey("VeiculoId")]
+    public Veiculo? Veiculo { get; set; }
+
 
     [Required(ErrorMessage = "A data de locação é obrigatória")]
     [Column("data_locacao", TypeName = "DATETIME")]

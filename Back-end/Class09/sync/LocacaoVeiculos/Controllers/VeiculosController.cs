@@ -22,9 +22,8 @@ namespace LocacaoVeiculos.Controllers
         // GET: Veiculos
         public async Task<IActionResult> Index()
         {
-              return _context.Veiculos != null ? 
-                          View(await _context.Veiculos.ToListAsync()) :
-                          Problem("Entity set 'DbContexto.Veiculos'  is null.");
+            var dbContexto = _context.Veiculos.Include(c => c.Marca).Include(c => c.Modelo);
+            return View(await dbContexto.ToListAsync());
         }
 
         // GET: Veiculos/Details/5
@@ -36,6 +35,8 @@ namespace LocacaoVeiculos.Controllers
             }
 
             var veiculo = await _context.Veiculos
+                .Include(v => v.Marca)
+                .Include(v => v.Modelo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (veiculo == null)
             {
@@ -48,6 +49,8 @@ namespace LocacaoVeiculos.Controllers
         // GET: Veiculos/Create
         public IActionResult Create()
         {
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nome");
+            ViewData["ModeloId"] = new SelectList(_context.Modelos, "Id", "Nome");
             return View();
         }
 
@@ -64,6 +67,8 @@ namespace LocacaoVeiculos.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nome", veiculo.MarcaId);
+            ViewData["ModeloId"] = new SelectList(_context.Modelos, "Id", "Nome", veiculo.ModeloId);
             return View(veiculo);
         }
 
@@ -80,6 +85,8 @@ namespace LocacaoVeiculos.Controllers
             {
                 return NotFound();
             }
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nome", veiculo.MarcaId);
+            ViewData["ModeloId"] = new SelectList(_context.Modelos, "Id", "Nome", veiculo.ModeloId);
             return View(veiculo);
         }
 
@@ -115,6 +122,8 @@ namespace LocacaoVeiculos.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MarcaId"] = new SelectList(_context.Marcas, "Id", "Nome", veiculo.MarcaId);
+            ViewData["ModeloId"] = new SelectList(_context.Modelos, "Id", "Nome", veiculo.ModeloId);
             return View(veiculo);
         }
 
@@ -127,6 +136,8 @@ namespace LocacaoVeiculos.Controllers
             }
 
             var veiculo = await _context.Veiculos
+                .Include(v => v.Marca)
+                .Include(v => v.Modelo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (veiculo == null)
             {

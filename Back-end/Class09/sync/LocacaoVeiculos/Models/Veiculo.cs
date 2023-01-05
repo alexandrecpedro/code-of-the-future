@@ -8,7 +8,7 @@ public class Veiculo
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("veiculo_id")]
+    [Column("id")]
     public int Id { get; set; }
 
     [Required(ErrorMessage = "Nome é obrigatório")]
@@ -17,12 +17,15 @@ public class Veiculo
     public string Nome { get;set; } = default!;
 
     [Required(ErrorMessage = "Id da marca é obrigatório")]
-    //[MaxLength(100)]
-    [Column("marca_id", TypeName = "varchar(50)")]
-    public int MarcaId { get; set; } = default!;
+    [Column("marca_id")]
+    public int MarcaId { get; set; }
+    [ForeignKey("MarcaId")]
+    public Marca? Marca { get; set; }
 
     [Required(ErrorMessage = "Id do modelo é obrigatório")]
-    //[MaxLength(100)]
-    [Column("modelo_id", TypeName = "varchar(100)")]
-    public int ModeloId { get; set; } = default!;
+    public int ModeloId { get; set; }
+    [ForeignKey("ModeloId")]
+    public Modelo? Modelo { get; set; }
+
+    public ICollection<Pedido>? Pedidos { get; set; }
 }

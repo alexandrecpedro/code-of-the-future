@@ -19,6 +19,8 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <button class="btn btn-primary">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="text-white text-decoration-none">Edit</a> |
+    </button>
+    <button class="btn btn-secondary"><a asp-action="Index" class="text-white text-decoration-none">Back to List</a></button>
 </div>

@@ -8,7 +8,7 @@ public class Cliente
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    [Column("cliente_id")]
+    [Column("id")]
     public int Id { get; set; }
 
     [Required(ErrorMessage = "Nome é obrigatório")]
@@ -23,4 +23,6 @@ public class Cliente
 
     [Column("endereco", TypeName = "text")]
     public string? Endereco { get;set; }
+
+    public ICollection<Pedido>? Pedidos { get; set; }
 }

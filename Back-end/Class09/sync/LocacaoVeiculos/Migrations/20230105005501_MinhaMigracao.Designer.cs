@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LocacaoVeiculos.Migrations
 {
     [DbContext(typeof(DbContexto))]
-    [Migration("20230104221830_MinhaMigracao")]
+    [Migration("20230105005501_MinhaMigracao")]
     partial class MinhaMigracao
     {
         /// <inheritdoc />
@@ -27,7 +27,7 @@ namespace LocacaoVeiculos.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("cliente_id");
+                        .HasColumnName("id");
 
                     b.Property<string>("Email")
                         .HasColumnType("varchar(150)")
@@ -56,7 +56,7 @@ namespace LocacaoVeiculos.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("configuracao_id");
+                        .HasColumnName("id");
 
                     b.Property<int>("DiasDeLocacao")
                         .HasColumnType("int")
@@ -72,7 +72,7 @@ namespace LocacaoVeiculos.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("marca_id");
+                        .HasColumnName("id");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -89,7 +89,7 @@ namespace LocacaoVeiculos.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("modelo_id");
+                        .HasColumnName("id");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -106,11 +106,7 @@ namespace LocacaoVeiculos.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("pedido_id");
-
-                    b.Property<int>("CarroId")
-                        .HasColumnType("int")
-                        .HasColumnName("carro_id");
+                        .HasColumnName("id");
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int")
@@ -124,7 +120,15 @@ namespace LocacaoVeiculos.Migrations
                         .HasColumnType("DATETIME")
                         .HasColumnName("data_locacao");
 
+                    b.Property<int>("VeiculoId")
+                        .HasColumnType("int")
+                        .HasColumnName("veiculo_id");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("VeiculoId");
 
                     b.ToTable("Pedidos");
                 });
@@ -134,17 +138,14 @@ namespace LocacaoVeiculos.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("veiculo_id");
+                        .HasColumnName("id");
 
-                    b.Property<string>("MarcaId")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)")
+                    b.Property<int>("MarcaId")
+                        .HasColumnType("int")
                         .HasColumnName("marca_id");
 
-                    b.Property<string>("ModeloId")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("modelo_id");
+                    b.Property<int>("ModeloId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -153,7 +154,69 @@ namespace LocacaoVeiculos.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("MarcaId");
+
+                    b.HasIndex("ModeloId");
+
                     b.ToTable("Veiculos");
+                });
+
+            modelBuilder.Entity("LocacaoVeiculos.Models.Pedido", b =>
+                {
+                    b.HasOne("LocacaoVeiculos.Models.Cliente", "Cliente")
+                        .WithMany("Pedidos")
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LocacaoVeiculos.Models.Veiculo", "Veiculo")
+                        .WithMany("Pedidos")
+                        .HasForeignKey("VeiculoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Veiculo");
+                });
+
+            modelBuilder.Entity("LocacaoVeiculos.Models.Veiculo", b =>
+                {
+                    b.HasOne("LocacaoVeiculos.Models.Marca", "Marca")
+                        .WithMany("Veiculos")
+                        .HasForeignKey("MarcaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LocacaoVeiculos.Models.Modelo", "Modelo")
+                        .WithMany("Veiculos")
+                        .HasForeignKey("ModeloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Marca");
+
+                    b.Navigation("Modelo");
+                });
+
+            modelBuilder.Entity("LocacaoVeiculos.Models.Cliente", b =>
+                {
+                    b.Navigation("Pedidos");
+                });
+
+            modelBuilder.Entity("LocacaoVeiculos.Models.Marca", b =>
+                {
+                    b.Navigation("Veiculos");
+                });
+
+            modelBuilder.Entity("LocacaoVeiculos.Models.Modelo", b =>
+                {
+                    b.Navigation("Veiculos");
+                });
+
+            modelBuilder.Entity("LocacaoVeiculos.Models.Veiculo", b =>
+                {
+                    b.Navigation("Pedidos");
                 });
 #pragma warning restore 612, 618
         }

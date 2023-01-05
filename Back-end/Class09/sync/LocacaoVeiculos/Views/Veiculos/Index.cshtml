@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <button class="btn btn-primary"><a asp-action="Create" class="text-white text-decoration-none">Create New</a></button>
 </p>
 <table class="table">
     <thead>
@@ -16,10 +16,10 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MarcaId)
+                @Html.DisplayNameFor(model => model.Marca)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ModeloId)
+                @Html.DisplayNameFor(model => model.Modelo)
             </th>
             <th></th>
         </tr>
@@ -31,15 +31,16 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MarcaId)
+                @Html.DisplayFor(modelItem => item.Marca.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ModeloId)
+                @Html.DisplayFor(modelItem => item.Modelo.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <button class="btn btn-warning"><a asp-action="Edit" asp-route-id="@item.Id" class="text-white text-decoration-none">Edit</a></button>
+                    <button class="btn btn-info">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="text-white text-decoration-none">Details</a></button>
+                    <button class="btn btn-danger"><a asp-action="Delete" asp-route-id="@item.Id" class="text-white text-decoration-none">Delete</a></button>
             </td>
         </tr>
 }
