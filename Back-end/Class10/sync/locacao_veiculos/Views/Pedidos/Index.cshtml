@@ -1,0 +1,72 @@
+@model IEnumerable<locacao_veiculos.Models.Pedido>;
+@using locacao_veiculos.ModelViews;
+
+@{
+    
+    ViewData["Title"] = "Index";
+    var json = Json.Serialize(Model);
+}
+
+<script>
+    var json = @json
+</script>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Carro
+            </th>
+            <th>
+                Marca
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Data de Locação
+            </th>
+            <th>
+                Data de Entrega
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (PedidoResumido pedido in ViewBag.pedidos) {
+            <tr>
+                <td>
+                    @pedido.NomeCliente
+                </td>
+                <td>
+                    @pedido.NomeCarro
+                </td>
+                <td>
+                    @pedido.MarcaDoCarro
+                </td>
+                <td>
+                    @pedido.ModeloDoCarro
+                </td>
+                <td>
+                    @pedido.DataLocacaoPedido.ToString("dd/MM/yyyy HH:mm")
+                </td>
+                <td>
+                    @pedido.DataEntregaPedido.ToString("dd/MM/yyyy HH:mm")
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@pedido.PedidoId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@pedido.PedidoId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@pedido.PedidoId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
