@@ -235,26 +235,40 @@
     -  Views: Layouts
 
 #### Class 10 | Design Patterns
-    -  Detalhes de TF (Terraform DSL)
-    -  Escrevemos um modelo mais complexo
-    -  O que é um provisionador?
-    -  O que é um módulo?
+    -  Unit of Work: Repository I
+    -  Unit of Work: Repository II
+    -  Unit of Work: Generic Repository
+    -  Unity of Work
+    -  Explaining Strategy pattern
+    -  Creating Strategy pattern structure
+    -  Strategy: Coupling strategies
+    -  Singleton: The Sigleton pattern
+    -  Singleton: Abstract Factory
 
 #### Class 11 | API's
-    -  Detalhes de TF (Terraform DSL)
-    -  Escrevemos um modelo mais complexo
-    -  O que é um provisionador?
-    -  O que é um módulo?
+    -  Building an API
+    -  Entity Framework
+    -  DTO
+    -  Authentication
+    -  Cookies X Session
 
 #### Class 12 | Message Brokers and Traceability ID
-    -  Integração das Classs 10 e 11
+    -  Presenting RabbitMQ
+    -  Message Broker with Rebus and RabbitMQ
+    -  Azure Service Bus: Sending Messages to the Queue
+    -  Azure Service Bus: Receiving Queue Messages
+    -  Virtualization: ASP.NET Core Microservices Project
+    -  Traceability ID with Jaeger UI
 
 #### Class 13 | Idempotence, Circuit Breaker and Telemetry
-    -  O que são e para que servem?
-    -  Que papel eles desempenham no mundo da infraestrutura moderna?
-    -  Quais tecnologias existem?
-    -  Apresentando Jenkins (e diferentes maneiras de executá-lo)
-    -  Scripting como amálgama
+    -  Idempotency in commands
+    -  Circuit Breaker concept
+    -  Setting Polly for HTTP Requests
+    -  Demonstrating Circuit Breaker and retries with Polly
+    -  Presenting Telemetry
+    -  Using telemetry in ASP.NET Core I
+    -  Using telemetry in ASP.NET Core II
+    -  Telemetry: Introduction to Jaeger
 
 #### Class 14 | Testing and Error handling
     -  Qual é o processo de construção e o que incluímos nele?
