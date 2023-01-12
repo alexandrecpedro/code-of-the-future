@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Seja bem vindo alunos</h1>
+    <p>Sistema de locação de veículos.</p>
+</div>
+
+@if(ViewBag.logado)
+{
+    <hr>
+    <a class="nav-link text-dark btn btn-primary" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
+}
+

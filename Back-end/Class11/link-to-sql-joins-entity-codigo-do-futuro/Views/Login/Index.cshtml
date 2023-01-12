@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+
+<form action="/logar" method="post">
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" name="email" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Email address</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" name="password" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">Password</label>
+  </div>
+
+  @if (!string.IsNullOrEmpty(ViewBag.erro))
+  {
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.erro
+    </div>
+  }
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Logar</button>
+
+</form>
