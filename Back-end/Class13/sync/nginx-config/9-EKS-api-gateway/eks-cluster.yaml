@@ -1,0 +1,24 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: desafio-k8s
+  region: us-east-1
+
+vpc:
+  subnets:
+    public:
+      us-east-1a: { id: subnet-ef5b8fa6 }
+      us-east-1b: { id: subnet-1fa24744 }
+      us-east-1c: { id: subnet-df562fba }
+
+nodeGroups:
+  - name: node-group-desafio-k8s
+    instanceType: t2.medium
+    volumeSize: 30
+    desiredCapacity: 3 # quantidadede maquinas
+    ssh:
+      publicKeyPath: ~/Desktop/desafio_devops/chaves_desafio_kubernetes/id_rsa.pub # chave ssh utilizará:  ~/.ssh/id_rsa.pub
+
+
+# eksctl create cluster -f eks-cluster.yaml

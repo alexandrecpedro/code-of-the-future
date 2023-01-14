@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: csharp
+  labels:
+    app: csharp
+spec:
+  containers:
+    - name: container-csharp
+      image: didox/validador-cpf-csharp-turma-devops
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-pod-csharp
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      nodePort: 30001 # 30000 ~ 32767
+  selector:
+    app: csharp

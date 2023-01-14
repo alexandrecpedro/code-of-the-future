@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: csharp
+  labels:
+    app: csharp
+spec:
+  containers:
+    - name: container-csharp
+      image: didox/validador-cpf-csharp-turma-devops
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: clusterip-csharp
+spec:
+  type: ClusterIP
+  selector:
+    app: csharp
+  ports:
+    - port: 5001
+      targetPort: 80
