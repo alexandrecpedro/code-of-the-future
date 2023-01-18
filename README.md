@@ -251,6 +251,7 @@
     -  DTO
     -  Authentication
     -  Cookies X Session
+    -  JWT: Json Web Token
 
 #### Class 12 | Message Brokers and Traceability ID
     -  Presenting RabbitMQ
@@ -271,12 +272,8 @@
     -  Telemetry: Introduction to Jaeger
 
 #### Class 14 | Testing and Error handling
-    -  Qual é o processo de construção e o que incluímos nele?
-        -  Maven: compilação e gerenciamento de configurações
-        -  Testing: Unit testing
-        -  Docker: construção de imagens
-    -  O que é continuous integration (CI) e por que é importante conhecer o conceito?
-        -  Triggers
-    -  O que é um artefato?
-        -  Onde armazenamos o produto do processo Build?
-        -  Princípio da imutabilidade
+    -  Tests: concepts and types
+    -  Testing: Unit testing
+    -  Testing: Integrated tests
+    -  CI (continuous integration) & CD (Continuous delivery)
+    -  Deploy application
