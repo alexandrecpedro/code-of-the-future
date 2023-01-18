@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "locacao_veiculos", "locacao_veiculos\locacao_veiculos.csproj", "{117A84AF-98BC-446B-8FDE-0AE91D3BC6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "locacao_veiculos.test", "locacao_veiculos.test\locacao_veiculos.test.csproj", "{61C76813-C080-4DDC-9C83-C9DB69BBDB9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{117A84AF-98BC-446B-8FDE-0AE91D3BC6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117A84AF-98BC-446B-8FDE-0AE91D3BC6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117A84AF-98BC-446B-8FDE-0AE91D3BC6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117A84AF-98BC-446B-8FDE-0AE91D3BC6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C76813-C080-4DDC-9C83-C9DB69BBDB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C76813-C080-4DDC-9C83-C9DB69BBDB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C76813-C080-4DDC-9C83-C9DB69BBDB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C76813-C080-4DDC-9C83-C9DB69BBDB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

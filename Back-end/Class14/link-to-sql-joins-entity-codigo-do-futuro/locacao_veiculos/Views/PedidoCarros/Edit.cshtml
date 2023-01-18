@@ -1,0 +1,46 @@
+@model locacao_veiculos.Models.PedidoCarro
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PedidoCarro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PedidoId" class="control-label"></label>
+                <select asp-for="PedidoId" class="form-control" asp-items="ViewBag.PedidoId"></select>
+                <span asp-validation-for="PedidoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarroId" class="control-label"></label>
+                <select asp-for="CarroId" class="form-control" asp-items="ViewBag.CarroId"></select>
+                <span asp-validation-for="CarroId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTrasacao" class="control-label"></label>
+                <input asp-for="ValorTrasacao" class="form-control" />
+                <span asp-validation-for="ValorTrasacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataTrasacao" class="control-label"></label>
+                <input asp-for="DataTrasacao" class="form-control" />
+                <span asp-validation-for="DataTrasacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
