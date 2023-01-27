@@ -1,0 +1,34 @@
+.container{
+    font-size: 12px;
+    max-width: 1000px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.row{
+    padding-top: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 970px;
+}
+
+table{
+    width: 100%;
+    margin-bottom: 50px;
+
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    border-collapse: collapse;
+}
+
+.btnacoes{
+    padding-right: 1px;
+    padding-left: 1px;
+    width: 39px;
+}
+

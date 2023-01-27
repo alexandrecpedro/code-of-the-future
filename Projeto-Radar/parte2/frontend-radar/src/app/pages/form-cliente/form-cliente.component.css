@@ -1,0 +1,46 @@
+.form {
+    width: 100%;
+}
+
+.coluna1 {
+    display: flex;
+}
+
+.coluna2 {
+    display: flex;
+}
+
+.coluna3 {
+    display: flex;
+}
+
+.coluna4 {
+    display: flex;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+.col-lg-8 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.page-section {
+    display: grid;
+    justify-content: center;
+    margin-top: 5px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-bottom: 5px;
+
+    margin-right: 6px;
+    margin-left: 6px
+}
+
+.container {
+    background: #f8f8f8;
+    border-radius: 10px;
+    text-align-last: left;
+}

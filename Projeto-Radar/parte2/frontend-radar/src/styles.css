@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap';
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px;
+}
+.modal-content {
+    width: 107% !important;
+}
+

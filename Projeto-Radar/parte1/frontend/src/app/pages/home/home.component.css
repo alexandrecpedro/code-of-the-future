@@ -1,0 +1,82 @@
+.cardd{
+    width: 400px;
+    height: 200px;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+}
+
+
+
+h4{
+    color: #212529;
+    font-weight: 700;
+}
+
+p{
+    color: #343A40;
+}
+
+.card-tag{
+    width: 65px;
+    padding: 1px;
+    border-radius: 20px;
+    background-color: #4E46B4;
+    color: #F8F9FA;
+    text-align: center;
+}
+
+button{
+    border: 2px solid #4E46B4;
+    border-radius: 4px;
+    color: #4E46B4;
+    font-weight: 400;
+}
+
+.quarter-circle-top-right{
+    margin-top: 0;
+    width: 105px;
+    height: 100px;
+    background: #4d46b446;
+    border-radius: 0 0 0 100px;
+    -moz-border-radius: 0 0 0 100px;
+    -webkit-border-radius: 0 0 0 100px;
+    position: absolute;
+}
+
+
+.produtos-estoque{
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    height: 500px;
+}
+
+.produtos-estoque h4{
+    color: #212529;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.produtos-estoque span{
+    color: #6C757D;
+    font-weight: 400;
+    font-size: 11px;
+    position: absolute;
+}
+
+.fluxo-overview{
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    height: 500px;
+}
+
+.produto-estoque{
+    background-color: #E9ECEF;
+    border-radius: 8px;
+    height: 60px;
+}
+
+.produto-estoque p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #212529;
+}

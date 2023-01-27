@@ -1,0 +1,34 @@
+
+<div class="container">
+    <div class="row mx-auto justify-content-center">
+        <img src="/assets/logo.svg">
+        <h1 class="text-center">Sign In</h1>
+        <p class="text-center text-small text-muted">
+            É necessário entrar com a sua conta para continuar
+        </p>
+    </div>
+    <div class="row mx-auto mt-5 form p-5">
+
+        <form class="row g-3 ">
+            <div class="col-md-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" placeholder="Email" name="email" [(ngModel)]="email" class="form-control" id="email"
+                    value="Mark" required>
+            </div>
+            <div class="col-md-12">
+                <label for="email" class="form-label">Senha</label>
+                <input class="form-control" id="password" type="password" placeholder="Password" name="password" [(ngModel)]="senha">
+            </div>
+            <div *ngIf="mensagem" class="alert alert-danger" role="alert">
+                {{mensagem}}
+            </div>
+        </form>
+    
+        <div class="row mx-auto">
+            <button class="btn mt-5 " (click)="logar()">Entrar</button>
+        </div>
+
+    </div>
+
+</div>
+

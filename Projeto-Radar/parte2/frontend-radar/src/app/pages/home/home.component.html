@@ -1,0 +1,117 @@
+<section class="page-section" id="contact" style="margin-top: 30px">
+  <div class="container2">
+    <div class="filtrosChart">
+      <div class="modelo1">
+        <label for="labelFiltro" style="display: block">Data Inicio</label>
+        <input
+          type="date"
+          onkeydown="return false"
+          id="dataI"
+          name="dataI"
+          [(ngModel)]="dataInicial"
+          (change)="atualizar()"
+        />
+        <label for="labelFiltro" style="display: block">Data Final</label>
+        <input
+          type="date"
+          onkeydown="return false"
+          id="dataF"
+          name="dataF"
+          [(ngModel)]="dataFinal"
+          (change)="atualizar()"
+        />
+        <label for="labelFiltro" style="display: block">Produtos</label>
+        <select
+          name="teste"
+          id="required"
+          class="form-control form-control-chosen-required"
+          (change)="atualizar()"
+          [(ngModel)]="categoriaSelecionado"
+          data-placeholder="CPF - Nome do cliente"
+        >
+          <option>0- Todas</option>
+          <option
+            *ngFor="let categoria of categoriasMostradas; index as i"
+            id="{{ categoria.id }}"
+          >
+            {{ i + 1 + "- " + categoria.nome }}
+          </option>
+        </select>
+      </div>
+      <div class="modelo">
+        <label for="labelTotal" style="display: block">Total</label>
+        <label for="labelTotalView" style="display: flex; width: 90px">{{
+          number(valorTotal) | currency
+        }}</label>
+      </div>
+      <div class="modelo">
+        <label for="labelSoma" style="display: block">Entrada</label>
+        <label for="labelSomaView" style="display: block">{{
+          number(valorPositivo) | currency
+        }}</label>
+      </div>
+      <div class="modelo">
+        <label for="labelSubtracao" style="display: block">Saída</label>
+        <label for="labelSubtracaoView" style="display: block">{{
+          number(valorNegativo) | currency
+        }}</label>
+      </div>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center">
+      <google-chart
+        [title]="titleColum"
+        [type]="columChart"
+        [data]="dataColum"
+        [width]="widthColum"
+        [height]="heightColum"
+        [options]="optionsColum"
+      >
+      </google-chart>
+    </div>
+    <div class="charts d-flex justify-content-center">
+      <google-chart
+        [title]="titleArea"
+        [type]="areaChart"
+        [data]="dataArea"
+        [columns]="columnsNames"
+        [options]="optionsArea"
+      >
+      </google-chart>
+      <google-chart
+        [title]="titlePie"
+        [type]="pieChart"
+        [data]="dataPie"
+        [columns]="columnNamesPie"
+        [options]="optionsPie"
+      >
+      </google-chart>
+    </div>
+    <!--<div class="row ">
+            <div class="col-lg-8 col-xl-7">
+            <div *ngIf="pedidos && pedidos.length == 0" class="alert alert-primary" role="alert">
+                Não existem pedidos cadastrados
+            </div>
+            <table *ngIf="pedidos && pedidos.length > 0" class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">ID do pedido</th>
+                    <th scope="col">ID do cliente</th>
+                    <th scope="col">Valor total</th>
+                    <th scope="col">Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pedido of pedidosMostrados.slice(0, 5)">
+                    <th scope="row">{{pedido.id}}</th>
+                    <td>{{pedido.cliente_id}}</td>
+                    <td>{{number(pedido.valor_total) | currency}}</td>
+                    <td>{{pedido.data}}</td>
+                    </tr>
+                </tbody>
+                <label class="naDireita" routerLink="/lista-completa">Mostrar tudo</label>
+            </table>
+            </div>
+        </div>-->
+  </div>
+</section>

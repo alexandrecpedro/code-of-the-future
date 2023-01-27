@@ -1,0 +1,60 @@
+
+.grafico{
+    width: 600px;
+    height: 300px;
+    border-radius: 20px;
+}
+.chart-container{
+    background-color: #F8F9FA;
+    border-radius: 8px;
+}
+.last-order{
+    background-color: #F8F9FA;
+    border-radius: 8px;
+}
+
+.cardd{
+    width: 400px;
+    height: 200px;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    border-left: 8px #a776eb solid;
+}
+
+.btn-primary {
+    background-color: #4E46B4;
+    color: #F8F9FA;
+}
+
+
+h4{
+    color: #212529;
+    font-weight: 700;
+}
+
+p{
+    color: #343A40;
+}
+
+.quarter-circle-top-right{
+    margin-top: 0;
+    width: 105px;
+    height: 100px;
+    background: #4d46b446;
+    border-radius: 0 0 0 100px;
+    -moz-border-radius: 0 0 0 100px;
+    -webkit-border-radius: 0 0 0 100px;
+    position: absolute;
+}
+
+
+
+.costumerProfile{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #CFCEE9;
+    font-weight: 800;
+    color: #4E46B4;
+    overflow: hidden;
+}

@@ -1,0 +1,224 @@
+.products-container {
+    background-color: #F8F9FA;
+}
+
+.details-container {
+    background-color: #F8F9FA;
+}
+
+.products-name span {
+    font-weight: 700;
+    font-size: large;
+    color: #212529;
+}
+
+.products-name span {
+    font-weight: 700;
+    font-size: large;
+    color: #212529;
+}
+
+
+.stockQty {
+    background-color: #B7EFC5;
+    color: #04B030;
+    font-weight: 700;
+    margin: 0;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background-color: transparent;
+    border-color: #FF4800;
+    color: #FF4800;
+    margin-left: 10px;
+}
+
+.btn-primary {
+    background-color: #4E46B4;
+    color: #F8F9FA;
+}
+
+.btn-info {
+    background-color: transparent;
+    border-color: #04B030;
+    color: #04B030;
+    margin-left: 70px;
+}
+
+.plus-button {
+    font-size: 18px;
+    color: #212529;
+    border: none;
+    width: 39px;
+}
+
+.alert-info{
+    background-color: #CFCEE9;
+    border-color: #CFCEE9;
+    color: #4E46B4;
+}
+
+.inStock{
+    background: #B7EFC5; color: #04B030;
+}
+.outStock{
+    background: #EDDEA4; color: #FF4800;
+}
+
+.costumerProfile{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #CFCEE9;
+    font-weight: 800;
+    color: #4E46B4;
+    overflow: hidden;
+}
+
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order {
+    font-weight: 700;
+  }
+  
+  
+  .tableContainer {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  
+  .subContainer {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 1px;
+  }
+  
+  .table {
+    width: 100%;
+    white-space: nowrap;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    color: #000;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 600;
+    background-color: rgba(78, 70, 180, 0.12);
+  }
+  
+  td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  tr {
+    border-bottom-width: 1px;
+  }
+  
+  .id-object {
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .tabbleFooter {
+    color: #000;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.75rem;
+    background-color: rgba(78, 70, 180, 0.12);
+    line-height: 1.5;
+  }
+  
+  .pagination {
+    padding-top: 0.75rem;
+    color: #000;
+    font-size: 0.75rem;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 0.8rem;
+  }
+  
+  .pagination span {
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    font-size: 0.75rem;
+  }
+  
+  nav ul {
+    align-items: center;
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .arrows {
+    color: #4c4f52;
+    padding: 0.5rem;
+    display: inline-flex;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 0.375rem;
+    border-color: transparent;
+  
+  }
+  
+  
+  .numberSelected {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.80rem;
+    cursor: pointer;
+    border-width: 2px;
+    border-radius: 0.375rem;
+    border-color: transparent;
+    background-color: #5c5c5c;
+    color: black;
+  }
+  
+  
+  .number {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.80rem;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: transparent;
+    color: black;
+  }
+  
+  .icon-actions{
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .icon-actions .icon {
+    margin-left: 1rem;
+  }
+  .checkbtn {
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: max-content;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  
+ 
+  

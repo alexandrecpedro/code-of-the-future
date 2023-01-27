@@ -1,0 +1,23 @@
+# This is an example Starter pipeline configuration
+# Use a skeleton to build, test and deploy using manual and parallel steps
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+
+image: node:16
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build
+          script:
+            - npm install --force
+            - npm run prd
+          artifacts:
+            - dist/** 
+      - step:
+          name: Deploy to Firebase
+          deployment: production
+          script:
+          - npm install -g firebase-tools
+          - firebase deploy --token=$FIREBASE_TOKEN --only hosting:desafio-final-dotnet -P desafio-final-dotnet --non-interactive

@@ -1,0 +1,144 @@
+<div class="d-flex flex-column" id="campanhas">
+  <h2 class="span1">LISTA DE CAMPANHAS</h2>
+  <div class="container">
+    <div class="">
+      <form class="form">
+        <div class="lateral">
+          <div class="form-group">
+            <label class="p-1 pt-3">Nome</label>
+            <input
+              type="text"
+              class="form-control mt-1"
+              id="nome-campnha"
+              name="nome-campnha"
+              placeholder="Insira o nome"
+              [(ngModel)]="campanha.nome" 
+            />
+          </div>
+          <div class="form-group">
+            <label class="p-1 pt-3">Descrição</label>
+            <input
+              type="text"
+              class="form-control mt-1"
+              id="desc-campnha"
+              name="desc-campnha"
+              placeholder="Insira a descrição"
+              [(ngModel)]="campanha.descricao"
+            />
+          </div>
+          <div class="form-group">
+            <label class="p-1 pt-3">Link</label>
+            <input
+              type="text"
+              class="form-control mt-1"
+              id="url-campnha"
+              name="url-campnha"
+              placeholder="Insira a URL da foto"
+              [(ngModel)]="campanha.urlFotoPrateleira"
+            />
+          </div>
+          <button
+            class="btn btn-primary btn-xl m-2 mt-5"
+            id="submitButton"
+            type="button"
+            (click)="atualizarCampanha()"
+          >
+            Cadastrar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      cdkDropListGroup
+      class="d-flex flex-row-reverse justify-content-between"
+    >
+      <div class="example-container d-flex flex-column align-items-center">
+        <h2>PRODUTOS</h2>
+
+        <div
+          cdkDropList
+          [cdkDropListData]="produtos"
+          class="product-list"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div class="box-list-product" *ngFor="let item of produtos" cdkDrag>
+            <img 
+            src="{{ item.fotoUrl }}" alt="Image" height="80" width="80" />
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-5">
+        <div
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          class="prateleira stuffonshelf-1"
+          [cdkDropListData]="prateleira"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="example-box"
+            *ngFor="let timePeriod of prateleira"
+            cdkDrag
+          >
+            <img
+            id="produto"
+            (click)="getElement('produto',timePeriod.id)"
+              src="{{ timePeriod.fotoUrl }}"
+              alt="Image"
+              height="100"
+              width="100"
+            />
+          </div>
+        </div>
+        <img class="shelf mt-4" />
+        <div
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          class="prateleira stuffonshelf"
+          [cdkDropListData]="prateleira2"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="example-box"
+            *ngFor="let timePeriod of prateleira2"
+            cdkDrag
+          >
+            <img
+            id ="produto2"
+            (click)="getElement('produto2',timePeriod.id)"
+              src="{{ timePeriod.fotoUrl }}"
+              alt="Image"
+              height="100"
+              width="100"
+            />
+          </div>
+        </div>
+        <img class="shelf" />
+        <div
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          class="prateleira stuffonshelf"
+          [cdkDropListData]="prateleira3"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <div
+            class="example-box"
+            *ngFor="let timePeriod of prateleira3"
+            cdkDrag
+          >
+            <img
+            id ="produto3"
+            (click)="getElement('produto3',timePeriod.id)"
+              src="{{ timePeriod.fotoUrl }}"
+              alt="Image"
+              height="80"
+              width="80"
+            />
+          </div>
+        </div>
+        <img class="shelf" />
+      </div>
+    </div>
+  </div>
+</div>

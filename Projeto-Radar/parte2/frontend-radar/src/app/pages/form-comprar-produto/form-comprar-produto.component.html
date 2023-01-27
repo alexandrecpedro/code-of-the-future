@@ -1,0 +1,39 @@
+<section class="page-section" id="contact" style="margin-top: 10px;">
+    <div class="container">
+        <div class="produt" style="width: 100%">
+            <form class="form" *ngIf="produto" style="display: flex;">
+                <!--Feito apenas para puxar as informações do produto, nenhuma alteração será feita nesses dados-->
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="padding: 10px;">Nome</label>
+                    <input type="text" class="form-control" id="nome-produto" name="nome-produto"
+                        [(ngModel)]="produto.nome" placeholder="Insira o nome do produto" [disabled]="true">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="padding: 10px;">Descrição</label>
+                    <input type="text" class="form-control" id="descricao-produto" name="descricao-produto"
+                        [(ngModel)]="produto.descricao" placeholder="Insira a descrição" [disabled]="true">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="padding: 10px;">Quantidade</label>
+                    <input type="text" class="form-control" id="quantidade-produto" name="quantidade-produto"
+                        [(ngModel)]="produto.qtd_estoque" placeholder="Insira a quantidade" [disabled]="true">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="padding: 10px;">Custo</label>
+                    <input type="text" class="form-control" id="custo-produto" name="custo-produto"
+                        [(ngModel)]="produto.custo" placeholder="Insira a quantidade" [disabled]="true">
+                </div>
+
+                <!--Aqui é onde será feita a quantidade de itens para essa compra-->
+                <div class="form-group">
+                    <label for="exampleInputEmail1" style="padding: 10px;">Quantidade a ser comprada</label>
+                    <input type="text" class="form-control" id="novaQuantidade-produto" name="novaQuantidade-produto"
+                        [(ngModel)]="qtd" placeholder="Insira a quantidade que será comprada">
+                </div>
+
+                <button class="btn btn-primary btn-xl m-3" id="submitButton" (click)="registrar()"
+                    type="button">Comprar</button>
+            </form>
+        </div>
+    </div>
+</section>

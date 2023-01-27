@@ -1,0 +1,90 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="d-flex div-login align-items-center">
+      <div class="d-flex flex-column align-items-center p-4">
+        <div
+          class="login100-pic js-tilt"
+          data-tilt=""
+          style="
+            will-change: transform;
+            transform: perspective(310px) rotateX(0deg) rotateY(0deg);
+          "
+        >
+          <!-- <img src="assets/Group 1.svg" alt="IMG" /> -->
+          <img src="assets/radar.png" alt="IMG" />
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-center p-4">
+        <h5 class="pb-4 pt-5">Cadastrar</h5>
+        <form class="">
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Valid email is required: ex@abc.xyz"
+          >
+            <input
+              class="input100"
+              type="text"
+              id="nome"
+              name="nome"
+              [(ngModel)]="nome"
+              placeholder="Nome"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Valid email is required: ex@abc.xyz"
+          >
+            <input
+              class="input100"
+              type="text"
+              id="nome"
+              name="nome"
+              [(ngModel)]="email"
+              placeholder="Email"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Password is required"
+          >
+            <input
+              class="input100"
+              type="password"
+              [(ngModel)]="senha"
+              name="pass"
+              placeholder="Senha"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Password is required"
+          >
+            <input
+              class="input100"
+              type="password"
+              [(ngModel)]="confirmaSenha"
+              name="pass"
+              placeholder="Confirmar Senha"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          <div *ngIf="mensagem" class="alert alert-danger" role="alert">
+            {{ mensagem }}
+          </div>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" (click)="cadastrar()">
+              Cadastrar
+            </button>
+          </div>
+          <div class="text-center p-t-12">
+            <span class="txt1"> Ja tem uma conta? </span>
+            <a class="txt2" routerLink="/login"> Faça o login aqui </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

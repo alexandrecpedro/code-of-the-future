@@ -1,0 +1,16 @@
+<div class="container p-5 client-modal">
+    <h3 class="text-center mb-3">Selecione um cliente</h3>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let client of clients">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title ">{{client.name}}</h5>
+                    <p class="card-text ">{{client.email}}</p>
+                </div>
+                  <div class="card-body">
+                    <a class="btn btn-primary" (click)="orderObserver.setClient(client)">Adicionar</a>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

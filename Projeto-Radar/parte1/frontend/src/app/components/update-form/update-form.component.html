@@ -1,0 +1,62 @@
+<div class="container">
+  <form class="row g-3" >
+    <div class="form-header" >
+      <div class="title">
+        <h1>Detalhes</h1>
+      </div>
+      <div class="close-button" (click)="closeDialog()">
+        <button><a href="#">
+            <fa-icon class="icon" [icon]="faXmark" size="lg"></fa-icon>
+          </a></button>
+      </div>
+    </div>
+    <div class="col-md-4 input-box">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="client.name">
+    </div>
+    <div class="col-md-4 input-box">
+      <label for="telefone" class="form-label">Telefone</label>
+      <input type="text" class="form-control " id="telefone" name="telefone" [(ngModel)]="client.phone">
+    </div>
+    <div class="col-md-4 input-box">
+      <label for="cpf" class="form-label">CPF</label>
+      <input type="number" class="form-control " id="cpf" name="cpf" [(ngModel)]="client.cpf">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control " id="cidade" name="cidade" [(ngModel)]="client.email">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control " id="cidade" name="cidade" [(ngModel)]="client.cidade">
+    </div>
+
+    <div class="col-md-3 input-box">
+      <label for="estado" class="form-label">Estado</label>
+      <input type="text" class="form-control " id="estado" name="estado" [(ngModel)]="client.estado">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="cep" class="form-label">CEP</label>
+      <input type="text" class="form-control " id="cep" name="cep" [(ngModel)]="client.cep">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input type="text" class="form-control " id="logradouro" name="logradouro" [(ngModel)]="client.logradouro">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="numero" class="form-label">Numero</label>
+      <input type="number" class="form-control " id="numero" name="numero" [(ngModel)]="client.numero">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="text" class="form-control " id="bairro" name="bairro" [(ngModel)]="client.bairro">
+    </div>
+    <div class="col-md-3 input-box">
+      <label for="complemento" class="form-label">Complemento</label>
+      <input type="text" class="form-control " id="complemento" name="complemento" [(ngModel)]="client.complemento">
+    </div>
+    <div class="col-12 ">
+      <button class="btn" type="submit" (click)="save()">Salva alterações</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,84 @@
+.container {
+  padding: 2rem;
+  background-color: rgba(223, 223, 223, 0.747);
+}
+
+.buttons {
+  margin-left: 2rem;
+}
+
+.form-header {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-header h1::after {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: #6c63ff;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.tilte {
+  margin-right: 2rem;
+}
+.close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button button {
+  border: none;
+  background-color: #6c63ff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.close-button button:hover {
+  background-color: #6b63fff1;
+}
+
+.close-button button a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+}
+
+.input-box input {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #0000001c;
+  font-size: 0.8rem;
+}
+
+.input-box input:hover {
+  background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+  outline: 1px solid #6c63ff;
+}
+
+.input-box label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000c0;
+}
+
+.input-box input::placeholder {
+  color: #000000be;
+}
+
+.btn {
+  background-color: #6c63ff;
+  color: #fff;
+}

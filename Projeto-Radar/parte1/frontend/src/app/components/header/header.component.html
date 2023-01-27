@@ -1,0 +1,19 @@
+<div class="container-fluid header">
+    <div class="row align-items-end">
+        <div class="col">
+            <img src="/assets/logo.svg" alt="logo codigo do futuro">
+        </div>
+        <div class="col-9">
+            <div class="row row-cols-auto ">
+                <a class="col menu activeRoute" routerLink="/">Home</a>
+                <a class="col menu" routerLink="clients">Clientes</a>
+                <a class="col menu" routerLink="products">Produtos</a>
+                <a class="col menu" routerLink="orders">Pedidos</a>
+                <a class="col menu" routerLink="cash-flow">Fluxo de Caixa</a>
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-danger" (click)="logout()">Sair</button>
+        </div>
+    </div>
+</div>

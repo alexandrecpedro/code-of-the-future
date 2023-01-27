@@ -1,0 +1,12 @@
+.modelo{
+    display: inline-block;
+    margin-right: 10px;
+}
+.naDireita{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.naDireita:hover{
+    color: rgb(23, 35, 209);
+    transition: 0.5s;
+}

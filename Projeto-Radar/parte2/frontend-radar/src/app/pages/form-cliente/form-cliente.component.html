@@ -1,0 +1,93 @@
+<section class="page-section" id="contact" style="margin-top: 5px;">
+    <div class="container">
+        <div class="col-lg-8 col-xl-7">
+            <form class="form" *ngIf="cliente" autocomplete="off">
+                <div class="coluna1">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Nome</label>
+                        <input type="text" class="form-control" id="nome-cliente" name="nome-cliente"
+                            [(ngModel)]="cliente.nome" placeholder="Insira seu nome" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Telefone</label>
+                        <input type="text" class="form-control" id="telefone-cliente" name="telefone-cliente"
+                            [(ngModel)]="cliente.telefone" placeholder="Insira seu telefone" autocomplete="off">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Email</label>
+                        <input type="text" class="form-control" id="email-cliente" name="email-cliente"
+                            [(ngModel)]="cliente.email" placeholder="Insira seu email">
+                    </div>
+
+                </div>
+                
+                <div class="coluna2">
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">CPF</label>
+                        <input type="text" class="form-control" id="cpf-cliente" name="cpf-cliente"
+                            [(ngModel)]="cliente.cpf" placeholder="Insira seu CPF">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">CEP</label>
+                        <input type="text" class="form-control" id="cep-cliente" name="cep-cliente"
+                            [(ngModel)]="cliente.cep" placeholder="Insira seu CEP">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Logradouro</label>
+                        <input type="text" class="form-control" id="logradouro-cliente" name="logradouro-cliente"
+                            [(ngModel)]="cliente.logradouro" placeholder="Insira seu logradouro">
+                    </div>
+
+                </div>
+                <div class="coluna3">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Número</label>
+                        <input type="number" class="form-control" id="numero-cliente" name="numero-cliente"
+                            [(ngModel)]="cliente.numero" placeholder="Insira seu número">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Bairro</label>
+                        <input type="text" class="form-control" id="bairro-cliente" name="bairro-cliente"
+                            [(ngModel)]="cliente.bairro" placeholder="Insira seu bairro">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Estado</label>
+                        <select name="teste" id="required" class="form-control form-control-chosen-required"
+                            (change)="importarCidades()" [(ngModel)]="estadoSelecionado"
+                            data-placeholder="CPF - Nome do cliente">
+                            <option></option>
+                            <option *ngFor="let estado of estados; index as i" id="{{estado.id}}"
+                                [selected]="(i+1)+'- '+estado.nome===estadoSelecionado">{{(i+1)+"- "+estado.nome}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="coluna4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Cidade</label>
+                        <select name="teste" id="required" class="form-control form-control-chosen-required"
+                            [(ngModel)]="municipioSelecionado" data-placeholder="CPF - Nome do cliente">
+                            <option></option>
+                            <option *ngFor="let municipio of municipios; index as i" id="{{municipio.id}}"
+                                [selected]="i+1==number(municipioSelecionado.split('-')[0])">
+                                {{(i+1)+"- "+municipio.nome}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Complemento</label>
+                        <input type="text" class="form-control" id="complemento-cliente" name="complemento-cliente"
+                            [(ngModel)]="cliente.complemento" placeholder="Insira seu complemento">
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary btn-xl m-3" id="submitButton" (click)="registrar()"
+                    type="button">{{tituloDoBotao}}</button>
+            </form>
+        </div>
+    </div>
+</section>

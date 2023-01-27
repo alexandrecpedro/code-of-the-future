@@ -1,0 +1,55 @@
+<div class="container-total">
+  <h1>CARRINHO: </h1>
+  <span style="width: 270px; align-self: self-end;" *ngIf="items.length>0">Selecione o cliente: </span><select
+    style="width: 270px; align-self: self-end; border-radius: 30px;" *ngIf="items.length>0" id="required"
+    [(ngModel)]="cliente" data-placeholder="CPF - Nome do cliente">
+    <option *ngFor="let cliente of clientes; index as i" id="{{cliente.id}}">
+      <div id>{{(i+1)+" - "+cliente.nome}}</div>
+    </option>
+  </select>
+
+  <div class="resu" *ngIf="items.length>0">
+    <h3>Resumo do pedido
+    </h3>
+  </div>
+  <table class="table table-hover" *ngIf="items.length>0">
+
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome Produto</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items;let i = index">
+        <th scope="row">{{item.id}}</th>
+        <td>{{nomes.at(i)}}</td>
+        <td>{{number(item.valor) | currency}}</td>
+        <td>
+          <button id="adicionar" type="button" class="btn btn-primary" style="margin-right: 10px;"
+            (click)="Adicionar(i)">+</button>
+          {{item.quantidade}}
+          <button id="retirar" type="button" class="btn btn-danger" style="margin-left: 10px;"
+            (click)="Subtrair(i)">-</button>
+        </td>
+        <td>{{multiplicacao(item.quantidade,item.valor) | currency}}</td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <p>{{number(valor_total) | currency}}</p><button id="proximo" type="submit" class="btn btn-primary"
+            (click)="salvar()">Comprar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="para" *ngIf="items.length==0">
+    <h3 class="para1">O Carrinho está vazio</h3>
+  </div>
+</div>

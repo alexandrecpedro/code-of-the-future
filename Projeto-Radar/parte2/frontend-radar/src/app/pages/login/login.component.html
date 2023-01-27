@@ -1,0 +1,91 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="d-flex div-login align-items-center">
+      <div class="d-flex flex-column align-items-center p-4 ">
+   
+
+        <div
+          class="login100-pic pt-4"
+          data-tilt=""
+        >
+          <!-- <img src="assets/Group 1.svg" alt="IMG" /> -->
+          <img src="assets/radar.png" alt="IMG" />
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-center p-4">
+                <h5 class="pb-4 pt-5"> Login </h5>
+      <form class="">
+
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Valid email is required: ex@abc.xyz"
+        >
+          <input
+            class="input100"
+            type="text"
+            id="nome"
+            name="nome"
+            [(ngModel)]="email"
+            placeholder="Email"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-envelope"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <div
+          class="wrap-input100 validate-input"
+          data-validate="Password is required"
+        >
+          <input
+            class="input100"
+            type="password"
+            [(ngModel)]="senha"
+            name="pass"
+            placeholder="Password"
+          />
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-lock"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <div *ngIf="mensagem" class="alert alert-danger" role="alert">
+          {{ mensagem }}
+        </div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" (click)="login()">Login</button>
+        </div>
+        <div class="text-center p-t-12">
+          <span class="txt1"> Esqueceu </span>
+          <a class="txt2" href="#"> Usuário / Senha? </a> <br />
+          <span class="txt1"> Não tem conta? </span>
+          <a class="txt2" routerLink="/cadastroUsuario"> Cadastre-se aqui </a>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

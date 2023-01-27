@@ -1,0 +1,15 @@
+.carrinho{
+    position: absolute;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: rgb(158 158 163);
+    color: white;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    justify-items: center;
+}

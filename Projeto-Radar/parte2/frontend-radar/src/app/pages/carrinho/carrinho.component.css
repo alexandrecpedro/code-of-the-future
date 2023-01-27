@@ -1,0 +1,47 @@
+.container-total {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+select {
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 750px;
+    align-self: end;
+    border-style: inset;
+    text-align-last: center;
+    background: #f8f8f8;
+    margin-bottom: 70px;
+}
+
+tr {
+    border-style: dotted;
+    border-width: 0;
+}
+
+.form-control {
+    visibility: hidden;
+}
+
+.resu {
+    align-self: end;
+    border-style: inset;
+    text-align-last: center;
+    width: 750px;
+    background: #f8f8f8;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.para1 {
+    padding-top: 15px;
+    text-align: center;
+}

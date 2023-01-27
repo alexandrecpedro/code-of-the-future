@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="row g-3" novalidate>
+    <div class="form-header">
+      <div class="title">
+        <h1>Detalhes</h1>
+      </div>
+      <div class="close-button" (click)="closeDialog()">
+        <button>
+          <fa-icon class="icon" [icon]="faXmark" size="lg"></fa-icon>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4 input-box">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="product.name">
+    </div>
+    <div class="col-md-4 input-box">
+      <label for="stockqty" class="form-label">Quantidade em Estoque</label>
+      <input type="number" class="form-control" id="stockqty" name="stockqty" [(ngModel)]="product.stockQty">
+    </div>
+    <div class="col-md-4 input-box">
+      <label for="value" class="form-label">Valor</label>
+      <input type="number" class="form-control" id="value" name="value" [(ngModel)]="product.value">
+    </div>
+    <div class="col-md-12 input-box">
+      <label for="description" class="form-label">Descrição</label>
+      <textarea type="text" rows="5" cols="40" class="form-control" id="description" name="description"
+        [(ngModel)]="product.description"></textarea>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="button" (click)="save()">Salvar Alteracao</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="sub-header">
+    <h1 class="client">Produtos</h1>
+    <button class="btn btn-primary" (click)="openDialogForm()">
+      <fa-icon class="icon" [icon]="faCirclePlus" size="lg"></fa-icon>
+      Adicionar Produto
+    </button>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="tableContainer">
+    <div class="subContainer">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Nome</td>
+            <td>Descrição</td>
+            <td>Valor(R$)</td>
+            <td>Quant. em estoque </td>
+            <td>Ações</td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of products">
+          <tr>
+            <td>
+              <div>
+                <div>
+                  <p class="id-object">{{product.name}}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span class="d-inline-block text-truncate" style="max-width: 150px;">{{product.description}}</span>
+            </td>
+            <td>
+              <span>{{product.value | currency}}</span>
+            </td>
+            <td>
+              <span>{{product.stockQty}}</span>
+            </td>
+            <td>
+              <div class="icon-actions">
+                <div (click)="openUpdateForm(product)">
+                  <fa-icon [icon]="faPenToSquare" size="lg"></fa-icon>
+                </div>
+                <div (click)="delete(product.id)">
+                  <fa-icon class="icon" [icon]="faTrashCan" size="lg"></fa-icon>
+                </div>
+              </div>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tabbleFooter">
+      <!-- <div class="pagination">
+        <span>mostrando 1 - 10 de 45</span>
+        <nav>
+          <ul>
+            <li class="arrows">
+            </li>
+            <li class="numberSelected">1</li>
+            <li class="number">2</li>
+            <li class="number">3</li>
+            <li class="number">4</li>
+            <li class="number">5</li>
+            <li class="arrows">
+            </li>
+          </ul>
+        </nav>
+      </div> -->
+    </div>
+  </div>
+</div>
+

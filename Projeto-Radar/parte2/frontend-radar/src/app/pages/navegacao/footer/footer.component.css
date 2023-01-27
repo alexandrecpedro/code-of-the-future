@@ -1,0 +1,9 @@
+footer {
+    background: linear-gradient(-135deg, #1e1044, #404186);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}

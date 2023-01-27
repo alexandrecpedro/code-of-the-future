@@ -1,0 +1,83 @@
+
+<div class="container MT-5">
+  <div class="sub-header">
+    <h1 class="client">Clientes</h1>
+    <button class="btn btn-primary" (click)="openDialogForm()">
+      <fa-icon class="icon" [icon]="faCirclePlus" size="lg"></fa-icon>
+      Adicionar cliente
+    </button>
+  </div>
+
+  <span class="strong">
+    Total: {{clientObserver.clientQty}}
+  </span>
+  <br>
+  <br>
+  <br>
+
+  <div class="tableContainer">
+    <div class="subContainer">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Estado</td>
+            <td>Cidade</td>
+            <td>Ações</td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let client of clients">
+          <tr>
+            <td>
+              <div>
+                <div>
+                  <p class="id-object">{{client.name}}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span>{{client.email}}</span>
+            </td>
+            <td>
+              <span>{{client.estado}}</span>
+            </td>
+            <td>
+              <span>{{client.cidade}}</span>
+            </td>
+            <td>
+              <div class="icon-actions">
+                <div (click)="openUpdateForm(client)">
+                  <fa-icon [icon]="faPenToSquare" size="lg"></fa-icon>
+                </div>
+                <div (click)="delete(client.id)">
+                  <fa-icon class="icon" [icon]="faTrashCan" size="lg"></fa-icon>
+                </div>
+              </div>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tabbleFooter">
+      <!-- <div class="pagination">
+        <span>mostrando 1 - 10 de 45</span>
+        <nav>
+          <ul>
+            <li class="arrows">
+            </li>
+            <li class="numberSelected">1</li>
+            <li class="number">2</li>
+            <li class="number">3</li>
+            <li class="number">4</li>
+            <li class="number">5</li>
+            <li class="arrows">
+            </li>
+          </ul>
+        </nav>
+      </div> -->
+    </div>
+  </div>
+</div>

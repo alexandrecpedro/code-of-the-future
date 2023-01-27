@@ -1,0 +1,168 @@
+<!-- <p *ngIf="orderObserver.orderClient.name">Cliente: {{orderObserver.orderClient.name}}</p> -->
+
+<div *ngIf="isList">
+  <div class="container mt-5">
+    <div class="sub-header">
+      <h1 class="order">Pedidos</h1>
+      <button class="btn btn-primary" (click)="creating()">
+        <fa-icon class="icon" [icon]="faCirclePlus" size="lg"></fa-icon>
+        Adicionar pedido
+      </button>
+    </div>
+
+    <span>
+      {{orders?.length}} pedidos
+    </span>
+    <br>
+    <br>
+    <br>
+
+    <div class="tableContainer">
+      <div class="subContainer">
+        <table class="table">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>data</td>
+              <td>cliente</td>
+              <td>valor</td>
+            </tr>
+          </thead>
+          <tbody *ngFor="let order of orderslist">
+            <tr (click)="redirect(order.id)">
+              <td>
+                <div>
+                  <div>
+                    <p class="id-object">{{order.id}}</p>
+                  </div>
+                </div>
+              </td>
+              <td>{{order.date | date}}</td>
+              <td>
+                <span>{{order.client_id}}</span>
+              </td>
+              <td>
+                <span>{{order.total_value | currency}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tabbleFooter">
+        <div class="pagination">
+          <span>mostrando 1 - 10 de 45</span>
+          <nav>
+            <ul>
+              <li class="arrows">
+              </li>
+              <li class="numberSelected">1</li>
+              <li class="number">2</li>
+              <li class="number">3</li>
+              <li class="number">4</li>
+              <li class="number">5</li>
+              <li class="arrows">
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf="isEdit || isCreating">
+  <h1 class="my-4">{{titulo}}</h1>
+  <div class="row justify-content-around ">
+    <div class="col-7 products-container p-5">
+      <div class="alert alert-info" role="alert" *ngIf="orderObserver.productsOrdered.length<=0">
+        Ainda não há produtos adicionados no pedido. Clique no botão abaixo para adicionar.
+      </div>
+      <div class="row justify-content-between" *ngFor="let products of orderObserver.productsOrdered">
+
+        <hr>
+        <div class="col">
+          <div class="row products-name">
+            <p><strong>{{products.product.name}}</strong></p>
+          </div>
+          <div class="row">
+            <span class="badge text-wrap" style="width: 9rem; font-weight: 700;font-size:14px"
+              [ngClass]="products.product.stockQty>50 ? 'inStock' : 'outStock' ">
+              Em estoque: {{products.product.stockQty}}
+            </span>
+          </div>
+          <div class="row">
+            <div class="col" *ngIf="isCreating">
+              <button type="button" class="plus-button btn"
+                (click)="minusQty(products.product.name, products.qty)">-</button> {{products.qty}} <button
+                type="button" class="plus-button btn" (click)="plusQty(products.product.name, products.qty)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <p class="text-end teste">Subtotal <strong>{{(products.qty * products.product.value | currency)}}</strong>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <br>
+          </div>
+          <div class="row">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+              <button type="button" class="btn btn-info me-md-2" routerLink="/products/{{products.product.id}}">
+                <fa-icon class="icon" [icon]="faInfo" size="lg"></fa-icon> ver
+              </button>
+              <button type="button" class="btn btn-danger" (click)="delete(products.product)" *ngIf="isCreating">
+                <fa-icon class="icon" [icon]="faTrashCan" size="lg"></fa-icon> remover
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-2">
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-primary" (click)="openDialog()" *ngIf="isCreating">
+          <fa-icon class="icon" [icon]="faCirclePlus" size="lg"></fa-icon>
+          Adicionar produto
+        </button>
+      </div>
+    </div>
+
+    <div class="col-4 details-container rounded p-5">
+      <h3>Detalhes do pedido</h3>
+      <hr>
+      <p class="text-end"><strong>Data: </strong>{{date | date:'d MMMM , y HH:mm'}}</p>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="btn btn-primary " (click)="openClient()" *ngIf="!orderObserver.orderClient.name">
+          <fa-icon class="icon" [icon]="faCirclePlus" size="lg"></fa-icon>
+          Adicionar Cliente
+        </button>
+      </div>
+      <div class="row gx-5" *ngIf="orderObserver.profileMock" (click)="openClient()">
+        <h5>Cliente</h5>
+        <div class="col-2 costumerProfile border justify-content-center d-flex align-items-center">
+          {{orderObserver.profileMock}}
+        </div>
+        <div class="col-10">
+          <div class="row fw-bold">{{orderObserver.orderClient.name}}</div>
+          <div class="row text-muted">{{orderObserver.orderClient.email}}</div>
+        </div>
+      </div>
+      <h5 class="mt-3 mb-1">Produtos:</h5>
+      <p class="mt-3" *ngFor="let products of orderObserver.productsOrdered">{{products.product.name}} x
+        {{products.qty}} <strong>{{products.product.value | currency}}</strong></p>
+      <div class="row mt-2" *ngIf="orderObserver.productsOrdered.length>0">
+        <div class="col-6">
+          <h5>Total</h5>
+        </div>
+        <div class="col-6">
+          <p class="text-end "><strong>{{orderObserver.sumValue() | currency}}</strong></p>
+        </div>    
+          <button class="btn btn-primary" type="button" (click)="save()" *ngIf="isCreating">Confirmar Pedido</button>
+        
+      </div>
+
+    </div>
+
+  </div>

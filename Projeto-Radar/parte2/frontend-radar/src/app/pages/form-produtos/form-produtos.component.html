@@ -1,0 +1,57 @@
+<section class="page-section" id="contact" style="margin-top: 10px;">
+    <div class="container">
+        <div class="col-lg-8 col-xl-7" style="width: 100%; max-width: 960px">
+            <form class="form" *ngIf="produto" autocomplete="off">
+                <div class="lateral">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Nome</label>
+                        <input type="text" class="form-control" id="nome-produto" name="nome-produto"
+                            [(ngModel)]="produto.nome" placeholder="Insira o nome do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Categoria</label>
+                        <select style="width: 210px;" name="teste" id="required"
+                            class="form-control form-control-chosen-required" [(ngModel)]="categoriaSelecionado"
+                            data-placeholder="CPF - Nome do cliente">
+                            <option></option>
+                            <option *ngFor="let categoria of categorias; index as i" id="{{categoria.id}}"
+                                [selected]="selecionado[i]">
+                                {{(i+1)+"- "+categoria.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lateral">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Descrição</label>
+                        <input type="text" class="form-control" id="descricao-produto" name="descricao-produto"
+                            [(ngModel)]="produto.descricao" placeholder="Insira a descrição">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Valor</label>
+                        <input type="text" class="form-control" id="valor-produto" name="valor-produto"
+                            [(ngModel)]="produto.valor" placeholder="00.00">
+                    </div>
+                </div>
+                <div class="lateral">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Quantidade</label>
+                        <input type="text" class="form-control" id="quantidade-produto" name="quantidade-produto"
+                            [(ngModel)]="produto.qtd_estoque" placeholder="Insira a quantidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Custo</label>
+                        <input type="text" class="form-control" id="quantidade-produto" name="quantidade-produto"
+                            [(ngModel)]="produto.custo" placeholder="Insira a quantidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Foto do Produto</label>
+                        <input type="text" class="form-control" id="fotoUrl-produto" name="fotoUrl-produto"
+                            [(ngModel)]="produto.fotoUrl" placeholder="Insira a quantidade">
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-xl m-3" id="submitButton" (click)="registrar()"
+                    type="button">{{tituloDoBotao}}</button>
+            </form>
+        </div>
+    </div>
+</section>

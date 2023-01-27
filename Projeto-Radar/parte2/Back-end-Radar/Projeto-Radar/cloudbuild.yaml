@@ -1,0 +1,35 @@
+steps:
+  # Build the container image
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/desafio-final-dotnet/backend", "."]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/desafio-final-dotnet/backend"]
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      [
+        "run",
+        "deploy",
+        "backend",
+        "--image",
+        "gcr.io/desafio-final-dotnet/backend",
+        "--region",
+        "southamerica-east1",
+        "--add-cloudsql-instances",
+        "desafio-final-dotnet:southamerica-east1:codigo-do-futuro",
+        "--min-instances",
+        "0",
+        "--max-instances",
+        "1",
+        "--memory",
+        "512Mi",
+        "--cpu",
+        "1",
+        "--concurrency",
+        "80",
+        "--timeout",
+        "600s",
+        "--allow-unauthenticated"
+      ]
+images:
+  - gcr.io/desafio-final-dotnet/backend

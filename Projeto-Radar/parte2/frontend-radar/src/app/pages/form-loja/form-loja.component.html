@@ -1,0 +1,94 @@
+<section class="page-section" id="contact" style="margin-top: 5px;">
+    <div class="container">
+        <div class="col-lg-8 col-xl-7">
+            <form class="form" *ngIf="loja" autocomplete="off">
+                <div class="coluna1">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Nome</label>
+                        <input type="text" class="form-control" id="nome-loja" name="nome-loja" [(ngModel)]="loja.nome"
+                            placeholder="Insira seu nome" autocomplete="off" readonly
+                            onfocus="this.removeAttribute('readonly');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Logradouro</label>
+                        <input type="text" class="form-control" id="logradouro-loja" name="logradouro-loja"
+                            [(ngModel)]="loja.logradouro" placeholder="Insira seu logradouro">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Número</label>
+                        <input type="number" class="form-control" id="numero-loja" name="numero-loja"
+                            [(ngModel)]="loja.numero" placeholder="Insira seu número">
+                    </div>
+
+                </div>
+
+
+                <div class="coluna2">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Cep</label>
+                        <input type="text" class="form-control" id="cep-loja" name="cep-loja" [(ngModel)]="loja.cep"
+                            placeholder="Insira o cep da loja" autocomplete="off" readonly
+                            onfocus="this.removeAttribute('readonly');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Bairro</label>
+                        <input type="text" class="form-control" id="bairro-loja" name="bairro-loja"
+                            [(ngModel)]="loja.bairro" placeholder="Insira seu bairro">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Estado</label>
+                        <select name="teste" id="required" class="form-control form-control-chosen-required"
+                            (change)="importarCidades()" [(ngModel)]="estadoSelecionado"
+                            data-placeholder="CPF - Nome do loja">
+                            <option></option>
+                            <option *ngFor="let estado of estados; index as i" id="{{estado.id}}"
+                                [selected]="(i+1)+'- '+estado.nome===estadoSelecionado">{{(i+1)+"- "+estado.nome}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="coluna3">
+
+                </div>
+                <div class="coluna4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Cidade</label>
+                        <select name="teste" id="required" class="form-control form-control-chosen-required"
+                            [(ngModel)]="municipioSelecionado" data-placeholder="CPF - Nome do loja">
+                            <option></option>
+                            <option *ngFor="let municipio of municipios; index as i" id="{{municipio.id}}"
+                                [selected]="i+1==number(municipioSelecionado.split('-')[0])">
+                                {{(i+1)+"- "+municipio.nome}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Complemento</label>
+                        <input type="text" class="form-control" id="complemento-loja" name="complemento-loja"
+                            [(ngModel)]="loja.complemento" placeholder="Insira seu complemento">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Observação</label>
+                        <input type="text" class="form-control" id="observacao-loja" name="observacao-loja"
+                            [(ngModel)]="loja.observacao"
+                            placeholder="Insira uma observacao">
+                    </div>
+                </div>
+                <!-- <div class="coluna4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Latitude</label>
+                        <input type="text" class="form-control" id="complemento-loja" name="complemento-loja"
+                            [(ngModel)]="loja.latitude" placeholder="Insira a latitude">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" style="padding: 10px;">Longitude</label>
+                        <input type="text" class="form-control" id="complemento-loja" name="complemento-loja"
+                            [(ngModel)]="loja.longitude" placeholder="Insira a longitude">
+                    </div>
+                </div> -->
+
+                <button class="btn btn-primary btn-xl m-3" id="submitButton" (click)="registrar()"
+                    type="button">{{tituloDoBotao}}</button>
+            </form>
+        </div>
+    </div>
+</section>

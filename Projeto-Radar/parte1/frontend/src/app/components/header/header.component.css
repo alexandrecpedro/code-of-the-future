@@ -1,0 +1,34 @@
+.header{
+    background-color: #F8F9FA;
+    width: 100%;
+    height: 5rem;
+}
+.menu{
+    border-radius: 4px;
+    text-decoration: none;
+    color: #212529;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.menu:hover{
+    background: rgba(78, 70, 180, 0.20);
+    color: #4E46B4;
+}
+
+.activeRoute{
+    background: #4e46b4;
+    color: #F8F9FA;
+}
+
+span:first-child{
+    font-weight: 700;
+    font-size: 18px;
+    color: #4E46B4;
+}
+
+span{
+    font-weight: 500;
+    font-size: 16px;
+    color: #10002B;
+}

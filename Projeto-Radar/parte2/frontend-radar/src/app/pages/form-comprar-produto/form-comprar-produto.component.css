@@ -1,0 +1,14 @@
+.page-section{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.produt{
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

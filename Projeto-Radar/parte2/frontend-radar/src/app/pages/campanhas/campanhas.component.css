@@ -1,0 +1,143 @@
+.page-section{
+    display: grid;
+    justify-content: center;
+    margin-top: 5px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin-bottom: 5px;
+    margin-right: 6px;
+    margin-left: 6px;
+    box-sizing: border-box;
+}
+
+
+
+.form{
+    
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.form-group{
+padding-right: 5px;
+}
+
+.lateral{
+    display: flex;
+  
+}
+
+.container{
+    background: #f8f8f8;
+    border-radius: 10px;
+    text-align-last: left;
+}
+.span1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+  display: flex;
+}
+
+.shelf {
+  display: block;
+  z-index: 9;
+  content: url("https://i.imgur.com/1QepZRl.png");
+  position: relative;
+  width: 941px;
+  height: 175px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stuffonshelf-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -105px; /* This is what actually puts the stuff ON the shelf instead of hovering above it */
+  width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stuffonshelf {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -80px; /* This is what actually puts the stuff ON the shelf instead of hovering above it */
+  width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prateleira {
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.product-list {
+  width: 200px;
+  max-width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.box-list-product {
+  max-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 14px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.example-box {
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 14px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
